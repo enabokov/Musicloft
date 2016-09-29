@@ -1,0 +1,12 @@
+img{
+    height: 300px;
+    width: 300px;
+}
+p{
+    color: yellow;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}

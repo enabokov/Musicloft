@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<h1>Bands</h1>
+<br/><br/>
+<section class ="container">
+    <line class ="row">
+        {% for band in bands%}
+            <h2>{{ band.name }}</h2>
+            <p>{{ band.description }}</p>
+            <img src ="{{ band.image.url }}"/>
+        {% endfor %}
+    </line>
+</section>
