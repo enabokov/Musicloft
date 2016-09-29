@@ -1,4 +1,3 @@
-# -*- coding: utf8 -*-
 import os
 
 from django.db import models
@@ -31,11 +30,13 @@ class Album(models.Model):
 
 class Song(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField()
-    length = models.DurationField()
+    image = models.ImageField(blank=True, null=True)
+    duration = models.IntegerField(blank=True, null=True)
     song_file = models.FileField(upload_to=update_filename)
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     band = models.ForeignKey(Band, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
+
+        # TODO add calculate duration function
