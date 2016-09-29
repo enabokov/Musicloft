@@ -3,7 +3,7 @@ img{
     width: 300px;
 }
 p{
-    color: yellow;
+    color: red;
 }
 .row{
     display: flex;
