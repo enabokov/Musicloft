@@ -52,7 +52,6 @@ class Song(models.Model):
 
     def image_tag(self):
         return mark_safe('<img src="{}" width="150" height="150" />'.format(self.image.url))
-
     image_tag.short_description = 'Image'
 
     def song_tag(self):
