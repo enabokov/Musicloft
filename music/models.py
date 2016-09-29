@@ -24,6 +24,7 @@ class Band(models.Model):
 
     image_tag.short_description = 'Image'
 
+
 class Album(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to=update_filename)
@@ -51,7 +52,6 @@ class Song(models.Model):
 
     def image_tag(self):
         return mark_safe('<img src="{}" width="150" height="150" />'.format(self.image.url))
-
     image_tag.short_description = 'Image'
 
     def song_tag(self):

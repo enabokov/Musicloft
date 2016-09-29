@@ -1,6 +1,8 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+{% extends 'music/base.html' %}
+{% block title %}Cool albums{% endblock %}
+
+{% block body %}
+
 <h1>Bands</h1>
 <br/><br/>
 <section class ="container">
@@ -12,3 +14,5 @@
         {% endfor %}
     </line>
 </section>
+
+{% endblock %}
