@@ -7,15 +7,23 @@
     <br/>
     <h2>Bands</h2>
     {% for band in bands %}
-        <img src="{{ band.image.url }}" height="250px" width="250px"/>
-        <h3>{{ band.name }}</h3>
+        <a href="{% url 'music:band' band.pk %}">
+            <img src="{{ band.image.url }}" height="250px" width="250px"/>
+        </a>
+        <a href="{% url 'music:band' band.pk %}">
+            <h3>{{ band.name }}</h3>
+        </a>
         <p>{{ band.description }}</p>
     {% endfor %}
     <br/>
     <h2>Albums</h2>
     {% for album in albums %}
-        <img src="{{ album.image.url }}" height="250px" width="250px"/>
-        <h3>{{ album.name }} by {{ album.band.name }}</h3>
+        <a href="{% url 'music:album' album.pk %}">
+            <img src="{{ album.image.url }}" height="250px" width="250px"/>
+        </a>
+        <a href="{% url 'music:album' album.pk %}">
+            <h3>{{ album.name }} by {{ album.band.name }}</h3>
+        </a>
     {% endfor %}
     <br/>
     <h2>Songs</h2>

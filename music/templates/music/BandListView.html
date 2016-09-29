@@ -1,0 +1,20 @@
+{% extends 'music/base.html' %}
+{% block title %}Cool albums{% endblock %}
+
+{% block body %}
+
+    <h1>Bands</h1>
+    <br/><br/>
+    <section class="container">
+        <line class="row">
+            {% for band in bands %}
+                <h2>
+                    <a href="{% url 'music:band' band.pk %}">{{ band.name }}</a>
+                </h2>
+                <p>{{ band.description }}</p>
+                <a href="{% url 'music:band' band.pk %}"><img src="{{ band.image.url }}"/></a>
+            {% endfor %}
+        </line>
+    </section>
+
+{% endblock %}
