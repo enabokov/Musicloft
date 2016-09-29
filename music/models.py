@@ -1,6 +1,7 @@
 import os
 
 from django.db import models
+from django.utils.safestring import mark_safe
 
 
 # Rename uploaded file with class attribute name
@@ -18,6 +19,10 @@ class Band(models.Model):
     def __str__(self):
         return self.name
 
+    def image_tag(self):
+        return mark_safe('<img src="{}" width="150" height="150" />'.format(self.image.url))
+
+    image_tag.short_description = 'Image'
 
 class Album(models.Model):
     name = models.CharField(max_length=100)
@@ -26,6 +31,11 @@ class Album(models.Model):
 
     def __str__(self):
         return self.name
+
+    def image_tag(self):
+        return mark_safe('<img src="{}" width="150" height="150" />'.format(self.image.url))
+
+    image_tag.short_description = 'Image'
 
 
 class Song(models.Model):
@@ -38,5 +48,15 @@ class Song(models.Model):
 
     def __str__(self):
         return self.name
+
+    def image_tag(self):
+        return mark_safe('<img src="{}" width="150" height="150" />'.format(self.image.url))
+
+    image_tag.short_description = 'Image'
+
+    def song_tag(self):
+        return mark_safe('<audio controls><source src="{}"/></audio>'.format(self.song_file.url))
+
+    song_tag.short_description = 'Song'
 
         # TODO add calculate duration function
