@@ -1,8 +1,6 @@
-from django.shortcuts import render
-from .models import Band
 from django.views import generic
 
-# Create your views here.
+from .models import Band, Album
 
 
 class BandView(generic.ListView):
@@ -11,3 +9,11 @@ class BandView(generic.ListView):
 
     def get_queryset(self):
         return Band.objects.all()
+
+
+class AlbumView(generic.ListView):
+    template_name = 'music/AlbumView.html'
+    context_object_name = 'albums'
+
+    def get_queryset(self):
+        return Album.objects.all()
