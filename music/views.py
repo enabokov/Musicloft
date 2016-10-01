@@ -1,6 +1,8 @@
+from django.contrib.auth import authenticate, login
 from django.shortcuts import render
 from django.views import generic
 
+from .forms import UserForm
 from .models import Band, Album, Song
 
 
@@ -42,3 +44,22 @@ def index_view(request):
     }
 
     return render(request, 'music/index.html', context)
+
+
+def register(request):
+    form = UserForm(request.POST or None)
+    if form.is_valid():
+        user = form.save(commit=False)
+        username = form.cleaned_data['username']
+        password = form.cleaned_data['password']
+        user.set_password(password)
+        user.save()
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return index_view(request)
+    context = {
+        "form": form,
+    }
+    return render(request, 'music/register.html', context)
