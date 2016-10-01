@@ -1,0 +1,40 @@
+{% extends 'music/base.html' %}
+{% block title %}Home page{% endblock %}
+
+{% block body %}
+
+    <h1>Home page</h1>
+    <br/>
+    <h2>Bands</h2>
+    {% for band in bands %}
+        <a href="{% url 'music:band' band.pk %}">
+            <img src="{{ band.image.url }}" height="250px" width="250px"/>
+        </a>
+        <a href="{% url 'music:band' band.pk %}">
+            <h3>{{ band.name }}</h3>
+        </a>
+        <p>{{ band.description }}</p>
+    {% endfor %}
+    <br/>
+    <h2>Albums</h2>
+    {% for album in albums %}
+        <a href="{% url 'music:album' album.pk %}">
+            <img src="{{ album.image.url }}" height="250px" width="250px"/>
+        </a>
+        <a href="{% url 'music:album' album.pk %}">
+            <h3>{{ album.name }} by {{ album.band.name }}</h3>
+        </a>
+    {% endfor %}
+    <br/>
+    <h2>Songs</h2>
+    {% for song in songs %}
+        {% if song.image %}
+            <img src="{{ song.image.url }}" height="250px" width="250px"/>
+        {% endif %}
+        <h3>{{ song.name }} by {{ song.band.name }} in {{ song.album.name }} album</h3>
+        <audio controls>
+            <source src="{{ song.song_file.url }}"/>
+        </audio>
+    {% endfor %}
+
+{% endblock %}

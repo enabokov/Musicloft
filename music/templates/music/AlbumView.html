@@ -1,0 +1,17 @@
+{% extends 'music/base.html' %}
+{% block title %}{{ album.band }} - {{ album.name }}{% endblock %}
+
+{% block body %}
+    <h1>{{ album.name }}</h1>
+    <p>id: {{ album.pk }}</p>
+    <img src="{{ album.image.url }}" height="400" width="400"/>
+
+    <h2>Songs</h2>
+    <ul>
+        {% for song in album.song_set.all %}
+            <li>
+                <h3>{{ song.name }}</h3>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,19 +1,44 @@
+from django.shortcuts import render
 from django.views import generic
 
-from .models import Band, Album
+from .models import Band, Album, Song
 
 
-class BandView(generic.ListView):
+class BandView(generic.DetailView):
+    model = Band
+    queryset = Band.objects.all()
     template_name = 'music/BandView.html'
+    context_object_name = 'band'
+
+
+class AlbumView(generic.DetailView):
+    model = Album
+    queryset = Album.objects.all()
+    template_name = 'music/AlbumView.html'
+    context_object_name = 'album'
+
+
+class BandListView(generic.ListView):
+    model = Band
+    template_name = 'music/BandListView.html'
     context_object_name = 'bands'
 
-    def get_queryset(self):
-        return Band.objects.all()
 
-
-class AlbumView(generic.ListView):
-    template_name = 'music/AlbumView.html'
+class AlbumListView(generic.ListView):
+    model = Album
+    template_name = 'music/AlbumListView.html'
     context_object_name = 'albums'
 
-    def get_queryset(self):
-        return Album.objects.all()
+
+def index_view(request):
+    bands = Band.objects.all()
+    albums = Album.objects.all()
+    songs = Song.objects.all()
+
+    context = {
+        'bands': bands,
+        'albums': albums,
+        'songs': songs
+    }
+
+    return render(request, 'music/index.html', context)
