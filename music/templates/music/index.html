@@ -3,53 +3,82 @@
 
 {% block body %}
 
-    <br>
-    <div class = "container-fluid">
-    <h2><ins>Bands</ins></h2>
-    </div>
-    <div class = "row">
+    <div class = "BandMain">
+      <div class="collapse navbar-collapse " id="topNavBar">
+        <nav class = "navbar navbar-default">
+            <div class = "container-fluid">
+                 <div class = "navbar-header">
+                    <a href = "#" class ="navbar-brand">Bands</a>
+                </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href = "#"><h3>See all</h3></a></li>
+            </ul>
+        </div>
+
+    <section>
+        <hr align="center" color="white" />
+        <div class = "row">
         {% for band in bands %}
-                <div class="col-sm-6 col-lg-2">
-                    <div class = "thumbnail text-center">
-                        <a href="{% url 'music:band' band.pk %}">
-                            <img src="{{ band.image.url }}" class = "img-responsive"/>
+            <div class = "col-sm-2 col-sm-2 col-sm-2 col-sm-2 col-sm-2 col-sm-2">
+                 <div class = "container ">
+                        <a href="{% url 'music:band' band.pk %}" class = "thumbnail">
+                            <img src="{{ band.image.url }}" class = "img-responsive"  style ="height: 220px; width: 220px"/>
                             <div class="caption text-center">
                                  <h3>{{ band.name }}</h3>
                             </div>
                         </a>
-                        <p>{{ band.description }}</p>
-                    </div>
                 </div>
-                {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
-        {% endfor %}
-    </div>
-    <br/>
-    <h2><ins>Albums</ins></h2>
-    <div class = "row">
-        {% for album in albums %}
-            <div class="col-lg-6 col-lg-3">
-                            <a href="{% url 'music:album' album.pk %}" class = "thumbnail" height = "300px" width="300px">
-                                <img src="{{ album.image.url }}" class = "img-responsive"/>
-                                <div class="caption text-center">
-                                     <h3>{{ album.name }}</h3>
-                                    <p>{{ album.description }}</p>
-                                </div>
-                            </a>
-                    </div>
+            </div>
             {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
         {% endfor %}
+        </div>
+    </section>
+            </nav>
+        </div>
     </div>
-    <br/>
 
-    <h2><ins>Songs</ins></h2>
-        {% for song in songs %}
-                {% if song.image %}
-                    <img src="{{ song.image.url }}"/>
-                {% endif %}
-                <h3>{{ song.name }} by {{ song.band.name }} in {{ song.album.name }} album</h3>
-                <audio controls>
-                    <source src="{{ song.song_file.url }}"/>
-                </audio>
-        {% endfor %}
+
+    <div class = "AlbumMain">
+          <div class="collapse navbar-collapse " id="topNavBar">
+            <nav class = "navbar navbar-default">
+                <div class = "container-fluid">
+                     <div class = "navbar-header">
+                        <a href = "#" class ="navbar-brand">Album</a>
+                    </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href = "#"><h3>See all</h3></a></li>
+                </ul>
+            </div>
+    <section>
+        <hr align="center" color="white" />
+        <div class = "row">
+            {% for album in albums %}
+                    <div class="col-md-4 col-md-4 col-md-4">
+                        <a href="{% url 'music:album' album.pk %}" class = "thumbnail" >
+                            <img src="{{ album.image.url }}" class = "img-responsive" height = "300px" width="300px"/>
+                            <div class="caption text-center">
+                                 <h3>{{ album.name }}</h3>
+                            </div>
+                        </a>
+                    </div>
+                    {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
+            {% endfor %}
+        </div>
+    </section>
+            </nav>
+        </div>
+    </div>
+
+    <br/>
+                <h2><ins>Songs</ins></h2>
+                    {% for song in songs %}
+                            {% if song.image %}
+                                <img src="{{ song.image.url }}"/>
+                            {% endif %}
+                            <h3>{{ song.name }} by {{ song.band.name }} in {{ song.album.name }} album</h3>
+                            <audio controls>
+                                <source src="{{ song.song_file.url }}"/>
+                            </audio>
+                    {% endfor %}
 
 {% endblock %}

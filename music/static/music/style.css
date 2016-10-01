@@ -1,18 +1,54 @@
-img{
-    height: 300px;
-    width: 300px;
+.top .navbar{
+    position: relative;
+    background-color: lightcyan;
 
 }
-.row{
-    flex-wrap: wrap;
+.top .navbar-brand{
+    color: blue;
 }
-.navbar {
-    background-color: darkgray;
+.BandMain .navbar{
+    background-color: lightcyan;
 }
-
-body{
+.BandMain .navbar-brand{
+    color: darkblue;
+    font-family: "Century Schoolbook", sans-serif;
+    font-size: 60px;
+}
+.BandMain section{
     background-color: darkslategrey;
+}
+.BandMain .caption{
+    color: yellow;
+}
+.AlbumMain .navbar{
+    background-color: lightcyan;
+    border-collapse: collapse;
+}
+.AlbumMain .navbar-brand{
+    color: darkblue;
+    font-family: "Century Schoolbook", sans-serif;
+    font-size: 60px;
+    position: absolute;
+}
+.AlbumMain .caption{
+    color: darkgoldenrod;
+}
+.AlbumMain section{
+    background-color: darkslategrey;
+}
+body{
+    background-color: black;
 }
 .thumbnail{
     background-color: black;
+    display: inline-table;
 }
+
+.container{
+    margin: -12px;
+    margin-right: -20px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    flex-wrap: wrap;
+}
+
