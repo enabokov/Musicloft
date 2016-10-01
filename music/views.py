@@ -35,12 +35,11 @@ class AlbumListView(generic.ListView):
             return Album.objects.filter(band=band)
         return Album.objects.all()
 
-def index_view(request):
+
+def index(request):
     bands = Band.objects.all().order_by('?')[:12]
     albums = Album.objects.all().order_by('?')[:5]
     songs = Song.objects.all().order_by('?')[:10]
-
-
 
     context = {
         'bands': bands,
