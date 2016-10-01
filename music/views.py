@@ -1,20 +1,18 @@
-from django.contrib.auth import authenticate, login
-from django.shortcuts import render
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.template import RequestContext
 from django.views import generic
 
-from .forms import UserForm
+from .forms import UserForm, LoginForm
 from .models import Band, Album, Song
 
 
 class BandView(generic.DetailView):
-    model = Band
     queryset = Band.objects.all()
     template_name = 'music/BandView.html'
-    context_object_name = 'band'
 
 
 class AlbumView(generic.DetailView):
-    model = Album
     queryset = Album.objects.all()
     template_name = 'music/AlbumView.html'
     context_object_name = 'album'
@@ -31,8 +29,14 @@ class AlbumListView(generic.ListView):
     template_name = 'music/AlbumListView.html'
     context_object_name = 'albums'
 
+    def get_queryset(self):
+        if 'pk' in self.kwargs.keys():
+            band = get_object_or_404(Band, pk=self.kwargs['pk'])
+            return Album.objects.filter(band=band)
+        return Album.objects.all()
 
-def index_view(request):
+
+def index(request):
     bands = Band.objects.all()
     albums = Album.objects.all()
     songs = Song.objects.all()
@@ -42,7 +46,6 @@ def index_view(request):
         'albums': albums,
         'songs': songs
     }
-
     return render(request, 'music/index.html', context)
 
 
@@ -58,8 +61,39 @@ def register(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return index_view(request)
-    context = {
-        "form": form,
-    }
-    return render(request, 'music/register.html', context)
+                return redirect(reverse('music:account'))
+    return render(request, 'music/user/registration.html', {'form': form})
+
+
+def login_user(request):
+    form = LoginForm(request.POST or None)
+    if form.is_valid():
+        username = form.cleaned_data['username']
+        password = form.cleaned_data['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect(reverse('music:account'))
+            else:
+                context = {'error_message': 'Your account has been blocked', 'form': form}
+                return render(request, 'music/user/login.html', context)
+        else:
+            context = {'error_message': 'Incorrect login or password', 'form': form}
+            return render(request, 'music/user/login.html', context)
+    return render(request, 'music/user/login.html', {'form': form})
+
+
+# Logout user and redirect to main page
+def logout_user(request):
+    if request.user.is_authenticated():
+        logout(request)
+    return redirect(reverse('music:index'))
+
+
+# User information page
+def user_account(request):
+    if not request.user.is_authenticated():
+        return redirect(reverse('music:register'))
+    else:
+        return render(request, 'music/user/account.html', content_type={'request': RequestContext(request)})
