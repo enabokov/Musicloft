@@ -1,3 +1,18 @@
-title{
-    color: red;
+img{
+    height: 300px;
+    width: 300px;
+
+}
+.row{
+    flex-wrap: wrap;
+}
+.navbar {
+    background-color: darkgray;
+}
+
+body{
+    background-color: darkslategrey;
+}
+.thumbnail{
+    background-color: black;
 }

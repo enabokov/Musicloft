@@ -14,7 +14,7 @@
         <p>by
             <a href="{% url 'music:band' album.band.pk %}">{{ album.band.name }}</a>
         </p>
-        <img src="{{ album.image.url }}" width="300" height="300"/>
+        <img src="{{ album.image.url }}"/>
         <ul>
             {% for song in album.song_set.all %}
                 <li>{{ song.name }}</li>
