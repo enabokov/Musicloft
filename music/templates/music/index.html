@@ -1,7 +1,13 @@
 {% extends 'music/base.html' %}
 {% block title %}Home page{% endblock %}
 
+{% load staticfiles %}
+
 {% block body %}
+
+    <!-- <input type="text" id="search" name="search" placeholder="search" /> -->
+
+    <ul id="search_results"></ul>
 
     <div class="BandMain">
         <div class="collapse navbar-collapse " id="topNavBar">
@@ -100,6 +106,5 @@
             </nav>
         </div>
     </div>
-
 
 {% endblock %}

@@ -77,3 +77,6 @@ body {
     flex-wrap: wrap;
 }
 
+.thumb {
+    margin-bottom: 30px;
+}

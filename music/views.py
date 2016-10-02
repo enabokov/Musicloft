@@ -97,3 +97,12 @@ def user_account(request):
         return redirect(reverse('music:register'))
     else:
         return render(request, 'music/user/account.html', content_type={'request': RequestContext(request)})
+
+
+def search_band(request):
+    results = None
+    if request.method == 'POST' and request.POST['search_text']:
+        search_text = request.POST['search_text']
+        results = Band.objects.filter(name__contains=search_text)
+
+    return render(request, 'music/ajax_search.html', {'bands': results})
