@@ -11,12 +11,12 @@
                     <a href = "#" class ="navbar-brand">Bands</a>
                 </div>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href = "#"><h3>See all</h3></a></li>
+                <li><a href = "#"><h4>See all >> </h4></a></li>
             </ul>
         </div>
 
     <section>
-        <hr align="center" color="white" />
+
         <div class = "row">
         {% for band in bands %}
             <div class = "col-sm-2 col-sm-2 col-sm-2 col-sm-2 col-sm-2 col-sm-2">
@@ -43,23 +43,24 @@
             <nav class = "navbar navbar-default">
                 <div class = "container-fluid">
                      <div class = "navbar-header">
-                        <a href = "#" class ="navbar-brand">Album</a>
+                        <a href = "#" class ="navbar-brand">Albums</a>
                     </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href = "#"><h3>See all</h3></a></li>
+                    <li><a href = "#"><h4>See all >></h4></a></li>
                 </ul>
             </div>
     <section>
-        <hr align="center" color="white" />
         <div class = "row">
             {% for album in albums %}
-                    <div class="col-md-4 col-md-4 col-md-4">
-                        <a href="{% url 'music:album' album.pk %}" class = "thumbnail" >
-                            <img src="{{ album.image.url }}" class = "img-responsive" height = "300px" width="300px"/>
-                            <div class="caption text-center">
-                                 <h3>{{ album.name }}</h3>
-                            </div>
-                        </a>
+                    <div class="col-md-3 col-md-3 col-md-3 col-md-3">
+                        <div class = "container">
+                            <a href="{% url 'music:album' album.pk %}" class = "thumbnail" >
+                                <img src="{{ album.image.url }}" class = "img-responsive" height = "300px" width="300px"/>
+                                <div class="caption text-center">
+                                     <h3>{{ album.name }}</h3>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
             {% endfor %}
@@ -69,16 +70,33 @@
         </div>
     </div>
 
-    <br/>
-                <h2><ins>Songs</ins></h2>
+    <div class = "SongMain">
+          <div class="collapse navbar-collapse " id="topNavBar">
+            <nav class = "navbar navbar-default">
+                <div class = "container-fluid">
+                     <div class = "navbar-header">
+                         <a href = "#" class ="navbar-brand">Top tracks</a>
+                    </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href = "#"><h4>See all >></h4></a></li>
+                </ul>
+            </div>
+            <section>
                     {% for song in songs %}
-                            {% if song.image %}
-                                <img src="{{ song.image.url }}"/>
-                            {% endif %}
-                            <h3>{{ song.name }} by {{ song.band.name }} in {{ song.album.name }} album</h3>
-                            <audio controls>
-                                <source src="{{ song.song_file.url }}"/>
-                            </audio>
+                        <div class = "col-md-6 col-md-6">
+                            <div class = "container">
+                                <div class="audio-player">
+                                    <h3>{{ song.name }} by {{ song.band }}</h3>
+                                    <img class="cover" src="{{ song.image }}" alt="">
+                                    <audio id="audio-player" src="{{ song.song_file.url }}" type="audio/mp3" controls="controls"></audio>
+                                </div>
+                            </div>
+                        </div>
                     {% endfor %}
+            </section>
+            </nav>
+        </div>
+    </div>
+
 
 {% endblock %}

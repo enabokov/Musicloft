@@ -7,10 +7,11 @@
     color: blue;
 }
 .BandMain .navbar{
-    background-color: lightcyan;
+    background-color: darkslategrey;
 }
 .BandMain .navbar-brand{
-    color: darkblue;
+
+    color: lightgreen;
     font-family: "Century Schoolbook", sans-serif;
     font-size: 60px;
 }
@@ -21,11 +22,11 @@
     color: yellow;
 }
 .AlbumMain .navbar{
-    background-color: lightcyan;
+    background-color: darkslategrey;
     border-collapse: collapse;
 }
 .AlbumMain .navbar-brand{
-    color: darkblue;
+    color: lightcoral;
     font-family: "Century Schoolbook", sans-serif;
     font-size: 60px;
     position: absolute;
@@ -35,6 +36,16 @@
 }
 .AlbumMain section{
     background-color: darkslategrey;
+}
+.SongMain .navbar{
+    background-color: darkslategrey;
+    color: antiquewhite;
+}
+.SongMain .navbar-brand{
+
+    color: orangered;
+    font-family: "Century Schoolbook", sans-serif;
+    font-size: 40px;
 }
 body{
     background-color: black;
