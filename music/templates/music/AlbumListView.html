@@ -47,7 +47,9 @@
             {% for album in albums %}
                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
                     <div class="container">
-                    <a href="#"><img src="{{ album.image.url }}" class="img-responsive" style="height: 200px; width: 200px"/></a>
+                        <a href="{% url 'music:album' album.pk %}"><img src="{{ album.image.url }}"
+                                                                        class="img-responsive"
+                                                                        style="height: 200px; width: 200px"/></a>
                     </div>
                 </div>
             {% endfor %}
