@@ -1,82 +1,96 @@
-.top .navbar {
-    position: relative;
-    background-color: lightcyan;
-
-}
-
-.top .navbar-brand {
-    color: blue;
-}
-
-.BandMain .navbar {
-
-    background-color: darkslategrey;
-}
-
-.BandMain .navbar-brand {
-
+#bodyMain{
+    font-family: 'Pacifico', cursive;
     color: lightgreen;
-    font-family: "Century Schoolbook", sans-serif;
-    font-size: 60px;
+    background-color: #5e5e5e;
 }
-
-.BandMain section {
-    background-color: darkslategrey;
+#theCarousel .slide1 {
+    background-image: url(/media/music/image_for_site/img1.jpg);
+    color: white;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
-
-.BandMain .caption {
+#theCarousel .slide2{
+    background-image: url(/media/music/image_for_site/img2.jpg);
+    color: white;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#theCarousel .slide3{
+    background-image: url(/media/music/image_for_site/img3.jpg);
+    color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#theBandsCarousel .slide1{
+    background-image: url(/media/music/band/Coldplay.jpg);
+    color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#theBandsCarousel .slide2{
+    background-image: url(/media/music/image_for_site/img4.jpg);
+     color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#theBandsCarousel .slide3{
+    background-image: url(/media/music/image_for_site/img5.jpg);
+    color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+#theAlbumsCarousel .slide1{
+    background-image: url(/media/music/album/Intense_8BuMtxW.jpg);
+    color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+#theAlbumsCarousel .slide2{
+    background-image: url(/media/music/album/A_head_full_of_dreams.jpg);
+     color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#theAlbumsCarousel .slide3{
+    background-image: url(/media/music/album/Intense.jpg);
+    color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.carousel-caption h1{
+    font-size: 7.4em;
+    font-family: 'Pacifico', cursive;
+    padding-bottom: .4em;
+    justify-content: center;
+}
+.carousel-caption p{
+    font-size: 2em;
+    font-family: 'Pacifico', cursive;
+}
+#foot{
+    background-color: gray;
+}
+#top .navbar-brand{
+    color: white;
+}
+#top .nav{
     color: yellow;
-}
-
-.AlbumMain .navbar {
-    background-color: darkslategrey;
-    border-collapse: collapse;
-}
-
-.AlbumMain .navbar-brand {
-    color: lightcoral;
-    font-family: "Century Schoolbook", sans-serif;
-    font-size: 60px;
-    position: absolute;
-}
-
-.AlbumMain .caption {
-    color: darkgoldenrod;
-}
-
-.AlbumMain section {
-    background-color: darkslategrey;
-}
-
-.SongMain .navbar {
-    background-color: darkslategrey;
-    color: lightgreen;
-}
-
-.SongMain .navbar-brand {
-
-    color: orangered;
-    font-family: "Century Schoolbook", sans-serif;
-    font-size: 40px;
-}
-
-body {
-    background-color: black;
-}
-
-.thumbnail {
-    background-color: black;
-    display: inline-table;
-}
-
-.container {
-    margin: -12px;
-    margin-right: -20px;
-    border-collapse: collapse;
-    border-spacing: 0;
-    flex-wrap: wrap;
-}
-
-.thumb {
-    margin-bottom: 30px;
 }

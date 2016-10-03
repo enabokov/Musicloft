@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Cool site name{% endblock %}</title>
+    <title>{% block title %}MusicHub - everywhere you want{% endblock %}</title>
     {% load staticfiles %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}">
-
-
-    <div class="top">
-        <div class="collapse navbar-collapse" id="topNavBar">
-            <nav class="navbar navbar-default">
+    <link href = 'https://fonts.googleapis.com/css?family=Pacifico' rel = 'stylesheet' type='text/css'>
+<!-- Fixed top -->
+    <div class="container">
+        <nav class="navbar navbar-fixed-top navbar-inverse" id="top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a href="#" class="navbar-brand">MUSICHUB</a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand">MUSICLOFT</a>
                     </div>
 
-                    <div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class="active"><a href="#">Bands<span class="sr-only">(current)</span></a></li>
                             <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false"
+                               aria-expanded="false">Contact Us<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Email</a></li>
+                                <li><a href="#">Phone</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Set Appointment</a></li>
+                            </ul>
+                        </li>
+
                         </ul>
-                    </div>
                     <form class="navbar-form navbar-left">
-                        <form class="navbar-form navbar-left" role="search" method="get"
+                        <form class="navbar-form " role="search" method="get"
                               action="{% url 'music:index' %}">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="search" name="q" value="">
@@ -35,29 +48,33 @@
                         </form>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#">
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Album
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
-                            </a>
-                        </li>
+                      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                 </div>
+                    </div>
             </nav>
         </div>
-    </div>
+
+
+
+
+<!-- Fixed footer -->
+        <nav class="navbar navbar-fixed-bottom " id="foot">
+            <div class="container">
+                <div class="navbar-text">
+                    <p>&copy; 2016 MusicHub</p>
+                </div>
+            </div>
+        </nav>
 </head>
 <body>
 
 {% block body %}
 {% endblock %}
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="{% static 'music/js/ajax_search.js' %}"></script>
-
+<script src="{% static 'music/fonts_js_css/js/bootstrap.min.js'%}"></script>
 </body>
 </html>

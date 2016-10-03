@@ -5,106 +5,65 @@
 
 {% block body %}
 
-    <!-- <input type="text" id="search" name="search" placeholder="search" /> -->
 
-    <ul id="search_results"></ul>
+    <div id="theCarousel" class="carousel slide carousel-fade" data-ride="carousel">
 
-    <div class="BandMain">
-        <div class="collapse navbar-collapse " id="topNavBar">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a href="#" class="navbar-brand">Bands</a>
-                    </div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><h4>See all >> </h4></a></li>
-                    </ul>
+    <ol class="carousel-indicators">
+        <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#theCarousel" data-slide-to="1"></li>
+        <li data-target="#theCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="slide1"></div>
+                <div class="carousel-caption">
+                    <h1>Play on</h1>
+                    <p><a href="#" class="btn btn-primary btn-sm">Get them Now</a></p>
                 </div>
-
-                <section>
-
-                    <div class="row">
-                        {% for band in bands %}
-                            <div class="col-sm-2 col-sm-2 col-sm-2 col-sm-2 col-sm-2 col-sm-2">
-                                <div class="container ">
-                                    <a href="{% url 'music:band' band.pk %}" class="thumbnail">
-                                        <img src="{{ band.image.url }}" class="img-responsive"
-                                             style="height: 220px; width: 220px"/>
-                                        <div class="caption text-center">
-                                            <h3>{{ band.name }}</h3>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
-                        {% endfor %}
-                    </div>
-                </section>
-            </nav>
         </div>
+        <div class="item" id="theCarousel">
+            <div class="slide2"></div>
+                <div class="carousel-caption">
+                    <h1>Listen</h1>
+                </div>
+        </div>
+        <div class="item">
+            <div class="slide3"></div>
+                <div class="carousel-caption">
+                    <h1>Enjoy</h1>
+                </div>
+        </div>
+    </div>
+</div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container text-center">
+    <a href="#"><button class="btn btn-warning navbar-btn  btn-lg" style="font-family: Pacifico, sans-serif;
+    height: 75px; width: 300px; color: black; background-color: dodgerblue">Join now</button></a>
     </div>
 
 
-    <div class="AlbumMain">
-        <div class="collapse navbar-collapse " id="topNavBar">
-            <nav class="navbar navbar-default">
+    <div class="container" id="aboutUs">
+        <section>
+                <h1 style="color: gray">About us</h1>
+            <div class="row">
                 <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a href="#" class="navbar-brand">Albums</a>
-                    </div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><h4>See all >></h4></a></li>
-                    </ul>
-                </div>
-                <section>
-                    <div class="row">
-                        {% for album in albums %}
-                            <div class="col-md-3 col-md-3 col-md-3 col-md-3">
-                                <div class="container">
-                                    <a href="{% url 'music:album' album.pk %}" class="thumbnail">
-                                        <img src="{{ album.image.url }}" class="img-responsive" height="300px"
-                                             width="300px"/>
-                                        <div class="caption text-center">
-                                            <h3>{{ album.name }}</h3>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
-                        {% endfor %}
-                    </div>
-                </section>
-            </nav>
-        </div>
-    </div>
-
-    <div class="SongMain">
-        <div class="collapse navbar-collapse " id="topNavBar">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a href="#" class="navbar-brand">Top tracks</a>
-                    </div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><h4>See all >></h4></a></li>
-                    </ul>
-                </div>
-                <section>
-                    {% for song in songs %}
-                        <div class="col-md-6 col-md-6">
-                            <div class="container">
-                                <div class="audio-player">
-                                    <h3>{{ song.name }} by {{ song.band }}</h3>
-                                    <img class="cover" src="{{ song.image }}" alt="">
-                                    <audio id="audio-player" src="{{ song.song_file.url }}" type="audio/mp3"
-                                           controls="controls"></audio>
-                                </div>
-                            </div>
+                    <blockquote>
+                        <p style="font-size: 2em ">Lorem ipsum dolor sit amet, consectetuer ,adfjvherou fheuormx;uoe
+                            rha;lmrcj8w 3ofcsmer;mxlmerlgsjhtglv,xso;ditrg jso;tcmigvsjexo;itgvt rhoncus ut, </p>
+                        <footer>Someone</footer>
+                        <button class="btn btn-warning">Find out more</button>
+                    </blockquote>
                         </div>
-                    {% endfor %}
-                </section>
-            </nav>
-        </div>
+            </div>
+        </section>
     </div>
+
+
+
 
 {% endblock %}
