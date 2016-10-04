@@ -2,6 +2,7 @@
 {% block title %}{{ album.band }} - {{ album.name }}{% endblock %}
 
 {% block body %}
+
     <h1>{{ album.name }}</h1>
     <p>id: {{ album.pk }}</p>
     <img src="{{ album.image.url }}"/>

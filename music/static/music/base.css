@@ -1,0 +1,14 @@
+#foot{
+    background-color: gray;
+}
+#top .navbar-brand{
+    color: white;
+}
+#top .navbar{
+    color: yellow;
+    letter-spacing: 4px;
+}
+body{
+    background-image: url('/media/music/image_for_site/img7.jpg');
+    linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('/media/music/image_for_site/img7.jpg');
+}

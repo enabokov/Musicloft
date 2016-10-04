@@ -1,0 +1,24 @@
+#theBandsCarousel .slide1{
+    background-image: url(/media/music/band/Coldplay.jpg);
+    color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#theBandsCarousel .slide2{
+    background-image: url(/media/music/image_for_site/img4.jpg);
+     color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#theBandsCarousel .slide3{
+    background-image: url(/media/music/image_for_site/img5.jpg);
+    color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
