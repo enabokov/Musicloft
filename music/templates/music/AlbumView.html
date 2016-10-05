@@ -7,12 +7,4 @@
     <p>id: {{ album.pk }}</p>
     <img src="{{ album.image.url }}"/>
 
-    <h2>Songs</h2>
-    <ul>
-        {% for song in album.song_set.all %}
-            <li>
-                <h3>{{ song.name }}</h3>
-            </li>
-        {% endfor %}
-    </ul>
 {% endblock %}

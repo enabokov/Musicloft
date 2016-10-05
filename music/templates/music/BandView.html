@@ -19,24 +19,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <h1 style="text-align: center; font-family: 'Pacifico', cursive"><ins>ALBUMS</ins></h1>
                     <ul>
                         {% for album in band.album_set.all %}
                             <li>
 
-                                <img src="{{ band.image }}" class="img-rounded"/>
+                                <img src="{{ album.image.url }}" class="img-responsive"/>
 
                             <a href="{% url 'music:album' album.pk %}">
                                 <h2 style="color: orange">{{ album.name }}</h2>
                             </a>
-                                <ul>
-                                    {% for song in album.song_set.all %}
-                                        <li>
-                                            <h4>{{ song.name }}</h4>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
                             </li>
                         {% endfor %}
                     </ul>

@@ -14,41 +14,43 @@
     <div class="carousel-inner">
         <div class="item active">
             <div class="slide1"></div>
-                <div class="carousel-caption">
 
-                </div>
         </div>
         <div class="item">
             <div class="slide2"></div>
-                <div class="carousel-caption">
-                    <h1>Listen</h1>
-                </div>
+
         </div>
         <div class="item">
             <div class="slide3"></div>
-                <div class="carousel-caption">
-                    <h1>Enjoy</h1>
-                </div>
+
         </div>
     </div>
 </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container text-center">
-    <a href="#"><button class="btn btn-warning navbar-btn  btn-lg" style="font-family: Pacifico, sans-serif;
-    height: 75px; width: 300px; color: black; background-color: lawngreen">Download</button></a>
+
+    <div class="container">
+        <div class="page-header">
+            <h1 style="color: lightgreen">The Bands</h1>
+        </div>
     </div>
 
-<div class="container" id="Band_list_view">
+
+    <div class="container" id="Band_list_view">
      <div class="row">
             {% for band in bands %}
-                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="container">
-                        <a href="{% url 'music:band' band.pk %}"><img src="{{ band.image.url }}" class="img-responsive"
-                                                                      style="height: 200px; width: 200px"/></a>
+
+                        <a href="{% url 'music:band' band.pk %}" class="thumbnail" id="img_style">
+                            <img src="{{ band.image.url }}" class="img-responsive"
+                                 style="height: 250px; width: 250px; margin-bottom: 50px;
+                                                                          object-position: center; object-fit: none; overflow: hidden"/>
+
+                            <div class="caption text-center"
+                            ">
+                            <h3>{{ band.name }}</h3>
+                    </div>
+                    </a>
                     </div>
                 </div>
             {% endfor %}
