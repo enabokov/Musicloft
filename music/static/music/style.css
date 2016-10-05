@@ -87,10 +87,15 @@
 }
 #foot{
     background-color: gray;
+
 }
 #top .navbar-brand{
     color: white;
 }
 #top .nav{
     color: yellow;
+}
+
+#Band_list_view {
+    margin: 5px;
 }

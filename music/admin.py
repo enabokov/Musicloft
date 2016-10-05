@@ -4,13 +4,13 @@ from .models import Band, Album, Song
 
 
 class BandAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'albums', 'songs')
-    list_filter = ('name',)
+    list_display = ('name', 'description', 'albums', 'songs', 'popularity')
+    list_filter = ('name', 'popularity')
     search_fields = ('name',)
     ordering = ['name']
 
-    fields = ('name', 'description', 'image', 'image_tag',)
-    readonly_fields = ('image_tag',)
+    fields = ('name', 'popularity', 'description', 'image', 'image_tag',)
+    readonly_fields = ('popularity', 'image_tag',)
 
     def albums(self, obj):
         return len(obj.album_set.all())
@@ -35,11 +35,11 @@ class AlbumAdmin(admin.ModelAdmin):
 class SongAdmin(admin.ModelAdmin):
     list_display = ('name', 'band', 'album', 'duration')
     list_filter = ('name', 'band', 'album')
-    search_field = ('name', 'band', 'album')
+    search_field = ('name', 'band', 'album', 'lyrics')
     ordering = ('name', 'band', 'album')
 
-    fields = ('name', 'duration', 'band', 'album', 'song_file', 'song_tag', 'image', 'image_tag')
-    readonly_fields = ('image_tag', 'song_tag', 'duration')
+    fields = ('name', 'duration', 'band', 'album', 'lyrics', 'song_file', 'song_tag')
+    readonly_fields = ('song_tag', 'duration')
 
 
 admin.site.register(Band, BandAdmin)
