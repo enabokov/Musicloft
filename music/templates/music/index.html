@@ -51,8 +51,44 @@
     <br>
     <br>
     <div class="container text-center">
-    <a href="#"><button class="btn btn-warning navbar-btn  btn-lg" style="font-family: Pacifico, sans-serif;
-    height: 75px; width: 300px; color: black; background-color: dodgerblue">Join now</button></a>
+        <button type="button" class="btn btn-warning navbar-btn  btn-lg" style="font-family: Pacifico, sans-serif;
+    height: 75px; width: 300px; color: black; background-color: dodgerblue" data-toggle="modal" data-target="#myModal">
+            Join now
+        </button>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title" style="text-align: center">Sign up</h2>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" action="{% url 'music:register' %}" method="post"
+                          enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'music/user/form_template.html' %}
+                        <p>If you don't have an account. You can <a href="{% url 'music:register' %}">register</a> here
+                        </p>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+
+        </div>
     </div>
 
 
@@ -71,6 +107,7 @@
             </div>
         </section>
     </div>
+
 
 
 
