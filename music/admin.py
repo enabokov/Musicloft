@@ -3,6 +3,20 @@ from django.contrib import admin
 from .models import Band, Album, Song
 
 
+class AlbumInline(admin.TabularInline):
+    model = Album
+    fields = ['name']
+    show_change_link = True
+    extra = 0
+
+
+class SongInline(admin.TabularInline):
+    model = Song
+    fields = ['name', 'song_file']
+    show_change_link = True
+    extra = 0
+
+
 class BandAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'albums', 'songs', 'popularity')
     list_filter = ('name', 'popularity')
@@ -11,6 +25,10 @@ class BandAdmin(admin.ModelAdmin):
 
     fields = ('name', 'popularity', 'description', 'image', 'image_tag',)
     readonly_fields = ('popularity', 'image_tag',)
+
+    inlines = [
+        AlbumInline,
+    ]
 
     def albums(self, obj):
         return len(obj.album_set.all())
@@ -27,6 +45,8 @@ class AlbumAdmin(admin.ModelAdmin):
 
     fields = ('name', 'band', 'image', 'image_tag',)
     readonly_fields = ('image_tag',)
+
+    inlines = [SongInline]
 
     def songs(self, obj):
         return len(obj.song_set.all())

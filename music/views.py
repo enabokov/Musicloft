@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.template import RequestContext
 from django.views import generic
@@ -94,6 +95,7 @@ def logout_user(request):
 
 
 # User information page
+@login_required
 def user_account(request):
     if not request.user.is_authenticated():
         return redirect(reverse('music:register'))
