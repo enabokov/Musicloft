@@ -2,25 +2,39 @@
 {% block title %}{{ band.name }} band{% endblock %}
 
 {% block body %}
-    <h1>{{ band.name }}</h1>
-    <p>id: {{ band.pk }}</p>
-    <img src="{{ band.image.url }}"/>
 
-    <h2>Albums</h2>
-    <ul>
-        {% for album in band.album_set.all %}
-            <li>
-                <h4>
-                    <a href="{% url 'music:album' album.pk %}">{{ album.name }}</a>
-                </h4>
-                <ul>
-                    {% for song in album.song_set.all %}
-                        <li>
-                            <h5>{{ song.name }}</h5>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <div class="jumbotron text-center">
+             <h1 style="color: yellow; font-family: 'Pacifico', cursive;">{{ band.name }}</h1>
+        </div>
+
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                <div class="thumbnail">
+                    <img src="{{ band.image.url }}" class="img-responsive"/>
+                    <div class="caption">
+                        <h4>{{ band.description }}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <h1 style="text-align: center; font-family: 'Pacifico', cursive"><ins>ALBUMS</ins></h1>
+                    <ul>
+                        {% for album in band.album_set.all %}
+                            <li>
+
+                                <img src="{{ album.image.url }}" class="img-responsive"/>
+
+                            <a href="{% url 'music:album' album.pk %}">
+                                <h2 style="color: orange">{{ album.name }}</h2>
+                            </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

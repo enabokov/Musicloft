@@ -1,0 +1,31 @@
+#theBandsCarousel .slide1{
+    background-image: url(/media/music/band/WALK_THE_MOON.jpg);
+    color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+#theBandsCarousel .slide2{
+    background-image: url(/media/music/image_for_site/img4.jpg);
+    color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#theBandsCarousel .slide3{
+    background-image: url(/media/music/image_for_site/img5.jpg);
+    color: black;
+    height:500px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+#img_style {
+    display: inline-table;
+    background-color: #3c3c3c;
+    border-color: #0f0f0f;
+    border-radius: 1%;
+}

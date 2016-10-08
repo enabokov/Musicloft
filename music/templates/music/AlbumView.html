@@ -1,17 +1,24 @@
 {% extends 'music/base.html' %}
-{% block title %}{{ album.band }} - {{ album.name }}{% endblock %}
+{% block title %} Cool Albums {% endblock %}
 
 {% block body %}
-    <h1>{{ album.name }}</h1>
-    <p>id: {{ album.pk }}</p>
-    <img src="{{ album.image.url }}"/>
 
-    <h2>Songs</h2>
+<h1>Album</h1>
+<br/>
+<br/>
+
+{% for album in albums %}
+    <h2>{{ album.name }}</h2>
+    <p>by {{ album.band.name }}</p>
+    <img src="{{ album.image.url }}" width="300" height="300"/>
     <ul>
         {% for song in album.song_set.all %}
-            <li>
-                <h3>{{ song.name }}</h3>
-            </li>
+            <li>{{ song.name }}</li>
+            <audio controls>
+                <source src="{{ song.song_file.url }}"/>
+            </audio>
         {% endfor %}
     </ul>
+{% endfor %}
+
 {% endblock %}
