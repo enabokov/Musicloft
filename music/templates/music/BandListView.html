@@ -27,15 +27,16 @@
     </div>
 </div>
 
-
     <div class="container">
         <div class="page-header">
-            <h1 style="color: lightgreen">The Bands</h1>
+            <div class="float-left">
+            <h1 style="color: lightgreen">NEW & NOTABLE</h1>
+            </div>
         </div>
     </div>
 
 
-    <div class="container" id="Band_list_view">
+    <div class="container-fluid" id="Band_list_view">
      <div class="row">
             {% for band in bands %}
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
@@ -46,8 +47,7 @@
                                  style="height: 250px; width: 250px; margin-bottom: 50px;
                                                                           object-position: center; object-fit: none; overflow: hidden"/>
 
-                            <div class="caption text-center"
-                            ">
+                            <div class="caption text-center">
                             <h3>{{ band.name }}</h3>
                     </div>
                     </a>

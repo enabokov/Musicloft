@@ -1,14 +1,6 @@
 #foot{
     background-color: gray;
 }
-#top .navbar-brand{
-    color: white;
-}
-#top {
-	color: yellow;
-	letter-spacing: 4px;
-}
-
 body{
     background-image: url('/media/music/image_for_site/footer_lodyas.png');
 }

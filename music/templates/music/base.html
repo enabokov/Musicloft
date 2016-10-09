@@ -13,75 +13,59 @@
     <link rel="stylesheet" type="text/css" href="{% static 'music/Album_view.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'music/BandView.css' %}">
     <link href = 'https://fonts.googleapis.com/css?family=Pacifico' rel = 'stylesheet' type='text/css'>
-    <!-- Fixed top -->
-    <div class="container-fluid">
-        <nav class="navbar navbar-fixed-top navbar-default" id="top" style="background-color: rgba(0,0,0, 0.5); border-color: #8c8c8c">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="{% url 'music:index' %}" class="navbar-brand" style="letter-spacing: 4px;">MUSICLOFT</a>
-                    </div>
+<!-- Fixed top -->
+<nav class="navbar navbar-fixed-top navbar-default" style="background: rgba(0,0,0, 0.4)">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav">
-                            <li><a href="{% url 'music:bands' %}" style="color: whitesmoke; letter-spacing: 4px">BANDS
-                                </a></li>
-                            <li><a href="#" style="color: whitesmoke; letter-spacing: 4px">ABOUT</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false"
-                               aria-expanded="false" style="color: whitesmoke; letter-spacing: 4px">CONTACT US<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Email</a></li>
-                                <li><a href="#">Phone</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Set Appointment</a></li>
-                            </ul>
-                        </li>
+      <a class="navbar-brand" href="{% url 'music:index' %}">
+          MUSICLOFT</a>
+    </div>
 
-                        </ul>
-                    <form class="navbar-form navbar-left">
-                        <form class="navbar-form " role="search" method="get"
-                              action="{% url 'music:index' %}">
-                            <div class="form-group id=search">
-
-                                <input type="text" class="typeahead" placeholder="search">
-                                {% csrf_token %}
-
-                            </div>
-                            <button type="submit" class="btn btn-default">Search</button>
-                        </form>
-                    </form>
-                        {% if not request.user.is_authenticated %}
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="{% url 'music:register' %}" style="color: whitesmoke; letter-spacing: 4px"><span class="glyphicon glyphicon-user" ></span> Sign Up</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'music:login' %}" style="color: whitesmoke; letter-spacing: 4px"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                        </li>
-                    </ul>
-                        {% else %}
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="{% url 'music:account' %}"><span class="glyphicon glyphicon-apple"></span>My
-                                    account</a></li>
-                            </ul>
-                        {% endif %}
-                    </div>
-                </div>
-            </nav>
+<!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'music:bands' %}">Bands <span class="sr-only">(current)</span></a></li>
+        <li><a href="{% url 'music:albums' %}">Albums</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CONTACT US <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
         </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Learn more</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 
 
-
-<!-- Fixed footer -->
 
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+<body>
 
 {% block body %}
 {% endblock %}
