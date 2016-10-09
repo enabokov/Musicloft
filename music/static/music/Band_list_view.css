@@ -1,5 +1,5 @@
 #theBandsCarousel .slide1{
-    background-image: url(/media/music/image_for_site/img1.jpg);
+    background-image: url(/media/music/band/WALK_THE_MOON.jpg);
     color: black;
     height:500px;
     background-repeat: no-repeat;
@@ -7,7 +7,7 @@
     background-size: cover;
 }
 #theBandsCarousel .slide2{
-    background-image: url(/media/music/image_for_site/img4.jpg);
+    background-image: url(/media/music/band/Nirvana.jpg);
     color: black;
     height:500px;
     background-repeat: no-repeat;
@@ -15,7 +15,7 @@
     background-size: cover;
 }
 #theBandsCarousel .slide3{
-    background-image: url(/media/music/image_for_site/img11.jpg);
+    background-image: url(/media/music/band/Red_Hot_Chili_Peppers.jpg);
     color: black;
     height:500px;
     background-repeat: no-repeat;

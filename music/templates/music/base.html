@@ -13,9 +13,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'music/Album_view.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'music/BandView.css' %}">
     <link href = 'https://fonts.googleapis.com/css?family=Pacifico' rel = 'stylesheet' type='text/css'>
-<!-- Fixed top -->
+    <!-- Fixed top -->
     <div class="container-fluid">
-        <nav class="navbar navbar-static-top navbar-inverse" id="top">
+        <nav class="navbar navbar-fixed-top navbar-default" id="top" style="background-color: rgba(0,0,0, 0.5); border-color: #8c8c8c">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -23,17 +23,17 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="{% url 'music:index' %}" class="navbar-brand">MUSICLOFT</a>
+                        <a href="{% url 'music:index' %}" class="navbar-brand" style="letter-spacing: 4px;">MUSICLOFT</a>
                     </div>
 
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="{% url 'music:bands' %}">BANDS<span
-                                    class="sr-only">(current)</span></a></li>
-                            <li><a href="#">ABOUT</a></li>
+                            <li><a href="{% url 'music:bands' %}" style="color: whitesmoke; letter-spacing: 4px">BANDS
+                                </a></li>
+                            <li><a href="#" style="color: whitesmoke; letter-spacing: 4px">ABOUT</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false"
-                               aria-expanded="false">CONTACT US<span class="caret"></span></a>
+                               aria-expanded="false" style="color: whitesmoke; letter-spacing: 4px">CONTACT US<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Email</a></li>
                                 <li><a href="#">Phone</a></li>
@@ -46,18 +46,22 @@
                     <form class="navbar-form navbar-left">
                         <form class="navbar-form " role="search" method="get"
                               action="{% url 'music:index' %}">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="search" name="q" value=""/>
+                            <div class="form-group id=search">
+
+                                <input type="text" class="typeahead" placeholder="search">
                                 {% csrf_token %}
+
                             </div>
                             <button type="submit" class="btn btn-default">Search</button>
                         </form>
                     </form>
                         {% if not request.user.is_authenticated %}
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{% url 'music:register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                        <li>
+                            <a href="{% url 'music:register' %}" style="color: whitesmoke; letter-spacing: 4px"><span class="glyphicon glyphicon-user" ></span> Sign Up</a>
                         </li>
-                        <li><a href="{% url 'music:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        <li>
+                            <a href="{% url 'music:login' %}" style="color: whitesmoke; letter-spacing: 4px"><span class="glyphicon glyphicon-log-in"></span> Login</a>
                         </li>
                     </ul>
                         {% else %}
@@ -82,7 +86,7 @@
 {% block body %}
 {% endblock %}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 <script src="{% static 'music/js/ajax_search.js' %}"></script>
 <script src="{% static 'music/fonts_js_css/js/bootstrap.min.js'%}"></script>
 </body>
