@@ -1,14 +1,9 @@
-.container-fluid{
-    color: yellowgreen;
+#jumbo{
+    background-image: url('/media/music/image_for_site/roof_background_201789.jpg');
 }
-.thumbnail{
-    background-color: black;
-
-}
-.thumbnail .caption{
-    color: yellow;
-    text-align: center;
-}
-#BandView{
-    background-image: url('/media/music/image_for_site/img10.jpg');
+#leftPic{
+    height: 500px;
+    width: 500px;
+    margin: -300px 0 0px 200px;
+    position: relative;
 }

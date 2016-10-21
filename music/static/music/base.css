@@ -1,6 +1,21 @@
-#foot{
-    background-color: gray;
-}
 body{
-    background-image: url('/media/music/image_for_site/footer_lodyas.png');
+    background-image: url(/media/music/image_for_site/footer_lodyas.png);
+}
+#nav-main{
+    background: rgba(200, 200, 200, 0.9);
+    letter-spacing: 4px;
+
+}
+#list1 li{
+    color: red;
+}
+
+#list1 ul li{
+    color: white;
+}
+#footIndex {
+    height: 150px;
+    background: rgba(10, 10, 10, 0.3);
+    color: wheat;
+    letter-spacing: 3px;
 }

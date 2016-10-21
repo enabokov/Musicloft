@@ -1,40 +1,18 @@
 {% extends 'music/base.html' %}
+
 {% block title %}{{ band.name }} band{% endblock %}
+
+{% load staticfiles %}
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static 'music/BandView.css' %}">
+{% endblock %}
+
 
 {% block body %}
 
-    <div class="container">
-        <div class="jumbotron text-center" id="BandView">
-             <h1 style="color: yellow; font-family: 'Pacifico', cursive;">{{ band.name }}</h1>
-        </div>
-
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
-                <div class="thumbnail">
-                    <img src="{{ band.image.url }}" class="img-responsive"/>
-                    <div class="caption">
-                        <h4>{{ band.description }}</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <h1 style="text-align: center; font-family: 'Pacifico', cursive"><ins>ALBUMS</ins></h1>
-                    <ul>
-                        {% for album in band.album_set.all %}
-                            <li>
-
-                                <img src="{{ album.image.url }}" class="img-responsive"/>
-
-                            <a href="{% url 'music:album' album.pk %}">
-                                <h2 style="color: orange">{{ album.name }}</h2>
-                            </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-            </div>
-        </div>
+    <div class="jumbotron" style="height: 500px">
+        <img src="/media/music/image_for_site/processed-_mg_9158.jpg" style="margin: -150px 0px 0px 0px ; position: relative; bottom: -20px; height: 700px; width: 100%; background: rgba(0,0,0,0.4)">
+        <img align="left" src="{{ band.image.url }}" class="img-thumbnail" id="leftPic"/>
     </div>
 
 {% endblock %}

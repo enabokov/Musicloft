@@ -5,16 +5,16 @@
     <title>{% block title %}MusicHub - everywhere you want{% endblock %}</title>
     {% load staticfiles %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'music/base.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'music/Band_list_view.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'music/Album_list_view.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'music/initial.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'music/Album_view.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'music/BandView.css' %}">
     <link href = 'https://fonts.googleapis.com/css?family=Pacifico' rel = 'stylesheet' type='text/css'>
+
+{% block css_files %}
+{% endblock %}
 <!-- Fixed top -->
-<nav class="navbar navbar-fixed-top navbar-default" style="background: rgba(0,0,0, 0.4)">
+<nav class="navbar navbar-fixed-top" id="nav-main">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -25,17 +25,17 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="{% url 'music:index' %}">
-          MUSICLOFT</a>
+      <a class="navbar-brand" href="{% url 'music:index' %}" >
+          <strong style="color: peachpuff;">MUSICLOFT</strong></a>
     </div>
 
 <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="{% url 'music:bands' %}">Bands <span class="sr-only">(current)</span></a></li>
-        <li><a href="{% url 'music:albums' %}">Albums</a></li>
+    <div class="collapse navbar-collapse" id="list1">
+      <ul class="nav navbar-nav" >
+        <li><a href="{% url 'music:bands' %}">BANDS <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">BOOKS</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CONTACT US <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CONCERTS <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -48,16 +48,18 @@
         </li>
       </ul>
 
-      <form class="navbar-form navbar-left">
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">LEARN MORE</a></li>
+        <li><a href="{% url 'music:register' %}">SIGN UP</a></li>
+        <li><a href="{% url 'music:login' %}">LOG IN</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Learn more</a></li>
-
-      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -70,9 +72,20 @@
 
 {% block body %}
 {% endblock %}
+<div class="container-fluid text-center" id="footIndex">
+                    <h5>&copy MusicLoft 2016
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">FAQ</a>   |
+                        <a href="#">Advertise</a>
+                        <a href="#">Team</a>
+                        <a href="#">Legal</a>
+                        <a href="#">Privacy</a>   |
+                        <a href="#">Login</a>
+                        <a href="#">Signup</a>
+                        <a href="#">Support</a>   |
+                        A Member of Townsquare Music</h5>
 
-
-<script src="{% static 'music/js/ajax_search.js' %}"></script>
-<script src="{% static 'music/fonts_js_css/js/bootstrap.min.js'%}"></script>
+    </div>
 </body>
 </html>

@@ -1,5 +1,10 @@
 {% extends 'music/base.html' %}
+{% load staticfiles %}
 {% block title %} Cool Albums {% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static 'music/Album_view.css' %}">
+{% endblock %}
 
 {% block body %}
 
