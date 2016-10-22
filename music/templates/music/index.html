@@ -5,6 +5,7 @@
 {% load staticfiles %}
 {% block css_files %}
 <link rel="stylesheet" type="text/css" href="{% static 'music/initial.css' %}">
+<
 {% endblock %}
 
 {% block body %}
@@ -18,18 +19,23 @@
             <li data-target="#theCarousel" data-slide-to="2"></li>
         </ol>
 
-        <div class="carousel-inner">
+        <div class="carousel-inner" id="car">
             <div class="item active">
                 <div class="slide1"></div>
                     <div class="carousel-caption">
                         <h1>Play on</h1>
-                        <p><a href="#" class="btn btn-primary btn-sm">Get them Now</a></p>
+
+                        <div class="">
+                                <a class="btn btn-theme btn-sm btn-min-block" href="{% url 'music:login' %}">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="{% url 'music:register' %}">Register</a>
+                        </div>
+                        <br>
                     </div>
             </div>
             <div class="item">
                 <div class="slide2"></div>
                     <div class="carousel-caption">
                         <h1>Listen</h1>
+                        <p><a href="#" class="btn btn-primary btn-sm">Get them Now</a></p>
                     </div>
             </div>
             <div class="item">
@@ -166,7 +172,25 @@
     </div>
     <br>
     <br>
+    <!--Submitted March 23, 12:00 noon  -->
+
+
 <!--footer-->
+     <div class="container-fluid text-center" id="footIndex">
+                    <h6>&copy MusicLoft 2016
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">FAQ</a>   |
+                        <a href="#">Advertise</a>
+                        <a href="#">Team</a>
+                        <a href="#">Legal</a>
+                        <a href="#">Privacy</a>   |
+                        <a href="#">Login</a>
+                        <a href="#">Signup</a>
+                        <a href="#">Support</a>   |
+                        A Member of Townsquare Music</h6>
+
+    </div>
 
 
 

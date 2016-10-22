@@ -10,9 +10,42 @@
 
 {% block body %}
 
-    <div class="jumbotron" style="height: 500px">
+
+    <div class="jumbotron">
         <img src="/media/music/image_for_site/processed-_mg_9158.jpg" style="margin: -150px 0px 0px 0px ; position: relative; bottom: -20px; height: 700px; width: 100%; background: rgba(0,0,0,0.4)">
         <img align="left" src="{{ band.image.url }}" class="img-thumbnail" id="leftPic"/>
+        <div class="fb-profile-text">
+            <h1>{{ band.name }}</h1>
+            <h2>About</h2>
+            <p>{{ band.description }}</p>
+        </div>
     </div>
+
+    <div class="row">
+        <div class="container">
+            {% for album in albums %}
+            <div class="col-lg-2 col-md-2 col-sm-4">
+                <img src="{{ album.image.url }}"/>;
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container-fluid text-center" id="foo" >
+                    <h6>&copy MusicLoft 2016
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">FAQ</a>   |
+                        <a href="#">Advertise</a>
+                        <a href="#">Team</a>
+                        <a href="#">Legal</a>
+                        <a href="#">Privacy</a>   |
+                        <a href="#">Login</a>
+                        <a href="#">Signup</a>
+                        <a href="#">Support</a>   |
+                        A Member of Townsquare Music</h6>
+
+    </div>
+
 
 {% endblock %}

@@ -44,7 +44,7 @@
 #panMain2{
     width: 100%;
     background-color: darkslategrey;
-    height: 20px;
+    height: 80px;
     border: none;
 }
 #photoGallery{
@@ -157,15 +157,15 @@ img:hover {
     position: relative;
     text-align: center;
     color: darkolivegreen;
-    background-color: navajowhite;
+    background-color: honeydew;
     height: 70px;
 }
 
 #NewNotable{
-    color: yellow;
+    color: coral;
 }
 #TopTrack{
-    color: orangered;
+    color: #843534;
 }
 #mainButton{
     font-family: Pacifico, sans-serif;
@@ -174,3 +174,30 @@ img:hover {
     color: black;
     background-color: dodgerblue;
 }
+#footIndex {
+    height: 100px;
+    background: rgba(100, 100, 100, 0.3);
+    color: wheat;
+    letter-spacing: 3px;
+
+}
+
+.btn-min-block {
+    min-width: 170px;
+    line-height: 26px;
+}
+
+.btn-theme {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    margin-right: 15px;
+}
+
+.btn-theme:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+

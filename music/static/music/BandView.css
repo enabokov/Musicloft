@@ -1,9 +1,42 @@
-#jumbo{
+#jumbo:after{
     background-image: url('/media/music/image_for_site/roof_background_201789.jpg');
+    filter: alpha(Opacity=20);
+    opacity: 0.3;
 }
 #leftPic{
     height: 500px;
     width: 500px;
     margin: -300px 0 0px 200px;
     position: relative;
+    display: block;
+}
+.fb-profile-text h1{
+    font-family: Pacifico, sans-serif;
+    position: relative;
+    top: -100px;
+    left: 30px;
+    color: blanchedalmond;
+
+}
+.fb-profile-text p{
+
+    font-family: "Poor Richard", sans-serif;
+    position: inherit;
+    color: navajowhite;
+
+}
+.fb-profile-text h2{
+    top:-40px;
+    font-family: "Poor Richard", sans-serif;
+    position: relative;
+    color: navajowhite;
+}
+.jumbotron{
+    height: 500px;
+}
+#foo{
+    height: 100px;
+    background: rgba(0, 0, 0, 0.3);
+    color: wheat;
+    letter-spacing: 3px;
 }

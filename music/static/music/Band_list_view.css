@@ -22,7 +22,9 @@
     background-position: top;
     background-size: cover;
 }
-
+#NewNotablee{
+    color: #3c763d;
+}
 #img_style {
     display: inline-table;
     background-color: #3c3c3c;
@@ -142,4 +144,10 @@ img:hover {
     color: darkolivegreen;
     background-color: navajowhite;
     height: 70px;
+}
+#footBandListView{
+    height: 100px;
+    background: rgba(0, 0, 0, 0.3);
+    color: wheat;
+    letter-spacing: 3px;
 }

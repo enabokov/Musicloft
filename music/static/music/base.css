@@ -1,8 +1,8 @@
 body{
-    background-image: url(/media/music/image_for_site/footer_lodyas.png);
+    background-color: lightgray;
 }
 #nav-main{
-    background: rgba(200, 200, 200, 0.9);
+    background: rgba(50, 50, 50, 0.9);
     letter-spacing: 4px;
 
 }
@@ -12,10 +12,4 @@ body{
 
 #list1 ul li{
     color: white;
-}
-#footIndex {
-    height: 150px;
-    background: rgba(10, 10, 10, 0.3);
-    color: wheat;
-    letter-spacing: 3px;
 }
