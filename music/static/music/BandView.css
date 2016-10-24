@@ -4,39 +4,143 @@
     opacity: 0.3;
 }
 #leftPic{
-    height: 500px;
     width: 500px;
-    margin: -300px 0 0px 200px;
+    height: 500px;
+    max-height: 100%px;
+    max-width: 100%;
+    margin: -300px 0px 0px 150px;
     position: relative;
+    float: left;
+    display: inline;
+
+}
+#itemGallery{
+    height: 250px;
+    width: 250px;
+}
+#albumView img:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+.panel .panel-footer
+{
+    padding: 8px !important;
+    background-color: #f9f9f9 !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+.panel .panel-footer h4
+{
+    display: inline;
+    font: 400 normal 1.125em "Roboto",Arial,Verdana,sans-serif;
+    color: #34495e;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.panel .panel-footer i.glyphicon
+{
+    display: inline;
+    font-size: 1.125em;
+    cursor: pointer;
+}
+.panel .panel-footer i.glyphicon-thumbs-up
+{
+    color: #1abc9c;
+}
+.panel .panel-footer i.glyphicon-thumbs-down
+{
+    color: #e74c3c;
+    padding-left: 5px;
+}
+.panel .panel-footer div
+{
+    width: 15px;
+    display: inline;
+    font: 300 normal 1.125em "Roboto",Arial,Verdana,sans-serif;
+    color: #34495e; text-align: center;
+    background-color: transparent !important;
+    border: none !important;
+}
+.panel
+{
+    position: relative;
+
+    display: inline-block;
+    border-radius: 0 !important;
+}
+.panel-default
+{
+    border-color: #ebedef !important;
+}
+.panel .panel-body
+{
+    position: static;
+    padding: 0 !important;
+    overflow: hidden;
+    height: auto;
+}
+.panel .panel-body a
+{
+    overflow: visible;
+}
+.panel .panel-body a img
+{
+
     display: block;
+    margin: 0;
+    width: 250px;
+    height: 250px;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
 }
 .fb-profile-text h1{
-    font-family: Pacifico, sans-serif;
+    font-family: Gabriola, serif;
+    font-variant: small-caps;
+    font-style: italic;
     position: relative;
-    top: -100px;
     left: 30px;
     color: blanchedalmond;
 
 }
-.fb-profile-text p{
-
-    font-family: "Poor Richard", sans-serif;
-    position: inherit;
-    color: navajowhite;
-
+#jMain{
+    background-color: gray;
+    float: left;
+}
+.fb-profile-text h4{
+    font-family: Magneto , sans-serif;
+    color: #8a6d3b;
+    text-align: match-parent;
 }
 .fb-profile-text h2{
-    top:-40px;
-    font-family: "Poor Richard", sans-serif;
-    position: relative;
-    color: navajowhite;
+    top: -20px;
+    font-family: Centaur, sans-serif;
+    color: goldenrod ;
 }
 .jumbotron{
     height: 500px;
+    position: relative;
 }
-#foo{
+#mainPhotoGal {
+    margin: auto;
+    object-fit: cover;
+    object-position: top;
+    bottom: -20px;
+    height: 700px;
+    max-width: 100%;
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+    border-color: black;
+    border: solid;
+}
+#footIndex {
     height: 100px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(100, 100, 100, 0.3);
     color: wheat;
     letter-spacing: 3px;
+
 }

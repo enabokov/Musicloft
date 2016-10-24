@@ -145,9 +145,10 @@ img:hover {
     background-color: navajowhite;
     height: 70px;
 }
-#footBandListView{
+#footIndex {
     height: 100px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(100, 100, 100, 0.3);
     color: wheat;
     letter-spacing: 3px;
+
 }

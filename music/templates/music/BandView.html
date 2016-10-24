@@ -12,26 +12,46 @@
 
 
     <div class="jumbotron">
-        <img src="/media/music/image_for_site/processed-_mg_9158.jpg" style="margin: -150px 0px 0px 0px ; position: relative; bottom: -20px; height: 700px; width: 100%; background: rgba(0,0,0,0.4)">
-        <img align="left" src="{{ band.image.url }}" class="img-thumbnail" id="leftPic"/>
+
+        <img src="{{ band.image.url }}" class="img-responsive img-circle" id="mainPhotoGal">
+        <img src="{{ band.image.url }}" class="img-responsive img-rounded img-thumbnail" id="leftPic"/>
         <div class="fb-profile-text">
-            <h1>{{ band.name }}</h1>
-            <h2>About</h2>
-            <p>{{ band.description }}</p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="container">
-            {% for album in albums %}
-            <div class="col-lg-2 col-md-2 col-sm-4">
-                <img src="{{ album.image.url }}"/>;
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <h1>{{ band.name }}</h1>
+                    <h2>About</h2>
+                    <h4>{{ band.description }}</h4>
             </div>
-            {% endfor %}
         </div>
     </div>
 
-    <div class="container-fluid text-center" id="foo" >
+    <div class="container" id="albumView">
+        <section class="row">
+            {% for album in band.album_set.all %}
+                <article class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="clearfix visible-lg-block"></div>
+                                <a href="{% url 'music:album' album.pk %}" title="{{ album.name }}" class="zoom" data-title="Albums" data-type="image" data-toggle="lightbox">
+                                    <img src="{{ album.image.url }}" alt="{{ album.name }}" id="itemGallery"/>
+                                </a>
+                            </div>
+                            <div class="panel-footer">
+                                <h4><a href="{% url 'music:album' album.pk %}" title="{{ album.name }}"><strong style="color: black">{{ album.name }}</strong></a></h4>
+                                <h5><a href="#" style="color: darkgray">Example</a></h5>
+                                <span class="pull-right">
+                                    <i id="like1" class="glyphicon glyphicon-thumbs-up"></i>
+                                    <div id="like1-bs3"></div>
+                                    <i id="dislike1" class="glyphicon glyphicon-thumbs-down"></i>
+                                    <div id="dislike1-bs3"></div>
+                                </span>
+                            </div>
+                        </div>
+                </article>
+            {% endfor %}
+        </section>
+    </div>
+
+    <div class="container-fluid text-center" id="footIndex">
                     <h6>&copy MusicLoft 2016
                         <a href="#">About</a>
                         <a href="#">Blog</a>
