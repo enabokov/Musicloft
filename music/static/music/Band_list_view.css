@@ -1,3 +1,4 @@
+
 #theBandsCarousel .slide1{
     background-image: url(/media/music/band/WALK_THE_MOON.jpg);
     color: black;
@@ -147,8 +148,8 @@ img:hover {
 }
 #footIndex {
     height: 100px;
-    background: rgba(100, 100, 100, 0.3);
+    background-color: #BF360C;
     color: wheat;
     letter-spacing: 3px;
-
+    margin-bottom: -20px;
 }

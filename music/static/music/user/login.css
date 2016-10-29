@@ -1,0 +1,13 @@
+#LogMainCont{
+    margin-top: 200px;
+}
+body{
+    background-color: #FF8A65;
+}
+#footIndex {
+    height: 100px;
+    background-color: #BF360C;
+    color: wheat;
+    letter-spacing: 3px;
+    margin-top: 131px;
+}

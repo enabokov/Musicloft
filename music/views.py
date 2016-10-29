@@ -40,7 +40,7 @@ class AlbumListView(generic.ListView):
 def index(request):
     form = UserForm(request.POST or None)
     bands = Band.objects.all().order_by('?')[:12]
-    albums = Album.objects.all().order_by('?')[:5]
+    albums = Album.objects.all().order_by('?')[:4]
     songs = Song.objects.all().order_by('?')[:10]
 
     context = {

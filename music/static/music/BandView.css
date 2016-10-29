@@ -1,22 +1,55 @@
-#jumbo:after{
-    background-image: url('/media/music/image_for_site/roof_background_201789.jpg');
-    filter: alpha(Opacity=20);
-    opacity: 0.3;
-}
-#leftPic{
-    width: 500px;
-    height: 500px;
-    max-height: 100%px;
-    max-width: 100%;
-    margin: -300px 0px 0px 150px;
-    position: relative;
-    float: left;
-    display: inline;
 
+body{
+    margin:0;
+    background-color: lightgray;
 }
+
+.jumbotron #top{
+    margin: 180px;
+    -ms-filter: blur(20px);
+    -webkit-filter: grayscale(80%) blur(20px); /* Safari 6.0 - 9.0 */
+    filter: grayscale(80%) blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    background-position: top ;
+}
+.jumbotron #leftPic {
+    float: left;
+    height: 500px;
+    width: 500px;
+    background-position: top ;
+    position: relative;
+    margin-top: -40px;
+}
+.jumbotron .fb-profile-text img{
+    margin-left: 100px;
+}
+.jumbotron .fb-profile-text{
+    margin-top: -500px;
+    background-color: darkslategray;
+}
+.jumbotron .fb-profile-text h1{
+    color: orangered;
+    font-family: 'Titillium Web', serif;
+    text-align: center;
+    text-shadow: black 1px 0;
+}
+.jumbotron .fb-profile-text h2{
+   font-family: 'Titillium Web', sans-serif;
+    color: whitesmoke;
+    text-shadow: yellow 1px 0;
+}
+.jumbotron .fb-profile-text h4{
+    font-family: "Times New Roman", serif;
+    color: yellow;
+    font-style: oblique;
+    padding-top: 20px;
+}
+
+
 #itemGallery{
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
 }
 #albumView img:hover {
     opacity: 0.5;
@@ -32,7 +65,7 @@
 .panel .panel-footer h4
 {
     display: inline;
-    font: 400 normal 1.125em "Roboto",Arial,Verdana,sans-serif;
+    font: 400 normal 0.8em "Roboto",Arial,Verdana,sans-serif;
     color: #34495e;
     margin: 0 !important;
     padding: 0 !important;
@@ -64,7 +97,6 @@
 .panel
 {
     position: relative;
-
     display: inline-block;
     border-radius: 0 !important;
 }
@@ -76,7 +108,6 @@
 {
     position: static;
     padding: 0 !important;
-    overflow: hidden;
     height: auto;
 }
 .panel .panel-body a
@@ -85,7 +116,6 @@
 }
 .panel .panel-body a img
 {
-
     display: block;
     margin: 0;
     width: 250px;
@@ -95,52 +125,10 @@
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
 }
-.fb-profile-text h1{
-    font-family: Gabriola, serif;
-    font-variant: small-caps;
-    font-style: italic;
-    position: relative;
-    left: 30px;
-    color: blanchedalmond;
 
-}
-#jMain{
-    background-color: gray;
-    float: left;
-}
-.fb-profile-text h4{
-    font-family: Magneto , sans-serif;
-    color: #8a6d3b;
-    text-align: match-parent;
-}
-.fb-profile-text h2{
-    top: -20px;
-    font-family: Centaur, sans-serif;
-    color: goldenrod ;
-}
-.jumbotron{
-    height: 500px;
-    position: relative;
-}
-#mainPhotoGal {
-    margin: auto;
-    object-fit: cover;
-    object-position: top;
-    bottom: -20px;
-    height: 700px;
-    max-width: 100%;
-    -webkit-filter: blur(20px);
-    -moz-filter: blur(20px);
-    -o-filter: blur(20px);
-    -ms-filter: blur(20px);
-    filter: blur(20px);
-    border-color: black;
-    border: solid;
-}
 #footIndex {
     height: 100px;
-    background: rgba(100, 100, 100, 0.3);
+    background-color: #BF360C;
     color: wheat;
     letter-spacing: 3px;
-
 }

@@ -1,10 +1,13 @@
+*{
+    margin: 0;
+}
 body{
-    background-color: lightgray;
+    background-color: #E3F2FD;
 }
 #nav-main{
-    background: rgba(50, 50, 50, 0.9);
-    letter-spacing: 3px;
-
+    background-color: #0D47A1;
+    letter-spacing: 1px;
+    font-size: 12px;
 }
 #list1 li{
     color: red;
@@ -12,4 +15,30 @@ body{
 
 #list1 ul li{
     color: white;
+}
+#Brnd{
+    color: ghostwhite;
+}
+#BndBar{
+    color: navajowhite;
+    background-color: #F4511E;
+    font-family: 'Titillium Web', sans-serif;
+}
+#BookBar{
+    color: navajowhite;
+    background-color: #FF7043;
+    font-family: 'Titillium Web', sans-serif;
+}
+#EventBar{
+    color: navajowhite;
+    background-color: #FF8A65;
+    font-family: 'Titillium Web', sans-serif;
+}
+#JoinBar{
+    font-family: 'Titillium Web', sans-serif;
+    color: navajowhite;
+}
+#LogBar{
+    font-family: 'Titillium Web', sans-serif;
+    color: navajowhite;
 }

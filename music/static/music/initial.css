@@ -1,18 +1,20 @@
 #theCarousel h1{
-    font-family: Pacifico, sans-serif;
-    font-size: 90px;
+    font-family: Pacifico, serif;
+    font-size: 130px;
+    margin-bottom: 100px;
+    color: #FF3D00;
+    text-shadow: white 2px 0;
 }
 #theCarousel p{
     font-family: Pacifico, sans-serif;
 }
 #theCarousel .slide1 {
-    background-image: url(/media/music/image_for_site/img1.jpg);
+    background-image: url(/media/music/image_for_site/crowd.jpg);
     color: white;
     height:500px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
 }
 #theCarousel .slide2{
     background-image: url(/media/music/image_for_site/img2.jpg);
@@ -23,7 +25,7 @@
     background-size: cover;
 }
 #theCarousel .slide3{
-    background-image: url(/media/music/image_for_site/img3.jpg);
+    background-image: url(/media/music/image_for_site/slide3.jpg);
     color: black;
     height:500px;
     background-repeat: no-repeat;
@@ -143,31 +145,41 @@ img:hover {
     font-family: Pacifico, serif;
     position: relative;
     text-align: center;
-    color: darkolivegreen;
-    background-color: honeydew;
+    color: aliceblue;
+    background-color: #FF5722;
     height: 70px;
+    text-shadow: #0f0f0f 2px 0;
+    border: dashed;
+    border-color: lime;
 }
 
 #NewNotable{
-    color: crimson;
+    color: paleturquoise;
+    font-family: 'Titillium Web', sans-serif;
 }
 #TopTrack{
-    color: #843534;
+    color: red;
+    font-family: 'Titillium Web', sans-serif;
 }
 #mainButton{
     font-family: Pacifico, sans-serif;
     height: 75px;
     width: 300px;
     color: black;
-    background-color: #4cae4c;
+    background-color: #FF5722;
+    font-size: 23px;
+    border: solid;
+    border-radius: 5px;
+    border-color: darkslategray;
 }
 #footIndex {
     height: 100px;
-    background: rgba(100, 100, 100, 0.3);
+    background-color: #BF360C;
     color: wheat;
     letter-spacing: 3px;
 
 }
+
 
 .btn-min-block {
     min-width: 170px;
@@ -186,8 +198,8 @@ img:hover {
     background-color: #fff;
     border-color: #fff;
 }
-#star{
-    color: yellow;
+#star {
+    color: yellowgreen;
 }
 
 
