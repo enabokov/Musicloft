@@ -7,10 +7,12 @@ html, body{
     height:100%;
 }
 #nav-main{
-    background-color: #0D47A1;
+    background-color: rgba(0,0,0,0.5);
     letter-spacing: 1px;
     font-size: 12px;
+    text-align: center;
 }
+
 #list1 li{
     color: red;
 }
@@ -23,22 +25,23 @@ html, body{
 }
 #BndBar{
     color: navajowhite;
-    background-color: #F4511E;
+    letter-spacing: 4px;
     font-family: 'Titillium Web', sans-serif;
 }
 #BookBar{
     color: navajowhite;
-    background-color: #FF7043;
+    letter-spacing: 4px;
     font-family: 'Titillium Web', sans-serif;
 }
 #EventBar{
     color: navajowhite;
-    background-color: #FF8A65;
+    letter-spacing: 4px;
     font-family: 'Titillium Web', sans-serif;
 }
 #JoinBar{
     font-family: 'Titillium Web', sans-serif;
     color: navajowhite;
+    background-color: crimson;
 }
 #LogBar{
     font-family: 'Titillium Web', sans-serif;
