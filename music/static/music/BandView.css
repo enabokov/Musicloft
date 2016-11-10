@@ -1,55 +1,68 @@
-
+*{
+    margin: 0;
+}
 body{
-    margin:0;
-    background-color: lightgray;
+    background: linear-gradient(#ffffff, #757575);
+    background-repeat: no-repeat;
+    background-color: #757575;
+}
+#topSurface{
+    height: 85%;
+    width: 100%;
+    display: block;
 }
 
-.jumbotron #top{
-    margin: 180px;
-    -ms-filter: blur(20px);
-    -webkit-filter: grayscale(80%) blur(20px); /* Safari 6.0 - 9.0 */
-    filter: grayscale(80%) blur(20px);
-    -moz-filter: blur(20px);
-    -o-filter: blur(20px);
-    background-position: top ;
-}
-.jumbotron #leftPic {
+#topSurface #topPart1{
+    width: 50%;
     float: left;
-    height: 500px;
-    width: 500px;
-    background-position: top ;
-    position: relative;
-    margin-top: -40px;
+    height: auto;
+    margin-top: 8%;
 }
-.jumbotron .fb-profile-text img{
-    margin-left: 100px;
+#topSurface #topPart1 #topPartPic{
+    height: auto;
+    width: 100%;
 }
-.jumbotron .fb-profile-text{
-    margin-top: -500px;
-    background-color: darkslategray;
+#topSurface #topPart2{
+    width: 50%;
+    float: right;
+    height: auto;
+    margin-top: 8%;
 }
-.jumbotron .fb-profile-text h1{
-    color: orangered;
-    font-family: 'Titillium Web', serif;
+#topSurface #topPart2 h1{
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
     text-align: center;
-    text-shadow: black 1px 0;
+    color: #000000;
+    font-size: 70px;
 }
-.jumbotron .fb-profile-text h2{
-   font-family: 'Titillium Web', sans-serif;
-    color: whitesmoke;
-    text-shadow: yellow 1px 0;
+#topSurface #topPart2 p{
+    font-size: 23px;
+    color: #212121;
 }
-.jumbotron .fb-profile-text h4{
-    font-family: "Times New Roman", serif;
-    color: yellow;
-    font-style: oblique;
-    padding-top: 20px;
+
+#sect{
+    height: 10%;
+}
+#sect h1{
+    margin-left: 10%;
+    font-size: 50px;
+    color: #000000;
+}
+#intermediate{
+    border-bottom: 4px solid white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
 }
 
 
 #itemGallery{
     height: 300px;
     width: 300px;
+}
+#albumView{
+    margin-left: 3.6%;
+    width: 100%;
 }
 #albumView img:hover {
     opacity: 0.5;
@@ -126,9 +139,4 @@ body{
     -o-transition: all 0.5s;
 }
 
-#footIndex {
-    height: 100px;
-    background-color: #BF360C;
-    color: wheat;
-    letter-spacing: 3px;
-}
+

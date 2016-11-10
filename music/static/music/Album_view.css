@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+}
+body{
+    background: linear-gradient(#ffffff, #757575);
+    background-repeat: no-repeat;
+    background-color: #757575;
+}
+#topSurface{
+    height: 85%;
+    width: 100%;
+    display: block;
+}
+
+#topSurface #topPart1{
+    width: 50%;
+    float: left;
+    height: auto;
+    margin-top: 8%;
+}
+#topSurface #topPart1 #topPartPic{
+    height: auto;
+    width: 100%;
+}
+#topSurface #topPart2{
+    width: 50%;
+    float: right;
+    height: auto;
+    margin-top: 8%;
+}
+#topSurface #topPart2 h1{
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+    font-size: 70px;
+}
+#topSurface #topPart2 h3{
+    font-family: Roboto, sans-serif;
+    font-style: italic;
+    text-align: center;
+    color: #000000;
+    font-size: 30px;
+}
+#topSurface #topPart2 p{
+    font-size: 23px;
+    color: #212121;
+}
+
+#sect{
+    height: 10%;
+}
+#sect h1{
+    margin-left: 10%;
+    font-size: 50px;
+    color: #000000;
+}
+#intermediate{
+    border-bottom: 4px solid white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+#intermediate2{
+    border-bottom: 2px solid #000000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.jumbotron{
+    background-color: #757575;
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+#MusicSurf{
+    display: inline;
+
+}
+#MusicSurf .row .container{
+    width: 40%;
+    float: left;
+    margin-left: 7%;
+    text-align: left;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+}
+#MusicSurf .row .container h4{
+    width: 100%;
+    text-align: left;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+}
+

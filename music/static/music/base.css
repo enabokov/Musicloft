@@ -2,7 +2,6 @@
     margin: 0;
 }
 html, body{
-    background-color: #E3F2FD;
     width: 100%;
     height:100%;
 }
@@ -12,7 +11,9 @@ html, body{
     font-size: 12px;
     text-align: center;
 }
-
+#nav-main .navbar-header .navbar-toggle .icon-bar{
+    background-color: white;
+}
 #list1 li{
     color: red;
 }
@@ -46,4 +47,68 @@ html, body{
 #LogBar{
     font-family: 'Titillium Web', sans-serif;
     color: navajowhite;
+}
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: #000000;
+    text-align: center;
+}
+.footer a{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.footer i{
+    background-color: #000000;
+    color: white;
+    font-size: 30px;
+    margin-top: 10px;
+    border-color: white;
+}
+.footer ul li{
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+    display: block;
+}
+#facebook, #instagram, #ln, #twitter, #google, #youtube{
+    height: 40px;
+    width: 40px;
+    background-color: whitesmoke;
+    border-radius: 100%;
+}
+#footer-middle{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#footer-intermediate{
+    border-bottom: groove;
+    border-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#footer-end h6{
+    display: inline-block;
+    color: #9E9E9E;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#footer-end h5{
+    display: inline;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    float: right;
+}
+#film{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    letter-spacing: 20px;
 }

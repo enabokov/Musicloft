@@ -1,13 +1,22 @@
-#LogMainCont{
-    margin-top: 200px;
-}
 body{
-    background-color: #FF8A65;
+    background-color: #757575;
 }
-#footIndex {
-    height: 100px;
-    background-color: #BF360C;
-    color: wheat;
-    letter-spacing: 3px;
-    margin-top: 131px;
+#Log{
+    margin-top: 8%;
+    height: 55%;
+    width: 100%;
+    display: block;
+}
+#Log #LogMainCont{
+    width: 50%;
+    float: left;
+    height: 100%;
+}
+#Log #LogMainCon1{
+    width: 50%;
+    float: right;
+    height: 100%;
+}
+#Log #LogMainCont h3{
+    font-size: 40px;
 }

@@ -1,11 +1,59 @@
 {% extends 'music/base.html' %}
 {% load staticfiles %}
-{% block title %} Cool Albums {% endblock %}
+{% block title %} {{ album.name }} by {{ album.band.name }}{% endblock %}
 
 {% block css_files %}
 <link rel="stylesheet" type="text/css" href="{% static 'music/Album_view.css' %}">
+
 {% endblock %}
 
 {% block body %}
+
+     <div id="topSurface">
+
+        <div class="container" id="topPart1">
+            <img class="img-thumbnail" id="topPartPic" src="{{ album.image.url }}" alt="{{ band.name }}"/>
+        </div>
+
+
+        <div class="container" id="topPart2">
+            <h1>{{ album.name }}</h1>
+            <h3>by {{ album.band.name }}</h3>
+        </div>
+
+    </div>
+
+    <div id="sect">
+        <h1>Songs</h1>
+        <div id="intermediate"></div>
+    </div>
+
+    <div class="jumbotron">
+        <div id="MusicSurf">
+            <div class="row">
+                {% for song in album.song_set.all %}
+                    {% if forloop.counter  %}
+                    <div class="container" id="part1">
+                        <h4>{{ forloop.counter }}. {{ song.name }}</h4>
+                         <div id="intermediate2"></div>
+                        <br>
+                        <audio controls>
+                            <source src="{{ song.song_file.url }}" type="audio/mp4">
+                        </audio>
+                        <br><br>
+                        <div id="intermediate2"></div>
+                        <br>
+                    </div>
+                    {% endif %}
+                    <div class="container" id="part2">
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+
 
 {% endblock %}

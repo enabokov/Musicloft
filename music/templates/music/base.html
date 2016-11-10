@@ -18,9 +18,8 @@
 <nav class="navbar navbar-fixed-top" id="nav-main">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header"style="margin-left: 40px ">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
-        <span class="sr-only">Toggle navigation</span>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -31,7 +30,7 @@
     </div>
 
 <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="navbar-brand-centered">
+    <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="nav navbar-nav">
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="BndBar"><strong>BANDS </strong><span class="caret"></span></a>
@@ -98,8 +97,76 @@
 
 </head>
 <body>
-
+<div id="TOP"></div>
 {% block body %}
 {% endblock %}
+
+<div class="footer">
+        <div class="container">
+            <a href="#TOP"><i class="glyphicon glyphicon-menu-up"></i></a>
+            <br><br><br>
+            <button style="width: 100%; margin-left: auto; margin-right: auto;  color: whitesmoke; font-family: Roboto, sans-serif; font-size: 20px; "  type="button" class="navbar-toggle" data-toggle="collapse" data-target="#footer-middle">
+                <strong><i class="glyphicon glyphicon-chevron-down"></i></strong>
+            </button>
+
+            <div class="row collapse navbar-collapse" id="footer-middle">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="first">
+                    <ul style="list-style-type:none">
+                        <li>PRODUCT</li>
+                        <li><br></li>
+                        <li>Business</li>
+                        <li>Compare</li>
+                        <li>Features</li>
+                        <li>Pricing</li>
+                        <li>Mobile</li>
+                        <li>App Showcase</li>
+                        <li>Download</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="second">
+                    <ul style="list-style-type:none">
+                        <li>COMPANY</li>
+                        <li><br></li>
+                        <li>About Us</li>
+                        <li>Blog</li>
+                        <li>News</li>
+                        <li>Press Releases</li>
+                        <li>Jobs</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="third">
+                    <ul  style="list-style-type:none">
+                        <li>LEARN MORE</li>
+                        <li><br></li>
+                        <li>Support</li>
+                        <li>Developers</li>
+                        <li>Referral</li>
+                        <li>Affillate</li>
+                        <li>Reseller</li>
+                        <li>Folder Sharing FAQ</li>
+                    </ul>
+                </div>
+            </div>
+            <br><br>
+            <div class="row" id="film">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img id="facebook" src="/media/music/image_for_site/facebook%20(1).png"/>
+                    <img id="ln" src="/media/music/image_for_site/linkedin-512.png"/>
+                    <img id="twitter" src="/media/music/image_for_site/twitter.png"/>
+                    <img id="instagram" src="/media/music/image_for_site/inst.png"/>
+                    <img id="google" src="/media/music/image_for_site/googlePlus.png"/>
+                    <img id="youtube" src="/media/music/image_for_site/youtube-icon.png"/>
+                </div>
+            </div>
+            <br>
+            <div class="row" id="footer-intermediate"></div>
+            <div id="footer-end">
+                <h6>&copy 2016 MusicLoft, Inc. All Rights Reserved.</h6>
+                <h5>Terms of Service * Privacy Policy * Site Map.</h5>
+            </div>
+            <br><br><br><br>
+        </div>
+    </div>
 </body>
 </html>

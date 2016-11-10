@@ -1,13 +1,23 @@
-#RegMainCont{
-    margin-top: 200px;
-}
 body{
-    background-color: #FF8A65;
+    background-color: #757575;
 }
-#footIndex {
-    height: 100px;
-    background-color: #BF360C;
-    color: wheat;
-    letter-spacing: 3px;
-    margin-top: 82px;
+#Reg{
+    margin-top: 8%;
+    height: 55%;
+    width: 100%;
+    display: block;
 }
+#Reg #RegMainCont{
+    width: 50%;
+    float: left;
+    height: 100%;
+}
+#Reg #RegMainCon1{
+    width: 50%;
+    float: right;
+    height: 100%;
+}
+#Reg #RegMainCont h3{
+    font-size: 40px;
+}
+

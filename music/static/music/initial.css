@@ -1,6 +1,5 @@
 *{
     margin: 0;
-
 }
 body, html{
     height: 100%;
@@ -57,20 +56,42 @@ body, html{
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: local;
 }
 .subsect{
     height: 50%;
     background-color: #EEEEEE;
+    text-align: center;
 
+}
+.subsect #pic_h{
+    margin-bottom: auto;
+    padding-top: 100px;
 }
 .subsect h1{
     display: inline-block;
-    padding-top: 10%;
-    padding-left: 10%;
     font-size: 50px;
     font-family: Pacifico, sans-serif;
 }
+.last .container h1{
+    display: block;
+}
+.last .container {
+    margin-top: 5%;
+    margin-bottom: auto;
+
+    height: 100%;
+}
+.last .container button{
+    font-family: Pacifico, sans-serif;
+    transition-duration: 0.5s;
+}
+.last .container button:hover{
+    background-color: whitesmoke; /* Green */
+    color: black;
+    cursor: pointer;
+}
+
 
 .photo1{
     background-image: url("/media/music/image_for_site/travel5.jpg");
@@ -78,10 +99,9 @@ body, html{
 .subphoto1, .subphoto2, .subphoto3, .subphoto4{
     height: 180px;
     width: 180px;
-    background-attachment: inherit;
-    margin-top: 5%;
-    margin-left: 10%;
     background-color: #EEEEEE;
+    display: inline;
+    margin-right: 10%;
 }
 
 .photo2{
@@ -90,67 +110,6 @@ body, html{
 .photo3{
     background-image: url("/media/music/image_for_site/travel3.jpg");
 }
-
-.footer{
-    width: 100%;
-    height: auto;
-    background-color: #212121;
-    text-align: center;
-}
-.footer a{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-.footer i{
-    background-color: #212121;
-    color: white;
-    font-size: 30px;
-    margin-top: 10px;
-    border-color: white;
-}
-.footer ul li{
-    font-size: 20px;
-    font-family: 'Titillium Web', sans-serif;
-    color: white;
-    display: block;
-}
-#facebook, #instagram, #ln, #twitter, #google, #youtube{
-    height: 40px;
-    width: 40px;
-    background-color: whitesmoke;
-    border-radius: 100%;
-}
-#footer-middle{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-#footer-intermediate{
-    border-bottom: groove;
-    border-color: white;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-#footer-end h6{
-    display: inline-block;
-    color: #9E9E9E;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-#footer-end h5{
-    display: inline;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    float: right;
-}
-#film{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    letter-spacing: 20px;
+#intermediate{
+    border: 4px groove black;
 }

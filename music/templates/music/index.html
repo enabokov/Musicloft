@@ -5,7 +5,6 @@
 {% load staticfiles %}
 {% block css_files %}
 <link rel="stylesheet" type="text/css" href="{% static 'music/initial.css' %}">
-
 {% endblock %}
 
 {% block body %}
@@ -84,84 +83,39 @@
 
 
     <div class="subsect">
-        <img class="subphoto1" src="/media/music/image_for_site/banddds.png"/>
-        <h1>Feel free to listen to music</h1>
+        <div id="pic_h">
+            <img class="subphoto1 img-responsive" src="/media/music/image_for_site/banddds.png"/>
+            <h1>Feel free to listen to music</h1>
+        </div>
     </div>
-    <div class="sect photo1"><p>Hello world</p></div>
+    <div class="sect photo1"></div>
+
     <div class="subsect">
-        <img class="subphoto2" src="/media/music/image_for_site/books.png"/>
-        <h1>Read books whenever you want</h1>
+        <div id="pic_h">
+            <img class="subphoto2 img-responsive" src="/media/music/image_for_site/books.png"/>
+            <h1>Read books whenever you want</h1>
+        </div>
     </div>
     <div class="sect photo2"></div>
     <div class="subsect">
-        <img class="subphoto3" src="/media/music/image_for_site/travel.png"/>
+        <div id="pic_h">
+            <img class="subphoto3 img-responsive" src="/media/music/image_for_site/travel.png"/>
+            <h1>Be in touch with music everywhere</h1>
+        </div>
     </div>
     <div class="sect photo3"></div>
     <div class="subsect">
-        <img class="subphoto4" src="/media/music/image_for_site/calendar-icon.png"/>
+        <div id="pic_h">
+            <img class="subphoto4 img-responsive" src="/media/music/image_for_site/calendar-icon.png"/>
+            <h1>Find out new more events, concerts</h1>
+        </div>
     </div>
-<!-- footer -->
-    <div class="footer">
-        <div class="container">
-            <a href="#theCarousel"><i class="glyphicon glyphicon-menu-up"></i></a>
+    <div class="row" id="intermediate"></div>
+    <div class="subsect last">
+        <div id="pic_h">
+            <h1>To start, just press the button below</h1>
             <br><br><br>
-            <div class="row" id="footer-middle">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <ul style="list-style-type:none">
-                        <li>PRODUCT</li>
-                        <li><br></li>
-                        <li>Business</li>
-                        <li>Compare</li>
-                        <li>Features</li>
-                        <li>Pricing</li>
-                        <li>Mobile</li>
-                        <li>App Showcase</li>
-                        <li>Download</li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <ul style="list-style-type:none">
-                        <li>COMPANY</li>
-                        <li><br></li>
-                        <li>About Us</li>
-                        <li>Blog</li>
-                        <li>News</li>
-                        <li>Press Releases</li>
-                        <li>Jobs</li>
-                        <li>Contact Us</li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <ul style="list-style-type:none">
-                        <li>LEARN MORE</li>
-                        <li><br></li>
-                        <li>Support</li>
-                        <li>Developers</li>
-                        <li>Referral</li>
-                        <li>Affillate</li>
-                        <li>Reseller</li>
-                        <li>Folder Sharing FAQ</li>
-                    </ul>
-                </div>
-            </div>
-            <br><br>
-            <div class="row" id="film">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <img id="facebook" src="/media/music/image_for_site/facebook%20(1).png"/>
-                    <img id="ln" src="/media/music/image_for_site/linkedin-512.png"/>
-                    <img id="twitter" src="/media/music/image_for_site/twitter.png"/>
-                    <img id="instagram" src="/media/music/image_for_site/inst.png"/>
-                    <img id="google" src="/media/music/image_for_site/googlePlus.png"/>
-                    <img id="youtube" src="/media/music/image_for_site/youtube-icon.png"/>
-                </div>
-            </div>
-            <br>
-            <div class="row" id="footer-intermediate"></div>
-            <div id="footer-end">
-                <h6>&copy 2016 MusicLoft, Inc. All Rights Reserved.</h6>
-                <h5>Terms of Service * Privacy Policy * Site Map.</h5>
-            </div>
-            <br><br><br><br>
+            <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Get Started!</button>
         </div>
     </div>
 
