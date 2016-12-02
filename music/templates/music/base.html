@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}MusicHub - everywhere you want{% endblock %}</title>
     {% load staticfiles %}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -25,6 +25,16 @@
         <span class="icon-bar"></span>
       </button>
 
+      <svg xmlns="http://www.w3.org/2000/svg" class="equilizer" viewBox="0 0 128 128">
+              <g>
+                  <title>Audio Equilizer</title>
+                  <rect class="bar" transform="translate(0,0)" y="15"></rect>
+                  <rect class="bar" transform="translate(25,0)" y="15"></rect>
+                  <rect class="bar" transform="translate(50,0)" y="15"></rect>
+                  <rect class="bar" transform="translate(75,0)" y="15"></rect>
+                  <rect class="bar" transform="translate(100,0)" y="15"></rect>
+              </g>
+      </svg>
       <a class="navbar-brand" href="{% url 'music:index' %}" id="Brnd">
           <strong>MUSICLOFT</strong></a>
     </div>
@@ -33,7 +43,7 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="BndBar"><strong>BANDS </strong><span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="BndBar"><strong>BANDS </strong></a>
             <ul class="dropdown-menu" role="menu" style="background-color: white">
                 {% for band in bands %}
                     <li><a href="{% url 'music:band' band.pk %}">{{ band.name }}</a></li>
@@ -46,7 +56,7 @@
 
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="EventBar"><strong>EVENTS </strong><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="EventBar"><strong>EVENTS </strong></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -64,9 +74,9 @@
         {% if not request.user.is_authenticated %}
             <li><a href="{% url 'music:register' %}" id="JoinBar"><strong>JOIN </strong></a></li>
             <li><a href="{% url 'music:login' %}" id="LogBar"><strong>LOGIN </strong></a></li>
-            <li><a href="#" style="font-size: 20px; color: white; "><strong>?</strong></a></li>
+            <li><a href="#" id="Question" style="font-size: 20px; color: white; "><strong>?</strong></a></li>
         {% else %}
-           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Welcome, {{ request.user.username }}<b class="caret"></b></a>
+           <li class="dropdown"><a href="#" id="Logged" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Welcome, {{ request.user.username }}<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="#"><i class="icon-cog"></i> Preferences</a></li>
                     <li><a href="#"><i class="icon-envelope"></i> Contact Support</a></li>

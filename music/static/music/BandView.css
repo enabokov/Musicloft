@@ -7,15 +7,15 @@ body{
     background-color: #757575;
 }
 #topSurface{
-    height: 85%;
+    height: 60vmax;
     width: 100%;
-    display: block;
+    display: inline-block;
 }
 
 #topSurface #topPart1{
     width: 50%;
     float: left;
-    height: auto;
+    height: 100%;
     margin-top: 8%;
 }
 #topSurface #topPart1 #topPartPic{
@@ -25,28 +25,31 @@ body{
 #topSurface #topPart2{
     width: 50%;
     float: right;
-    height: auto;
+    height: 100%;
     margin-top: 8%;
 }
 #topSurface #topPart2 h1{
     font-family: Roboto, sans-serif;
     font-weight: bold;
-    text-align: center;
+    text-align: justify;
     color: #000000;
-    font-size: 70px;
+    font-size: 3vmax;
+
 }
 #topSurface #topPart2 p{
-    font-size: 23px;
+    font-size: 2vmax;
     color: #212121;
+    line-height: 1;
 }
 
 #sect{
-    height: 10%;
+    height: 0;
 }
 #sect h1{
     margin-left: 10%;
-    font-size: 50px;
+    font-size: 5vmax;
     color: #000000;
+    font-family: "High Tower Text", sans-serif;
 }
 #intermediate{
     border-bottom: 4px solid white;
@@ -55,7 +58,6 @@ body{
     width: 90%;
 }
 
-
 #itemGallery{
     height: 300px;
     width: 300px;
@@ -63,6 +65,7 @@ body{
 #albumView{
     margin-left: 3.6%;
     width: 100%;
+    margin-top: 20%;
 }
 #albumView img:hover {
     opacity: 0.5;

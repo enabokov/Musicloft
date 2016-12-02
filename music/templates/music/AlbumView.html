@@ -28,13 +28,13 @@
         <div id="intermediate"></div>
     </div>
 
-    <div class="jumbotron">
-        <div id="MusicSurf">
-            <div class="row">
+    <div id="subsect">
+            <div id="inner">
                 {% for song in album.song_set.all %}
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     {% if forloop.counter  %}
                     <div class="container" id="part1">
-                        <h4>{{ forloop.counter }}. {{ song.name }}</h4>
+                        <h4>{{ forloop.counter }}. {{ song.name|truncatewords:6 }}</h4>
                          <div id="intermediate2"></div>
                         <br>
                         <audio controls>
@@ -45,12 +45,9 @@
                         <br>
                     </div>
                     {% endif %}
-                    <div class="container" id="part2">
-
                     </div>
                 {% endfor %}
             </div>
-        </div>
         <br><br>
     </div>
 

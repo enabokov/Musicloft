@@ -2,8 +2,10 @@
 {% block title %}User account{% endblock %}
 
 {% block body %}
-    <h1>Hello {{ request.user.username }}!</h1>
-    <h2>You are welcome at out cool music site!</h2>
-    <a href="{% url 'music:index' %}"><p>Go to main page</p></a>
-    <a href="{% url 'music:logout' %}"><p>Log out</p></a>
+    <div id="sect">
+        <h1>Congrats, {{ request.user.username }}!</h1>
+        <h2>You are welcome at out cool music site!</h2>
+        <a href="{% url 'music:index' %}"><p>Go to main page</p></a>
+        <a href="{% url 'music:logout' %}"><p>Log out</p></a>
+    </div>
 {% endblock %}

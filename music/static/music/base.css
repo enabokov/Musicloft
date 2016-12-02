@@ -1,13 +1,131 @@
 *{
     margin: 0;
+    padding: 0;
 }
 html, body{
     width: 100%;
     height:100%;
 }
+
+.equilizer {
+    height: 25px;
+    width: 25px;
+    transform: rotate(180deg);
+    margin: 10px;
+}
+
+.bar {
+  fill: DeepPink;
+  width: 18px;
+  animation: equalize 1.25s steps(25, end) 0s infinite;
+}
+
+.bar:nth-child(1) {
+  animation-duration: 1.9s;
+}
+
+.bar:nth-child(2) {
+  animation-duration: 2s;
+}
+
+.bar:nth-child(3) {
+  animation-duration: 2.3s;
+}
+
+.bar:nth-child(4) {
+  animation-duration: 2.4s;
+}
+
+.bar:nth-child(5) {
+  animation-duration: 2.1s;
+}
+
+@keyframes equalize {
+  0% {
+    height: 60px;
+  }
+  4% {
+    height: 50px;
+  }
+  8% {
+    height: 40px;
+  }
+  12% {
+    height: 30px;
+  }
+  16% {
+    height: 20px;
+  }
+  20% {
+    height: 30px;
+  }
+  24% {
+    height: 40px;
+  }
+  28% {
+    height: 10px;
+  }
+  32% {
+    height: 40px;
+  }
+  36% {
+    height: 60px;
+  }
+  40% {
+    height: 20px;
+  }
+  44% {
+    height: 40px;
+  }
+  48% {
+    height: 70px;
+  }
+  52% {
+    height: 30px;
+  }
+  56% {
+    height: 10px;
+  }
+  60% {
+    height: 30px;
+  }
+  64% {
+    height: 50px;
+  }
+  68% {
+    height: 60px;
+  }
+  72% {
+    height: 70px;
+  }
+  76% {
+    height: 80px;
+  }
+  80% {
+    height: 70px;
+  }
+  84% {
+    height: 60px;
+  }
+  88% {
+    height: 50px;
+  }
+  92% {
+    height: 60px;
+  }
+  96% {
+    height: 70px;
+  }
+  100% {
+    height: 80px;
+  }
+}
+
+
+
 #nav-main{
-    background-color: rgba(0,0,0,0.5);
-    letter-spacing: 1px;
+    background-color: rgba(0,0,0,0);
+    letter-spacing: 4px;
     font-size: 12px;
     text-align: center;
 }
@@ -21,32 +139,80 @@ html, body{
 #list1 ul li{
     color: white;
 }
+
 #Brnd{
-    color: ghostwhite;
+    color: gold;
 }
 #BndBar{
-    color: navajowhite;
+    color: greenyellow;
     letter-spacing: 4px;
     font-family: 'Titillium Web', sans-serif;
+
 }
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+.dropdown-menu{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+}
+.dropdown-menu li {
+    text-decoration: none;
+    letter-spacing: normal;
+    font-family: "Berlin Sans FB Demi", serif;
+}
+.dropdown-menu li:hover a:hover{
+    background-color: #a6e1ec;
+}
+#BndBar:hover{
+    background-color: #1b6d85;
+}
+
+#BookBar:hover{
+    background-color: #1b6d85;
+}
+
 #BookBar{
-    color: navajowhite;
+    color: greenyellow;
     letter-spacing: 4px;
     font-family: 'Titillium Web', sans-serif;
 }
+
+#EventBar:hover{
+    background-color: #1b6d85;
+}
+
 #EventBar{
-    color: navajowhite;
+    color: greenyellow;
     letter-spacing: 4px;
     font-family: 'Titillium Web', sans-serif;
 }
+
+#JoinBar:hover{
+    background-color: #1b6d85;
+}
+
 #JoinBar{
     font-family: 'Titillium Web', sans-serif;
     color: navajowhite;
     background-color: crimson;
+    text-align: center;
+}
+#LogBar:hover{
+    background-color: #1b6d85;
 }
 #LogBar{
     font-family: 'Titillium Web', sans-serif;
-    color: navajowhite;
+    color: greenyellow;
+}
+
+#Question:hover{
+    background-color: #1b6d85;
+    color: greenyellow;
 }
 
 .footer{
@@ -62,11 +228,12 @@ html, body{
 }
 .footer i{
     background-color: #000000;
-    color: white;
+    color: greenyellow;
     font-size: 30px;
     margin-top: 10px;
     border-color: white;
 }
+
 .footer ul li{
     font-size: 20px;
     font-family: 'Titillium Web', sans-serif;

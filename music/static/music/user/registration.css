@@ -1,23 +1,21 @@
 body{
-    background-color: #757575;
+    background: url('/media/music/image_for_site/altes-klavier-169464.jpg');
+
 }
-#Reg{
+
+#sect{
     margin-top: 8%;
-    height: 55%;
-    width: 100%;
-    display: block;
-}
-#Reg #RegMainCont{
-    width: 50%;
-    float: left;
     height: 100%;
+    text-align: center;
 }
-#Reg #RegMainCon1{
-    width: 50%;
-    float: right;
-    height: 100%;
+#sect .panel-body h3{
+    color: honeydew;
 }
-#Reg #RegMainCont h3{
-    font-size: 40px;
+#sect .panel-footer{
+    width: 75%;
+    margin-left: 10%;
+    background-color: black;
+    color: lawngreen;
+    border: dashed 3px black;
 }
 
