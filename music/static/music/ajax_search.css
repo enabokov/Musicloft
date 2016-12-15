@@ -1,0 +1,28 @@
+#items{
+    display: inline-block;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: auto;
+    width: 100%;
+    opacity: 1;
+    /*margin-top: 5vmax;*/
+    /*background-color: gray;*/
+}
+
+#item{
+    text-align: left;
+    /*border-bottom: solid 2px whitesmoke;*/
+    backface-visibility: hidden;
+}
+
+#item h3{
+    font-family: "High Tower Text", sans-serif;
+    color: yellowgreen;
+    display: inline;
+    font-weight: bold;
+    filter: brightness(200%);
+    /*text-decoration: underline;*/
+}
+h4{
+    color: orangered;
+}

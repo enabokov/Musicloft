@@ -1,21 +1,20 @@
 body{
-    background: url('/media/music/image_for_site/altes-klavier-169464.jpg');
-
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: url('/media/music/image_for_site/o-LISTENING-TO-HEADPHONES-facebook.jpg');
 }
-
 #sect{
-    margin-top: 8%;
-    height: 100%;
-    text-align: center;
-}
-#sect .panel-body h3{
-    color: honeydew;
+    margin-left: 35vmax;
+    margin-top: 15vmax;
+    margin-bottom: 15vmax;
 }
 #sect .panel-footer{
-    width: 75%;
-    margin-left: 10%;
-    background-color: black;
-    color: lawngreen;
-    border: dashed 3px black;
+    width: 50%;
+    border-radius: 10px;
 }
-
+#sect h3{
+    color: #2e6da4;
+}

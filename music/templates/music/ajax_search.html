@@ -3,19 +3,22 @@
     <link rel="stylesheet" type="text/css" href="{% static 'music/ajax_search.css' %}">
 {% endblock %}
 {% if bands %}
-    <ul id="item">
+    <div id="items">
         {% for band in bands %}
-                <article class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                        <div id="item">
                                 <a href="{% url 'music:band' band.pk %}" title="{{ band.name }}" class="zoom" data-title="Bands" data-type="image" data-toggle="lightbox">
-                                    <img src="{{ band.image.url }}" style="height: 50px; width: 50px" alt="{{ band.name }}" id="itemGallery"/>
+                                    <img src="{{ band.image.url }}" alt="{{ band.name }}"/>
                                 </a>
-                            </div>
+                                <h3>{{ band.name }}</h3>
                         </div>
-                </article>
-            {% endfor %}
-    </ul>
+                </div>
+        {% endfor %}
+    </div>
 {% else %}
-{#    <h1 style="color:white;">No results</h1>#}
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="no_result">
+                <h4>No suggestions</h4>
+        </div>
+    </div>
 {% endif %}

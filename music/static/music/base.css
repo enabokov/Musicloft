@@ -121,47 +121,15 @@ html, body{
   }
 }
 
-.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
-.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
-.autocomplete-selected { background: #f0f0f0; }
-.autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
 
-#searchfield{
-    display: block;
-    width: 100%;
-    text-align: left;
-}
-#searchfield form{
-    display: inline-block;
-    background: #eeefed;
-    padding: 0;
-    border-radius: 3px;
-    margin: 10px 0 0 0;
-}
-
-#searchfield form .biginput {
-  width: 300px;
-  height: 30px;
-  padding: 0 10px 0 10px;
-  background-color: #fff;
-  border: 1px solid #c8c8c8;
-  border-radius: 3px;
-  color: #aeaeae;
-  font-weight:normal;
-  font-size: 1.5em;
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-#searchfield form .biginput:focus {
-  color: #858585;
-}
 
 #nav-main{
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.5);
     letter-spacing: 4px;
     font-size: 12px;
     text-align: center;
+    max-height: 500px;
+    border-bottom: solid 1px whitesmoke;
 }
 #nav-main .navbar-header .navbar-toggle .icon-bar{
     background-color: white;
@@ -218,13 +186,12 @@ html, body{
 }
 
 .dropdown:hover .dropdown-menu{
-    display: block;
+    display: inline;
 }
 .dropdown-menu{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
     min-width: 160px;
 }
 .dropdown-menu li {
@@ -235,6 +202,7 @@ html, body{
 .dropdown-menu li:hover a:hover{
     background-color: #a6e1ec;
 }
+
 #BndBar:hover{
     background-color: #1b6d85;
 }
@@ -280,6 +248,9 @@ html, body{
 #Question:hover{
     background-color: #1b6d85;
     color: greenyellow;
+}
+#Question{
+    margin-right: 10px;
 }
 #Logged:hover{
     background-color: #1b6d85;
@@ -350,4 +321,21 @@ html, body{
     margin-right: auto;
     width: 100%;
     letter-spacing: 20px;
+}
+#search_id input{
+    background-color: whitesmoke;
+}
+#search_id input::-webkit-input-placeholder{
+    color: yellowgreen;
+}
+#search_id:focus #nav-main{
+    background-color: yellow;
+}
+#search_results{
+    display: inline;
+}
+#search_results img{
+    height: 70px;
+    width: 70px;
+    display: inline;
 }
