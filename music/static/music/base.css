@@ -121,10 +121,44 @@ html, body{
   }
 }
 
+.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
+.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #f0f0f0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
 
+#searchfield{
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+#searchfield form{
+    display: inline-block;
+    background: #eeefed;
+    padding: 0;
+    border-radius: 3px;
+    margin: 10px 0 0 0;
+}
+
+#searchfield form .biginput {
+  width: 300px;
+  height: 30px;
+  padding: 0 10px 0 10px;
+  background-color: #fff;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  color: #aeaeae;
+  font-weight:normal;
+  font-size: 1.5em;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+#searchfield form .biginput:focus {
+  color: #858585;
+}
 
 #nav-main{
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0.3);
     letter-spacing: 4px;
     font-size: 12px;
     text-align: center;
@@ -140,14 +174,47 @@ html, body{
     color: white;
 }
 
-#Brnd{
+#Brnd .letters{
     color: gold;
+    display: inline-block;
+    list-style: none;
+    letter-spacing: normal;
 }
+#Brnd .letters li{
+    display: inline;
+}
+#Brnd .letters li:nth-child(1):hover{
+    color: red;
+}
+#Brnd .letters li:nth-child(2):hover{
+    color: orange;
+}
+#Brnd .letters li:nth-child(3):hover{
+    color: yellowgreen;
+}
+#Brnd .letters li:nth-child(4):hover{
+    color: green;
+}
+#Brnd .letters li:nth-child(5):hover{
+    color: lightblue;
+}
+#Brnd .letters li:nth-child(6):hover{
+    color: blue;
+}
+#Brnd .letters li:nth-child(7):hover{
+    color: darkviolet;
+}
+#Brnd .letters li:nth-child(8):hover{
+    color: red;
+}
+#Brnd .letters li:nth-child(9):hover{
+    color: red;
+}
+
 #BndBar{
     color: greenyellow;
     letter-spacing: 4px;
     font-family: 'Titillium Web', sans-serif;
-
 }
 
 .dropdown:hover .dropdown-menu{
@@ -214,7 +281,12 @@ html, body{
     background-color: #1b6d85;
     color: greenyellow;
 }
-
+#Logged:hover{
+    background-color: #1b6d85;
+}
+#Logged{
+    color: greenyellow;
+}
 .footer{
     width: 100%;
     height: auto;

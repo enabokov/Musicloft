@@ -42,7 +42,7 @@
     <div class="container">
         <section class="row">
             {% for band in bands %}
-                <article class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <article class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <a href="{% url 'music:band' band.pk %}" title="{{ band.name }}" class="zoom" data-title="Bands" data-type="image" data-toggle="lightbox">

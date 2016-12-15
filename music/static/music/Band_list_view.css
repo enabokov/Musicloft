@@ -1,22 +1,31 @@
+*{
+    margin: 0;
+}
+body{
+    background: linear-gradient(#ffffff, #757575);
+    background-repeat: no-repeat;
+    background-color: #757575;
+}
 
 #theBandsCarousel .slide1{
-    background-image: url(/media/music/band/WALK_THE_MOON.jpg);
-    color: black;
-    height:500px;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-}
-#theBandsCarousel .slide2{
-    background-image: url(/media/music/band/Nirvana.jpg);
+    background-image: url(/media/music/image_for_site/Hands-Clapping-Grayscale-flip-web-banner1.png);
     color: black;
     height:500px;
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
 }
+#theBandsCarousel .slide2{
+    background-image: url(/media/music/image_for_site/music-wallpapers-22.jpeg);
+    color: black;
+    height:500px;
+    filter: grayscale(100%);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
 #theBandsCarousel .slide3{
-    background-image: url(/media/music/band/Red_Hot_Chili_Peppers.jpg);
+    background-image: url(/media/music/image_for_site/concert_doue_77510.jpg);
     color: black;
     height:500px;
     background-repeat: no-repeat;
@@ -24,7 +33,7 @@
     background-size: cover;
 }
 #NewNotablee{
-    color: #3c763d;
+    color: greenyellow;
 }
 #img_style {
     display: inline-table;
@@ -44,9 +53,9 @@ img {
 
 img:hover {
 	cursor: pointer;
-	-webkit-transform: scale(5, 5);
-    -ms-transform: scale(1, 1);
-    transform: scale(1.5, 1.5);
+	-webkit-transform: scale(3, 3);
+    -ms-transform: scale(0.5, 0.5);
+    transform: scale(1.2, 1.2);
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s; /* Safari */
     box-shadow: 5px 5px 5px #888888;

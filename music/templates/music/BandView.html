@@ -24,9 +24,11 @@
 
     </div>
     <div id="sect">
-        <h1>Albums</h1>
+        <h1>Albums({{ band.album_set.all.count }})</h1>
         <div id="intermediate"></div>
     </div>
+
+
     <div class="container" id="albumView">
         <div class="row">
             {% for album in band.album_set.all %}
@@ -54,6 +56,8 @@
             {% endfor %}
         </div>
     </div>
+
+
 
 
 
