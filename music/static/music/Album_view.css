@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+}
+body{
+    background: linear-gradient(#ffffff, #757575);
+    background-repeat: no-repeat;
+    background-color: #757575;
+}
+#topSurface{
+    height: 60vmax;
+    width: 100%;
+    display: inline-block;
+}
+
+#topSurface #topPart1{
+    width: 50%;
+    float: left;
+    height: 100%;
+    margin-top: 8%;
+}
+#topSurface #topPart1 #topPartPic{
+    height: auto;
+    width: 100%;
+}
+#topSurface #topPart2{
+    width: 50%;
+    float: right;
+    height: 100%;
+    margin-top: 8%;
+}
+#topSurface #topPart2 h1{
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+    font-size: 6vmax;
+}
+#topSurface #topPart2 h3{
+    font-family: Roboto, sans-serif;
+    font-style: italic;
+    text-align: center;
+    color: #000000;
+    font-size: 2vmax;
+}
+#topSurface #topPart2 p{
+    font-size: 3vmax;
+    color: #212121;
+}
+
+#sect{
+    height: 25%;
+}
+#sect h1{
+    margin-left: 10%;
+    font-size: 5vmax;
+    color: #000000;
+    font-family: "High Tower Text", sans-serif;
+}
+#intermediate{
+    border-bottom: 4px solid white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+#intermediate2{
+    border-bottom: 2px solid #000000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#subsect{
+    background-color: #757575;
+    width:100%;
+    display: inline-block;
+}
+#subsect #inner{
+    width: 100%;
+    margin-left: 2.5%;
+}
+#subsect #inner #part1{
+    width: 100%;
+}
+#subsect #inner #part1 h4{
+    color: lawngreen;
+    font-family: "High Tower Text", serif;
+}
+
+

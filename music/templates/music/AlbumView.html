@@ -1,24 +1,56 @@
 {% extends 'music/base.html' %}
-{% block title %} Cool Albums {% endblock %}
+{% load staticfiles %}
+{% block title %} {{ album.name }} by {{ album.band.name }}{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static 'music/Album_view.css' %}">
+
+{% endblock %}
 
 {% block body %}
 
-<h1>Album</h1>
-<br/>
-<br/>
+     <div id="topSurface">
 
-{% for album in albums %}
-    <h2>{{ album.name }}</h2>
-    <p>by {{ album.band.name }}</p>
-    <img src="{{ album.image.url }}" width="300" height="300"/>
-    <ul>
-        {% for song in album.song_set.all %}
-            <li>{{ song.name }}</li>
-            <audio controls>
-                <source src="{{ song.song_file.url }}"/>
-            </audio>
-        {% endfor %}
-    </ul>
-{% endfor %}
+        <div class="container" id="topPart1">
+            <img class="img-thumbnail" id="topPartPic" src="{{ album.image.url }}" alt="{{ band.name }}"/>
+        </div>
+
+
+        <div class="container" id="topPart2">
+            <h1>{{ album.name }}</h1>
+            <h3>by {{ album.band.name }}</h3>
+        </div>
+
+    </div>
+
+    <div id="sect">
+        <h1>Songs</h1>
+        <div id="intermediate"></div>
+    </div>
+
+    <div id="subsect">
+            <div id="inner">
+                {% for song in album.song_set.all %}
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    {% if forloop.counter  %}
+                    <div class="container" id="part1">
+                        <h4>{{ forloop.counter }}. {{ song.name|truncatewords:6 }}</h4>
+                         <div id="intermediate2"></div>
+                        <br>
+                        <audio controls>
+                            <source src="{{ song.song_file.url }}" type="audio/mp4">
+                        </audio>
+                        <br><br>
+                        <div id="intermediate2"></div>
+                        <br>
+                    </div>
+                    {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        <br><br>
+    </div>
+
+
 
 {% endblock %}

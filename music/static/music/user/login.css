@@ -1,0 +1,20 @@
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: url('/media/music/image_for_site/o-HEADPHONES-facebook.jpg');
+}
+#sect{
+    margin-left: 35vmax;
+    margin-top: 15vmax;
+    margin-bottom: 15vmax;
+}
+#sect .panel-footer{
+    width: 50%;
+    border-radius: 10px;
+}
+#sect h3{
+    color: #2e6da4;
+}

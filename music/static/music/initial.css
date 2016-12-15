@@ -1,29 +1,96 @@
-#bodyMain{
-    font-family: 'Pacifico', cursive;
-    color: lightgreen;
-    background-color: #5e5e5e;
+*{
+    margin: 0;
+    /*border: 3px dashed red;*/
+}
+body, html{
+    height: 100%;
+    width: 100%;
+}
+#theCarousel{
+    height: 600px;
+    width: 100%;
+    position: static;
+}
+#theCarousel .slide1, .slide2, .slide3{
+    filter: grayscale(100%) brightness(50%) blur(2px);
+    opacity: 0.8;
+    color: white;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#theCarousel h1{
+    font-family: "High Tower Text", sans-serif;
+    font-size: 9vw;
+    margin-bottom: 200px;
+    color: #ffffff;
+    text-shadow: black 2px 0;
+    letter-spacing: 4px;
 }
 #theCarousel .slide1 {
-    background-image: url(/media/music/image_for_site/img1.jpg);
-    color: white;
-    height:500px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-image: url(/media/music/image_for_site/iii.jpeg);
 }
 #theCarousel .slide2{
-    background-image: url(/media/music/image_for_site/img2.jpg);
-    color: white;
-    height:500px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-image: url(/media/music/image_for_site/pexels-photo.jpg);
 }
 #theCarousel .slide3{
-    background-image: url(/media/music/image_for_site/img3.jpg);
-    color: black;
-    height:500px;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-image: url(/media/music/image_for_site/disk.png);
+}
+
+#leftCtrl {
+    color: white;
+    height: 600px;
+}
+#rightCtrl {
+    color: white;
+    height: 600px;
+}
+
+.sect {
+    height: 100%;
+    width: 100%;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.subsect{
+    height: 30vmax;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    display: inline-block;
+    background: linear-gradient(lavender, white, lavender);
+}
+
+.subsect img{
+    width: 20%;
+    height: auto;
+    vertical-align: middle;
+    float: left;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.subsect h1{
+    font-size: 4vmax;
+    font-family: "High Tower Text", sans-serif;
+    color: black;
+    margin: 15%;
+}
+
+.photo1{
+    background-image: url("/media/music/image_for_site/gro.jpg");
+}
+.photo2{
+    background-image: url("/media/music/image_for_site/girl2.jpg");
+}
+.photo3{
+    background-image: url("/media/music/image_for_site/anywalls.com-17423.jpg");
+}
+.photo4{
+    background-image: url('/media/music/image_for_site/music_grayscale_guitars_keith_richards_cigarettes_musicians_desktop_1680x1050_hd-wallpaper-978512.jpg');
+}
+#intermediate{
+    border: 4px groove black;
 }

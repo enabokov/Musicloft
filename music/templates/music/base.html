@@ -4,86 +4,203 @@
     <meta charset="UTF-8">
     <title>{% block title %}MusicHub - everywhere you want{% endblock %}</title>
     {% load staticfiles %}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Keywords" content="MusicLoft">
+    <meta name="description" content="Content of music">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'music/base.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'music/Band_list_view.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'music/Album_list_view.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'music/initial.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'music/Album_view.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'music/BandView.css' %}">
-    <link href = 'https://fonts.googleapis.com/css?family=Pacifico' rel = 'stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link href='http://lipis.github.io/bootstrap-social' rel='stylesheet' type='text/css'>
+    <link href="http://fortawesome.github.io/Font-Awesome/icons/" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lobster+Two|Kaushan+Script|Architects+Daughter|Nunito|Pacifico|Quicksand|Titillium+Web" rel="stylesheet">
+{% block css_files %}
+{% endblock %}
 <!-- Fixed top -->
-    <div class="container-fluid">
-        <nav class="navbar navbar-static-top navbar-inverse" id="top">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="{% url 'music:index' %}" class="navbar-brand">MUSICLOFT</a>
-                    </div>
+<div>
+<nav class="navbar navbar-fixed-top" id="nav-main">
 
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav">
-                            <li><a href="{% url 'music:bands' %}">BANDS<span
-                                    class="sr-only">(current)</span></a></li>
-                            <li><a href="#">ABOUT</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false"
-                               aria-expanded="false">CONTACT US<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Email</a></li>
-                                <li><a href="#">Phone</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Set Appointment</a></li>
-                            </ul>
-                        </li>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-                        </ul>
-                    <form class="navbar-form navbar-left">
-                        <form class="navbar-form " role="search" method="get"
-                              action="{% url 'music:index' %}">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="search" name="q" value="">
-                                {% csrf_token %}
-                            </div>
-                            <button type="submit" class="btn btn-default">Search</button>
-                        </form>
-                    </form>
-                        {% if not request.user.is_authenticated %}
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{% url 'music:register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-                        </li>
-                        <li><a href="{% url 'music:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                        </li>
-                    </ul>
-                        {% else %}
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="{% url 'music:account' %}"><span class="glyphicon glyphicon-apple"></span>My
-                                    account</a></li>
-                            </ul>
-                        {% endif %}
+      <svg xmlns="http://www.w3.org/2000/svg" class="equilizer" viewBox="0 0 128 128">
+              <g>
+                  <title>Audio Equilizer</title>
+                  <rect class="bar" transform="translate(0,0)" y="15"></rect>
+                  <rect class="bar" transform="translate(25,0)" y="15"></rect>
+                  <rect class="bar" transform="translate(50,0)" y="15"></rect>
+                  <rect class="bar" transform="translate(75,0)" y="15"></rect>
+                  <rect class="bar" transform="translate(100,0)" y="15"></rect>
+              </g>
+      </svg>
+      <a class="navbar-brand" href="{% url 'music:index' %}" id="Brnd">
+          <strong>
+              <ul class="letters">
+              <!--MUSICLOFT-->
+                  <li>M</li>
+                  <li>U</li>
+                  <li>S</li>
+                  <li>I</li>
+                  <li>C</li>
+                  <li>L</li>
+                  <li>O</li>
+                  <li>F</li>
+                  <li>T</li>
+              </ul>
+          </strong></a>
+    </div>
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle"  data-toggle="dropdown" id="BndBar"><strong>BANDS </strong></a>
+            <ul class="dropdown-menu" role="menu" style="background-color: white">
+                {% for band in bands %}
+                    {% if forloop.counter0 < 5 %}
+                        <li><a href="{% url 'music:band' band.pk %}">{{ band.name }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                <li role="separator" class="divider"></li>
+                <li><a href="{% url 'music:bands' %}" style="text-align: center"><strong>All bands</strong></a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="EventBar"><strong>EVENTS </strong></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        {% if not request.user.is_authenticated %}
+            <li><a href="{% url 'music:register' %}" id="JoinBar"><strong>JOIN </strong></a></li>
+            <li><a href="{% url 'music:login' %}" id="LogBar"><strong>LOGIN </strong></a></li>
+            <li><a href="#" id="Question" style="font-size: 20px; color: white; "><strong>?</strong></a></li>
+        {% else %}
+           <li class="dropdown"><a href="#" id="Logged" class="dropdown-toggle" data-toggle="dropdown" >Welcome, {{ request.user.username }}<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><i class="icon-cog"></i> Preferences</a></li>
+                    <li><a href="#"><i class="icon-envelope"></i> Contact Support</a></li>
+                    <li class="divider"></li>
+                    <li><a href="{% url 'music:logout' %}"><i class="icon-off"></i> Logout</a></li>
+                </ul>
+           </li>
+        {% endif %}
+      </ul>
+        <div class="container">
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" id="search_above" role="search" method="get" action="{% url 'music:index' %}">
+                    <div class="input-group" id="search_id">
+                        <input type="text" class="form-control" id="search" name="q" value="" placeholder="Search">
+                        {% csrf_token %}
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
                     </div>
-                </div>
-            </nav>
+                </form>
+            </div>
+            <div id="search_results"></div>
         </div>
+    </div><!-- /.navbar-collapse -->
 
 
+</nav>
+</div>
 
 
-<!-- Fixed footer -->
 
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-
+<body>
+<div id="TOP"></div>
 {% block body %}
 {% endblock %}
 
+<div class="footer" style="background: linear-gradient(#000000, darkslategray)">
+        <div class="container">
+            <a href="#TOP"><i class="glyphicon glyphicon-menu-up"></i></a>
+            <br><br><br>
+            <button style="width: 100%; margin-left: auto; margin-right: auto;  color: whitesmoke; font-family: Roboto, sans-serif; font-size: 20px; "  type="button" class="navbar-toggle" data-toggle="collapse" data-target="#footer-middle">
+                <strong><i class="glyphicon glyphicon-chevron-down"></i></strong>
+            </button>
+
+            <div class="row collapse navbar-collapse" id="footer-middle">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="first">
+                    <ul style="list-style-type:none">
+                        <li>PRODUCT</li>
+                        <li><br></li>
+                        <li>Business</li>
+                        <li>Compare</li>
+                        <li>Features</li>
+                        <li>Pricing</li>
+                        <li>Mobile</li>
+                        <li>App Showcase</li>
+                        <li>Download</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="second">
+                    <ul style="list-style-type:none">
+                        <li>COMPANY</li>
+                        <li><br></li>
+                        <li>About Us</li>
+                        <li>Blog</li>
+                        <li>News</li>
+                        <li>Press Releases</li>
+                        <li>Jobs</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="third">
+                    <ul  style="list-style-type:none">
+                        <li>LEARN MORE</li>
+                        <li><br></li>
+                        <li>Support</li>
+                        <li>Developers</li>
+                        <li>Referral</li>
+                        <li>Affillate</li>
+                        <li>Reseller</li>
+                        <li>Folder Sharing FAQ</li>
+                    </ul>
+                </div>
+            </div>
+            <br><br>
+            <div class="row" id="film">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img id="facebook" src="/media/music/image_for_site/facebook%20(1).png"/>
+                    <img id="ln" src="/media/music/image_for_site/linkedin-512.png"/>
+                    <img id="twitter" src="/media/music/image_for_site/twitter.png"/>
+                    <img id="instagram" src="/media/music/image_for_site/inst.png"/>
+                    <img id="google" src="/media/music/image_for_site/googlePlus.png"/>
+                    <img id="youtube" src="/media/music/image_for_site/youtube-icon.png"/>
+                </div>
+            </div>
+            <br>
+            <div class="row" id="footer-intermediate"></div>
+            <div id="footer-end">
+                <h6>&copy 2016 MusicLoft, Inc. All Rights Reserved.</h6>
+                <h5>Terms of Service * Privacy Policy * Site Map.</h5>
+            </div>
+            <br><br><br><br>
+        </div>
+    </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="{% static 'music/js/ajax_search.js' %}"></script>
-<script src="{% static 'music/fonts_js_css/js/bootstrap.min.js'%}"></script>
+
 </body>
 </html>

@@ -1,40 +1,64 @@
 {% extends 'music/base.html' %}
+
 {% block title %}{{ band.name }} band{% endblock %}
+
+{% load staticfiles %}
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static 'music/BandView.css' %}">
+{% endblock %}
+
 
 {% block body %}
 
-    <div class="container">
-        <div class="jumbotron text-center">
-             <h1 style="color: yellow; font-family: 'Pacifico', cursive;">{{ band.name }}</h1>
+    <div id="topSurface">
+
+        <div class="container" id="topPart1">
+            <img class="img-thumbnail" id="topPartPic" src="{{ band.image.url }}" alt="{{ band.name }}"/>
+        </div>
+
+
+        <div class="container" id="topPart2">
+            <h1>{{ band.name }}</h1>
+            <p>{{ band.description|truncatewords:100 }}</p>
         </div>
 
     </div>
-    <div class="container-fluid">
+    <div id="sect">
+        <h1>Albums({{ band.album_set.all.count }})</h1>
+        <div id="intermediate"></div>
+    </div>
+
+
+    <div class="container" id="albumView">
         <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
-                <div class="thumbnail">
-                    <img src="{{ band.image.url }}" class="img-responsive"/>
-                    <div class="caption">
-                        <h4>{{ band.description }}</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <h1 style="text-align: center; font-family: 'Pacifico', cursive"><ins>ALBUMS</ins></h1>
-                    <ul>
-                        {% for album in band.album_set.all %}
-                            <li>
+            {% for album in band.album_set.all %}
+                <article class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
 
-                                <img src="{{ album.image.url }}" class="img-responsive"/>
+                                <a href="{% url 'music:album' album.pk %}" title="{{ album.name }}" class="zoom" data-title="Albums" data-type="image" data-toggle="lightbox">
+                                    <img src="{{ album.image.url }}" alt="{{ album.name }}" id="itemGallery"/>
+                                </a>
 
-                            <a href="{% url 'music:album' album.pk %}">
-                                <h2 style="color: orange">{{ album.name }}</h2>
-                            </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-            </div>
+                            </div>
+                            <div class="panel-footer">
+                                <h4><a href="{% url 'music:album' album.pk %}" title="{{ album.name }}"><strong style="color: black">{{ album.name|truncatewords:5 }}</strong></a></h4>
+                                <h5><a href="#" style="color: darkgray">{{ band.name }}</a></h5>
+                                <span class="pull-right">
+                                    <i id="like1" class="glyphicon glyphicon-thumbs-up"></i>
+                                    <i id="like1-bs3"></i>
+                                    <i id="dislike1" class="glyphicon glyphicon-thumbs-down"></i>
+                                    <i id="dislike1-bs3"></i>
+                                </span>
+                            </div>
+                        </div>
+                </article>
+            {% endfor %}
         </div>
     </div>
+
+
+
+
 
 {% endblock %}

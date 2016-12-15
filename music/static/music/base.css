@@ -1,14 +1,341 @@
-#foot{
-    background-color: gray;
+*{
+    margin: 0;
+    padding: 0;
 }
-#top .navbar-brand{
+html, body{
+    width: 100%;
+    height:100%;
+}
+
+.equilizer {
+    height: 25px;
+    width: 25px;
+    transform: rotate(180deg);
+    margin: 10px;
+}
+
+.bar {
+  fill: DeepPink;
+  width: 18px;
+  animation: equalize 1.25s steps(25, end) 0s infinite;
+}
+
+.bar:nth-child(1) {
+  animation-duration: 1.9s;
+}
+
+.bar:nth-child(2) {
+  animation-duration: 2s;
+}
+
+.bar:nth-child(3) {
+  animation-duration: 2.3s;
+}
+
+.bar:nth-child(4) {
+  animation-duration: 2.4s;
+}
+
+.bar:nth-child(5) {
+  animation-duration: 2.1s;
+}
+
+@keyframes equalize {
+  0% {
+    height: 60px;
+  }
+  4% {
+    height: 50px;
+  }
+  8% {
+    height: 40px;
+  }
+  12% {
+    height: 30px;
+  }
+  16% {
+    height: 20px;
+  }
+  20% {
+    height: 30px;
+  }
+  24% {
+    height: 40px;
+  }
+  28% {
+    height: 10px;
+  }
+  32% {
+    height: 40px;
+  }
+  36% {
+    height: 60px;
+  }
+  40% {
+    height: 20px;
+  }
+  44% {
+    height: 40px;
+  }
+  48% {
+    height: 70px;
+  }
+  52% {
+    height: 30px;
+  }
+  56% {
+    height: 10px;
+  }
+  60% {
+    height: 30px;
+  }
+  64% {
+    height: 50px;
+  }
+  68% {
+    height: 60px;
+  }
+  72% {
+    height: 70px;
+  }
+  76% {
+    height: 80px;
+  }
+  80% {
+    height: 70px;
+  }
+  84% {
+    height: 60px;
+  }
+  88% {
+    height: 50px;
+  }
+  92% {
+    height: 60px;
+  }
+  96% {
+    height: 70px;
+  }
+  100% {
+    height: 80px;
+  }
+}
+
+
+
+#nav-main{
+    background-color: rgba(0,0,0,0.8);
+    letter-spacing: 4px;
+    font-size: 12px;
+    text-align: center;
+    max-height: 500px;
+    border-bottom: solid 1px whitesmoke;
+}
+#nav-main .navbar-header .navbar-toggle .icon-bar{
+    background-color: white;
+}
+#list1 li{
+    color: red;
+}
+
+#list1 ul li{
     color: white;
 }
-#top .navbar{
-    color: yellow;
-    letter-spacing: 4px;
-}
-body{
-    background-image: url('/media/music/image_for_site/footer_lodyas.png');
 
+#Brnd .letters{
+    color: gold;
+    display: inline-block;
+    list-style: none;
+    letter-spacing: normal;
+}
+#Brnd .letters li{
+    display: inline;
+}
+#Brnd .letters li:nth-child(1):hover{
+    color: red;
+}
+#Brnd .letters li:nth-child(2):hover{
+    color: orange;
+}
+#Brnd .letters li:nth-child(3):hover{
+    color: yellowgreen;
+}
+#Brnd .letters li:nth-child(4):hover{
+    color: green;
+}
+#Brnd .letters li:nth-child(5):hover{
+    color: lightblue;
+}
+#Brnd .letters li:nth-child(6):hover{
+    color: blue;
+}
+#Brnd .letters li:nth-child(7):hover{
+    color: darkviolet;
+}
+#Brnd .letters li:nth-child(8):hover{
+    color: red;
+}
+#Brnd .letters li:nth-child(9):hover{
+    color: red;
+}
+
+#BndBar{
+    color: greenyellow;
+    letter-spacing: 4px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: inline;
+}
+.dropdown-menu{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    display: none;
+    position: absolute;
+    min-width: 160px;
+}
+.dropdown-menu li {
+    text-decoration: none;
+    letter-spacing: normal;
+    font-family: "Berlin Sans FB Demi", serif;
+}
+.dropdown-menu li:hover a:hover{
+    background-color: #a6e1ec;
+}
+
+#BndBar:hover{
+    background-color: #1b6d85;
+}
+
+#BookBar:hover{
+    background-color: #1b6d85;
+}
+
+#BookBar{
+    color: greenyellow;
+    letter-spacing: 4px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#EventBar:hover{
+    background-color: #1b6d85;
+}
+
+#EventBar{
+    color: greenyellow;
+    letter-spacing: 4px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#JoinBar:hover{
+    background-color: #1b6d85;
+}
+
+#JoinBar{
+    font-family: 'Titillium Web', sans-serif;
+    color: navajowhite;
+    background-color: crimson;
+    text-align: center;
+}
+#LogBar:hover{
+    background-color: #1b6d85;
+}
+#LogBar{
+    font-family: 'Titillium Web', sans-serif;
+    color: greenyellow;
+}
+
+#Question:hover{
+    background-color: #1b6d85;
+    color: greenyellow;
+}
+#Question{
+    margin-right: 10px;
+}
+#Logged:hover{
+    background-color: #1b6d85;
+}
+#Logged{
+    color: greenyellow;
+}
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: #000000;
+    text-align: center;
+}
+.footer a{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.footer i{
+    background-color: #000000;
+    color: greenyellow;
+    font-size: 30px;
+    margin-top: 10px;
+    border-color: white;
+}
+
+.footer ul li{
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+    display: block;
+}
+#facebook, #instagram, #ln, #twitter, #google, #youtube{
+    height: 40px;
+    width: 40px;
+    background-color: whitesmoke;
+    border-radius: 100%;
+}
+#footer-middle{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#footer-intermediate{
+    border-bottom: groove;
+    border-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#footer-end h6{
+    display: inline-block;
+    color: #9E9E9E;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#footer-end h5{
+    display: inline;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    float: right;
+}
+#film{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    letter-spacing: 20px;
+}
+#search_id input{
+    background-color: whitesmoke;
+}
+#search_id input::-webkit-input-placeholder{
+    color: yellowgreen;
+}
+#search_id:focus #nav-main{
+    background-color: yellow;
+}
+#search_results{
+    display: inline;
+}
+#search_results img{
+    height: 70px;
+    width: 70px;
+    display: inline;
 }
