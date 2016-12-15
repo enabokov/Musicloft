@@ -9,6 +9,7 @@ body, html{
 #theCarousel{
     height: 600px;
     width: 100%;
+    position: static;
 }
 #theCarousel .slide1, .slide2, .slide3{
     filter: grayscale(100%) brightness(50%) blur(2px);
@@ -18,7 +19,6 @@ body, html{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
 }
 #theCarousel h1{
     font-family: "High Tower Text", sans-serif;
@@ -38,18 +38,14 @@ body, html{
     background-image: url(/media/music/image_for_site/disk.png);
 }
 
-
 #leftCtrl {
-    display: inline;
     color: white;
     height: 600px;
 }
 #rightCtrl {
-    display: inline;
     color: white;
     height: 600px;
 }
-
 
 .sect {
     height: 100%;
@@ -82,7 +78,6 @@ body, html{
     color: black;
     margin: 15%;
 }
-
 
 .photo1{
     background-image: url("/media/music/image_for_site/gro.jpg");
