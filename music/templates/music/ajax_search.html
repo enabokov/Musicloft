@@ -1,9 +1,21 @@
+{% load staticfiles %}
+{% block css_files %}
+    <link rel="stylesheet" type="text/css" href="{% static 'music/ajax_search.css' %}">
+{% endblock %}
 {% if bands %}
-    <ul>
+    <ul id="item">
         {% for band in bands %}
-            <li><h3 style="color:white;"><a href="{% url 'music:band' band.pk %}">{{ band.name }}</a></h3></li>
-        {% endfor %}
+                <article class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <a href="{% url 'music:band' band.pk %}" title="{{ band.name }}" class="zoom" data-title="Bands" data-type="image" data-toggle="lightbox">
+                                    <img src="{{ band.image.url }}" style="height: 50px; width: 50px" alt="{{ band.name }}" id="itemGallery"/>
+                                </a>
+                            </div>
+                        </div>
+                </article>
+            {% endfor %}
     </ul>
 {% else %}
-    <h1 style="color:white;">No results</h1>
+{#    <h1 style="color:white;">No results</h1>#}
 {% endif %}

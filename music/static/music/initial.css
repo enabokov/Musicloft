@@ -9,7 +9,6 @@ body, html{
 #theCarousel{
     height: 600px;
     width: 100%;
-    position: static;
 }
 #theCarousel .slide1, .slide2, .slide3{
     filter: grayscale(100%) brightness(50%) blur(2px);
