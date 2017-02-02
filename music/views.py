@@ -107,6 +107,6 @@ def search_band(request):
     results = None
     if request.method == 'POST' and request.POST['search_text']:
         search_text = request.POST['search_text']
-        results = Band.objects.filter(name__contains=search_text)
+        results = Band.objects.filter(name__contains=search_text)[:8:-1]
 
     return render(request, 'music/ajax_search.html', {'bands': results})
