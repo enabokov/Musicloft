@@ -8,26 +8,26 @@ body{
 }
 
 #theBandsCarousel .slide1{
-    background-image: url(/media/music/image_for_site/Hands-Clapping-Grayscale-flip-web-banner1.png);
+    background-image: url(/media/music/image_for_site/bandsmain1.jpg);
     color: black;
-    height:500px;
+    height: 820px;
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
 }
 #theBandsCarousel .slide2{
-    background-image: url(/media/music/image_for_site/music-wallpapers-22.jpeg);
+    background-image: url(/media/music/image_for_site/bandsmain2.jpg);
     color: black;
-    height:500px;
+    height: 820px;
     filter: grayscale(100%);
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
 }
 #theBandsCarousel .slide3{
-    background-image: url(/media/music/image_for_site/concert_doue_77510.jpg);
+    background-image: url(/media/music/image_for_site/bandsmain3.jpg);
     color: black;
-    height:500px;
+    height: 820px;
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;

@@ -1,10 +1,10 @@
 body{
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-x: auto;
+    overflow-y: auto;
     background-position: bottom;
-    background-size: cover;
+    background: url('/media/music/image_for_site/signup.jpg');
+    background-size: 100% 820px;
     background-repeat: no-repeat;
-    background: url('/media/music/image_for_site/o-LISTENING-TO-HEADPHONES-facebook.jpg');
 }
 #sect{
     margin-left: 35vmax;
@@ -16,5 +16,5 @@ body{
     border-radius: 10px;
 }
 #sect h3{
-    color: #2e6da4;
+    color: #101010;
 }

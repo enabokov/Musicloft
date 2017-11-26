@@ -7,7 +7,8 @@ body, html{
     width: 100%;
 }
 #theCarousel{
-    height: 600px;
+    /*height: 600px;*/
+    height: 100%;
     width: 100%;
     position: static;
 }
@@ -15,7 +16,7 @@ body, html{
     filter: grayscale(100%) brightness(50%) blur(2px);
     opacity: 0.8;
     color: white;
-    height: 600px;
+    height: 820px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -29,22 +30,22 @@ body, html{
     letter-spacing: 4px;
 }
 #theCarousel .slide1 {
-    background-image: url(/media/music/image_for_site/iii.jpeg);
+    background-image: url(/media/music/image_for_site/slide1_.jpg);
 }
 #theCarousel .slide2{
-    background-image: url(/media/music/image_for_site/pexels-photo.jpg);
+    background-image: url(/media/music/image_for_site/slide2.jpg);
 }
 #theCarousel .slide3{
-    background-image: url(/media/music/image_for_site/disk.png);
+    background-image: url(/media/music/image_for_site/slide3.jpg);
 }
 
 #leftCtrl {
     color: white;
-    height: 600px;
+    height: 820px;
 }
 #rightCtrl {
     color: white;
-    height: 600px;
+    height: 820px;
 }
 
 .sect {
@@ -80,16 +81,16 @@ body, html{
 }
 
 .photo1{
-    background-image: url("/media/music/image_for_site/gro.jpg");
+    background-image: url("/media/music/image_for_site/main1.jpg");
 }
 .photo2{
-    background-image: url("/media/music/image_for_site/girl2.jpg");
+    background-image: url("/media/music/image_for_site/main2.jpg");
 }
 .photo3{
-    background-image: url("/media/music/image_for_site/anywalls.com-17423.jpg");
+    background-image: url("/media/music/image_for_site/main3.jpg");
 }
 .photo4{
-    background-image: url('/media/music/image_for_site/music_grayscale_guitars_keith_richards_cigarettes_musicians_desktop_1680x1050_hd-wallpaper-978512.jpg');
+    background-image: url('/media/music/image_for_site/main4.jpg');
 }
 #intermediate{
     border: 4px groove black;
