@@ -2,13 +2,13 @@
 
 {% block title %}Home page{% endblock %}
 
-{% load staticfiles %}
+{% load static %}
+
 {% block css_files %}
     <link rel="stylesheet" type="text/css" href="{% static 'music/initial.css' %}">
 {% endblock %}
 
 {% block body %}
-
     <div id="theCarousel" class="carousel slide carousel-fade" data-ride="carousel">
 
         <ol class="carousel-indicators">
@@ -17,61 +17,69 @@
             <li data-target="#theCarousel" data-slide-to="2"></li>
         </ol>
 
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="slide1"></div>
-                    <div class="carousel-caption">
-                        <h1>Play on</h1>
-                    </div>
+        <div class="carousel-inner" role="listbox">
+            <div class="item">
+                <img src="{% static 'music/image_for_site/slide1_.jpg' %}"/>
+                <div class="carousel-caption">
+                    <h1>Play on</h1>
+                </div>
             </div>
             <div class="item">
-                <div class="slide2"></div>
-                    <div class="carousel-caption">
-                        <h1>Listen</h1>
-
-                    </div>
+                <img src="{% static 'music/image_for_site/slide2.jpg' %}"/>
+                <div class="carousel-caption">
+                    <h1>Listen</h1>
+                </div>
             </div>
             <div class="item">
-                <div class="slide3"></div>
-                    <div class="carousel-caption">
-                        <h1>Enjoy</h1>
-                    </div>
+                <img src="{% static 'music/image_for_site/slide3.jpg' %}"/>
+                <div class="carousel-caption">
+                    <h1>Enjoy</h1>
+                </div>
             </div>
         </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#theCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#theCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
     </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#theCarousel" role="button" data-slide="prev" id="leftCtrl">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#theCarousel" role="button" data-slide="next" id="rightCtrl">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+    <div class="sect">
+        <img src="{% static 'music/image_for_site/main1.jpg' %}"/>
+    </div>
 
-    <div class="sect photo1"></div>
+    <div class="subsect">
+        <img src="{% static 'music/image_for_site/submain1.png' %}"/>
+        <h2>Feel free to listen to music </h2>
+    </div>
 
-        <div class="subsect">
-            <img src="/media/music/image_for_site/submain1.png"/>
-            <h1>Feel free to listen to music </h1>
-        </div>
+    <div class="sect">
+        <img src="{% static 'music/image_for_site/main2.jpg' %}"/>
+    </div>
 
-    <div class="sect photo2"></div>
+    <div class="subsect">
 
-        <div class="subsect">
+        <img src="{% static 'music/image_for_site/submain2.png' %}"/>
+        <h2>Touch the dream </h2>
+    </div>
 
-            <img src="/media/music/image_for_site/submain2.png"/>
-            <h1>Touch the dream </h1>
-        </div>
+    <div class="sect">
+        <img src="{% static 'music/image_for_site/main3.jpg' %}"/>
+    </div>
 
-    <div class="sect photo3"></div>
+    <div class="subsect">
+        <img src="{% static 'music/image_for_site/submain3.png' %}"/>
+        <h2>Motivate, achieve, enjoy </h2>
+    </div>
 
-        <div class="subsect">
-            <img src="/media/music/image_for_site/submain3.png"/>
-            <h1>Motivate, achieve, enjoy </h1>
-        </div>
-
-    <div class="sect photo4"></div>
+    <div class="sect">
+        <img src="{% static 'music/image_for_site/main4.jpg' %}"/>
+    </div>
 
 {% endblock %}

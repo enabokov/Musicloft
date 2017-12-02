@@ -1,54 +1,29 @@
 *{
     margin: 0;
-    /*border: 3px dashed red;*/
-}
-body, html{
-    height: 100%;
-    width: 100%;
-}
-#theCarousel{
-    /*height: 600px;*/
-    height: 100%;
-    width: 100%;
-    position: static;
-}
-#theCarousel .slide1, .slide2, .slide3{
-    filter: grayscale(100%) brightness(50%) blur(2px);
-    opacity: 0.8;
-    color: white;
-    height: 820px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-#theCarousel h1{
-    font-family: "High Tower Text", sans-serif;
-    font-size: 9vw;
-    margin-bottom: 200px;
-    color: #ffffff;
-    text-shadow: black 2px 0;
-    letter-spacing: 4px;
-}
-#theCarousel .slide1 {
-    background-image: url(/media/music/image_for_site/slide1_.jpg);
-}
-#theCarousel .slide2{
-    background-image: url(/media/music/image_for_site/slide2.jpg);
-}
-#theCarousel .slide3{
-    background-image: url(/media/music/image_for_site/slide3.jpg);
 }
 
-#leftCtrl {
-    color: white;
-    height: 820px;
-}
-#rightCtrl {
-    color: white;
-    height: 820px;
+.full-screen {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.sect {
+h1 {
+  display: inline-block;
+  padding: 10px;
+  background: #843534;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+h2 {
+  display: inline-block;
+  padding-top: 160px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.sect img {
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -80,18 +55,6 @@ body, html{
     margin: 15%;
 }
 
-.photo1{
-    background-image: url("/media/music/image_for_site/main1.jpg");
-}
-.photo2{
-    background-image: url("/media/music/image_for_site/main2.jpg");
-}
-.photo3{
-    background-image: url("/media/music/image_for_site/main3.jpg");
-}
-.photo4{
-    background-image: url('/media/music/image_for_site/main4.jpg');
-}
 #intermediate{
     border: 4px groove black;
 }
