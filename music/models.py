@@ -4,14 +4,14 @@ from django.core.files import File
 from django.db import models
 from django.utils.safestring import mark_safe
 
-from music.static.music.py.download_music import download_song
-
 
 # Rename uploaded file with class attribute name
 def update_filename(instance, filename):
     path = 'music/' + str.lower(instance.__class__.__name__) + '/'
     format = str(instance) + '.' + filename.split('.')[-1]
-    return os.path.join(path, format)
+
+    path = os.path.join(path, format)
+    return path if os.path.exists(path) else None
 
 
 class Band(models.Model):

@@ -2,9 +2,11 @@
 
 {% block title %}{{ band.name }} band{% endblock %}
 
-{% load staticfiles %}
+{% load static %}
+{% load app_filters %}
+
 {% block css_files %}
-<link rel="stylesheet" type="text/css" href="{% static 'music/BandView.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'music/BandView.css' %}">
 {% endblock %}
 
 
@@ -13,7 +15,13 @@
     <div id="topSurface">
 
         <div class="container" id="topPart1">
-            <img class="img-thumbnail" id="topPartPic" src="{{ band.image.url }}" alt="{{ band.name }}"/>
+            {% with image_path=band.image.url|check %}
+                {% if image_path %}
+                    <img class="img-thumbnail" id="topPartPic" src="{% static image_path %}" alt="{{ band.name }}"/>
+                {% else %}
+                    <img class="img-thumbnail" id="topPartPic" src="{% static 'music/image_for_site/noimage.jpg' %} alt="{{ band.name }}" />
+                {% endif %}
+            {% endwith %}
         </div>
 
 
@@ -37,7 +45,13 @@
                             <div class="panel-body">
 
                                 <a href="{% url 'music:album' album.pk %}" title="{{ album.name }}" class="zoom" data-title="Albums" data-type="image" data-toggle="lightbox">
-                                    <img src="{{ album.image.url }}" alt="{{ album.name }}" id="itemGallery"/>
+                                    {% with image_path=album.image.url|check %}
+                                        {% if image_path %}
+                                            <img src="{% static image_path %}" alt="{{ album.name }}" id="itemGallery"/>
+                                        {% else %}
+                                            <img src="{% static 'music/image_for_site/noimage.jpg' %} " id="itemGallery"/>
+                                        {% endif %}
+                                    {% endwith %}
                                 </a>
 
                             </div>

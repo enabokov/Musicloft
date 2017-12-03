@@ -1,5 +1,7 @@
 {% extends 'music/base.html' %}
-{% load staticfiles %}
+{% load static %}
+{% load app_filters %}
+
 {% block title %} {{ album.name }} by {{ album.band.name }}{% endblock %}
 
 {% block css_files %}
@@ -12,7 +14,13 @@
      <div id="topSurface">
 
         <div class="container" id="topPart1">
-            <img class="img-thumbnail" id="topPartPic" src="{{ album.image.url }}" alt="{{ band.name }}"/>
+            {% with image_path=album.image.url|check %}
+                {% if image_path %}
+                    <img class="img-thumbnail" id="topPartPic" src="{% static image_path %}" alt="{{ album.name }}"/>
+                {% else %}
+                    <img class="img-thumbnail" id="topPartPic" src="{% static 'music/image_for_site/noimage.jpg' %}"/>
+                {% endif %}
+            {% endwith %}
         </div>
 
 

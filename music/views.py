@@ -52,6 +52,16 @@ def index(request):
     return render(request, 'music/index.html', context)
 
 
+def bands_list(request):
+    bands = Band.objects.all()[:15]
+
+    context = {
+        'bands': bands,
+    }
+
+    return render(request, 'music/BandListView.html', context)
+
+
 def register(request):
     form = UserForm(request.POST or None)
     if form.is_valid():

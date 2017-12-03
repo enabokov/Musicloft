@@ -3,29 +3,45 @@
 
 {% load staticfiles %}
 {% block css_files %}
-<link rel="stylesheet" type="text/css" href="{% static 'music/user/login.css' %}">
-
+    <link rel="stylesheet" type="text/css" href="{% static 'music/user/user_forms.css' %}">
 {% endblock %}
 {% block body %}
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        .bg {
+            background-image: url({% static 'music/image_for_site/login.jpg'%});
 
-    <div id="sect">
-         <div class="panel-body">
-            <h3>Log in to your Account</h3>
-            {% if error_message %}
-                <p><strong>{{ error_message }}</strong></p>
-            {% endif %}
-            <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                {% include 'music/user/form_template.html' %}
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-8">
-                        <button type="submit" class="btn btn-success">Log in</button>
+            height: 100%;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+    <div class="bg">
+        <div id="sect">
+             <div class="panel-body">
+                <h3>Log in to your Account</h3>
+                {% if error_message %}
+                    <p><strong>{{ error_message }}</strong></p>
+                {% endif %}
+                <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% include 'music/user/form_template.html' %}
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-8">
+                            <button type="submit" class="btn btn-success">Log in</button>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </div>
-        <div class="panel-footer">
-            Don't have an account? <a href="{% url 'music:register' %}">Click here</a> to create.
+                </form>
+            </div>
+            <div class="panel-footer">
+                Don't have an account? <a href="{% url 'music:register' %}">Click here</a> to create.
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -1,0 +1,11 @@
+#sect{
+    padding-left: 35vmax;
+    padding-top: 15vmax;
+}
+#sect .panel-footer{
+    width: 50%;
+    border-radius: 10px;
+}
+#sect h3{
+    color: #101010;
+}
