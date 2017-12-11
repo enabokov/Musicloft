@@ -140,8 +140,66 @@ ORDER BY avg_rating DESC
 LIMIT 10;
 
 -- Insert or update already existed song
+INSERT INTO Songs (id, title, genre) 
+VALUES (14, 'new song', 'genre')
+ON CONFLICT (id) DO UPDATE
+SET title = excluded.title, genre = excluded.genre;
+
 values_to_update = [f"'{value}'" for value in parameter_value if value]
 'INSERT INTO Songs (id, {", ".join(columns_to_update)}) ' \
 f'VALUES ({id}, {", ".join(values_to_update)}) ' \
 f'ON CONFLICT (id) DO UPDATE ' \
 f'SET ' + ', '.join([f'{column} = excluded.{column}' for column in columns_to_update])
+
+
+-- The most popular dates of singer's carea
+SELECT AVG(Ratings.rating) as avg_rating FROM Singers
+JOIN SongSinger ON SongSinger.singer_id = Singers.id
+JOIN Songs ON Songs.id = SongSinger.song_id
+JOIN Ratings ON Songs.id = Ratings.song_id
+WHERE Singers.name = 'Some Name'
+GROUP BY Ratings.data
+ORDER BY avg_rating DESC;
+
+-- Statistic of rating for precise singer
+SELECT COUNT(Songs.rating) FROM Songs
+JOIN SongSinger ON Songs.id = SongSinger.song_id
+JOIN Singer ON Singer.id = SongSinger.singer_id
+WHERE Singer.name = 'Some name'
+GROUP By Songs.rating;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
