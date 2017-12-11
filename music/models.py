@@ -37,7 +37,10 @@ class Band(models.Model):
     name = models.CharField(max_length=100)
     popularity = models.IntegerField(default=0)
     image = models.ImageField(upload_to=update_filename)
-    country = models.ForeignKey(Countries, default='Unknown country')
+    country = models.ForeignKey(Countries,
+                                models.SET_NULL,
+                                blank=True,
+                                null=True)
     description = models.TextField()
 
     def __str__(self):
@@ -72,7 +75,10 @@ class Album(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to=update_filename)
     band = models.ForeignKey(Band, on_delete=models.CASCADE)
-    language = models.ForeignKey(Languages, default='Unknown language')
+    language = models.ForeignKey(Languages,
+                                 models.SET_NULL,
+                                 blank=True,
+                                 null=True)
     budget = models.FloatField(blank=True, null=True)
     released_date = models.DateField(blank=True, null=True)
 
@@ -107,7 +113,10 @@ class Album(models.Model):
 
 class Song(models.Model):
     name = models.CharField(max_length=100)
-    genre = models.ForeignKey(Genres, default='Unknown genre')
+    genre = models.ForeignKey(Genres,
+                              models.SET_NULL,
+                              blank=True,
+                              null=True)
     duration = models.IntegerField(blank=True, null=True)
     lyrics = models.TextField(default='No lyrics')
     song_file = models.FileField(upload_to=update_filename)
@@ -117,7 +126,10 @@ class Song(models.Model):
     popularity = models.FloatField(blank=True, null=True)
     vote_average = models.FloatField(blank=True, null=True)
     vote_count = models.FloatField(blank=True, null=True)
-    song_status = models.ForeignKey(Status, default='Unknown status')
+    song_status = models.ForeignKey(Status,
+                                    models.SET_NULL,
+                                    blank=True,
+                                    null=True)
 
     def __str__(self):
         return self.name
