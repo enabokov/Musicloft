@@ -13,6 +13,8 @@
         {% load static %}
 
         <link rel="stylesheet" type='text/css' href="{% static 'music/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'music/bower_components/bootstrap-social/bootstrap-social.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'music/bower_components/font-awesome/css/font-awesome.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'music/base.css' %}">
         {% block css_files %}{% endblock %}
 
@@ -173,17 +175,27 @@
                     </div>
                 </div>
                 <br><br>
-                <div class="row" id="film">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img id="facebook" src="{% static 'music/image_for_site/facebook.png' %}"/>
-                        <img id="ln" src="{% static 'music/image_for_site/linkedin.png' %}"/>
-                        <img id="twitter" src="{% static 'music/image_for_site/twitter.png' %}"/>
-                        <img id="instagram" src="{% static 'music/image_for_site/instagram.png' %}"/>
-                        <img id="google" src="{% static 'music/image_for_site/google_plus.png' %}"/>
-                        <img id="youtube" src="{% static 'music/image_for_site/youtube.png' %}"/>
-                    </div>
+                <div id="social_media">
+                    <button class="btn btn-social-icon btn-lg btn-facebook">
+                      <span class="fa fa-facebook"></span>
+                    </button>
+                    <button class="btn btn-social-icon btn-lg btn-linkedin">
+                      <span class="fa fa-linkedin"></span>
+                    </button>
+                    <button class="btn btn-social-icon btn-lg btn-twitter">
+                      <span class="fa fa-twitter"></span>
+                    </button>
+                    <button class="btn btn-social-icon btn-lg btn-instagram">
+                      <span class="fa fa-instagram"></span>
+                    </button>
+                    <button class="btn btn-social-icon btn-lg btn-google">
+                      <span class="fa fa-google"></span>
+                    </button>
+                    <button class="btn btn-social-icon btn-lg btn-youtube">
+                      <span class="fa fa-youtube"></span>
+                    </button>
                 </div>
-                <br>
+                <br><br>
 
                 <div class="row" id="footer-intermediate"></div>
 
