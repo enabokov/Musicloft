@@ -1,6 +1,4 @@
 $(function () {
-
-// using jQuery
     function getCookie(name) {
         var cookieValue = null;
         if (document.cookie && document.cookie != '') {
@@ -20,7 +18,7 @@ $(function () {
     $('#search').on('keyup', function () {
         $.ajax({
             type: 'POST',
-            url: '/music/search/',
+            url: 'search/',
             data: {
                 'search_text': $('#search').val(),
                 'csrfmiddlewaretoken': getCookie('csrftoken')

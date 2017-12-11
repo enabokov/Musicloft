@@ -1,4 +1,5 @@
-{% load staticfiles %}
+{% load static %}
+{% load app_filters %}
 {% block css_files %}
     <link rel="stylesheet" type="text/css" href="{% static 'music/ajax_search.css' %}">
 {% endblock %}
@@ -7,10 +8,21 @@
         {% for band in bands %}
                 <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                         <div id="item">
-                                <a href="{% url 'music:band' band.pk %}" title="{{ band.name }}" class="zoom" data-title="Bands" data-type="image" data-toggle="lightbox">
-                                    <img src="{{ band.image.url }}" alt="{{ band.name }}"/>
+                                <a href="{% url 'music:band' band.pk %}"
+                                   title="{{ band.name }}"
+                                   class="zoom"
+                                   data-title="Bands"
+                                   data-type="image"
+                                   data-toggle="lightbox">
+                                    {% with image_path=band.image.url|check %}
+                                        {% if image_path %}
+                                            <img src="{% static image_path %}" alt="{{ band.name }}" id="itemGallery"/>
+                                        {% else %}
+                                            <img src="{% static 'music/image_for_site/noimage.jpg' %}" />
+                                        {% endif %}
+                                    {% endwith %}
+                                    <h3>{{ band.name }}</h3>
                                 </a>
-                                <h3>{{ band.name }}</h3>
                         </div>
                 </div>
         {% endfor %}
@@ -18,7 +30,7 @@
 {% else %}
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div id="no_result">
-                <h4>No suggestions</h4>
+            <h4>No suggestions</h4>
         </div>
     </div>
 {% endif %}

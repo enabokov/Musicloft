@@ -283,12 +283,7 @@ html, body{
     color: white;
     display: block;
 }
-#facebook, #instagram, #ln, #twitter, #google, #youtube{
-    height: 40px;
-    width: 40px;
-    background-color: whitesmoke;
-    border-radius: 100%;
-}
+
 #footer-middle{
     margin-left: auto;
     margin-right: auto;
@@ -316,12 +311,14 @@ html, body{
     width: 100%;
     float: right;
 }
-#film{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    letter-spacing: 20px;
+
+#social_media {
+  display: inline;
+  border: none;
+  text-align: center;
+  text-decoration: none;
 }
+
 #search_id input{
     background-color: whitesmoke;
 }
@@ -339,3 +336,5 @@ html, body{
     width: 70px;
     display: inline;
 }
+
+
