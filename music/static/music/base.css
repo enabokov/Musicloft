@@ -121,8 +121,6 @@ html, body{
   }
 }
 
-
-
 #nav-main{
     background-color: rgba(0,0,0,0.8);
     letter-spacing: 4px;
@@ -131,9 +129,10 @@ html, body{
     max-height: 500px;
     border-bottom: solid 1px whitesmoke;
 }
-#nav-main .navbar-header .navbar-toggle .icon-bar{
-    background-color: white;
-}
+/*#nav-main .navbar-header .navbar-toggle .icon-bar{*/
+    /*background-color: white;*/
+/*}*/
+
 #list1 li{
     color: red;
 }
