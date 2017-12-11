@@ -45,9 +45,11 @@
                         <h4>{{ forloop.counter }}. {{ song.name|truncatewords:6 }}</h4>
                          <div id="intermediate2"></div>
                         <br>
-                        <audio controls>
-                            <source src="{{ song.song_file.url }}" type="audio/mp4">
-                        </audio>
+                        {% with music_path=song.song_file.url|music_check %}
+                            <audio controls>
+                                <source src="{% static music_path %}" type="audio/mp3">
+                            </audio>
+                        {% endwith %}
                         <br><br>
                         <div id="intermediate2"></div>
                         <br>

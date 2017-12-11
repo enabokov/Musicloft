@@ -19,4 +19,7 @@ urlpatterns = [
     url(r'^albums/(?P<pk>[0-9]+)/$', views.AlbumListView.as_view(), name='albums'),  # Albums for precise band
     # Test search
     url(r'^search/$', views.search_band, name='search'),
+    url(r'^bands/search/$', views.search_band, name='search'),
+    url(r'^band/[0-9]+/search/$', views.search_band, name='search'),
+    url(r'^album/[0-9]+/search/$', views.search_band, name='search'),
 ]

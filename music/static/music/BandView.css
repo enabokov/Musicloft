@@ -1,10 +1,11 @@
 *{
-    margin: 0;
+  margin: 0;
+  padding: 0;
 }
 body{
-    background: linear-gradient(#ffffff, #757575);
-    background-repeat: no-repeat;
-    background-color: #757575;
+  background: linear-gradient(#ffffff, #757575);
+  background-repeat: no-repeat;
+  background-color: #757575;
 }
 #topSurface{
     height: 60vmax;

@@ -19,7 +19,7 @@
                 {% if image_path %}
                     <img class="img-thumbnail" id="topPartPic" src="{% static image_path %}" alt="{{ band.name }}"/>
                 {% else %}
-                    <img class="img-thumbnail" id="topPartPic" src="{% static 'music/image_for_site/noimage.jpg' %} alt="{{ band.name }}" />
+                    <img class="img-thumbnail" id="topPartPic" src="{% static 'music/image_for_site/noimage.jpg' %}" />
                 {% endif %}
             {% endwith %}
         </div>
