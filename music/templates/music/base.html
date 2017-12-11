@@ -117,17 +117,12 @@
                     <div id="search_results"></div>
                 </div>
             </div><!-- /.navbar-collapse -->
-
-
         </nav>
         </div>
-
     </head>
     <body>
-
         {% block body %}{% endblock %}
-    <!-- Fixed footer -->
-        <div class="footer" style="background: linear-gradient(#000000, darkslategray)">
+        <div class="footer" style="background: linear-gradient(dimgrey, #000000)">
             <div class="container">
                 <br><br>
                 <button style="width: 100%; margin-left: auto; margin-right: auto;  color: whitesmoke; font-family: Roboto, sans-serif; font-size: 20px; "  type="button" class="navbar-toggle" data-toggle="collapse" data-target="#footer-middle">
@@ -161,7 +156,7 @@
                         </ul>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="third">
-                        <ul  style="list-style-type:none">
+                        <ul style="list-style-type:none">
                             <li>LEARN MORE</li>
                             <li><br></li>
                             <li>Support</li>
@@ -209,6 +204,7 @@
         <script src="{% static 'music/bower_components/jquery/dist/jquery.min.js' %}"></script>
         <script src="{% static 'music/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
         <script src="{% static 'music/js/ajax_search.js' %}"></script>
-        <script src="{% static 'music/js/style.js' %}"></script>
+        <script src="{% static 'music/js/carousel.js' %}"></script>
+        <script src="{% static 'music/js/player.js' %}"></script>
     </body>
 </html>
