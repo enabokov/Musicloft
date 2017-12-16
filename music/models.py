@@ -3,7 +3,7 @@ import os
 from django.core.files import File
 from django.db import models
 from django.utils.safestring import mark_safe
-
+from django.contrib.auth.models import User
 
 # Rename uploaded file with class attribute name
 # from _download_script import download_song
@@ -163,3 +163,8 @@ class Song(models.Model):
         return mark_safe('<audio controls><source src="{}"/></audio>'.format(self.song_file.url))
 
     song_tag.short_description = 'Song'
+
+
+class LikedByUsers(models.Model):
+    user = models.IntegerField()
+    band = models.ForeignKey(Band, null=True)

@@ -1,11 +1,31 @@
 {% extends 'music/base.html' %}
 {% block title %}User account{% endblock %}
 
+{% load static %}
+{% block css_files %}
+    <link rel="stylesheet" type="text/css" href="{% static 'music/user/account.css' %}">
+{% endblock %}
 {% block body %}
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        #sect {
+            background-image: url({% static 'music/image_for_site/account.jpg'%});
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.8;
+        }
+    </style>
     <div id="sect">
         <h1>Congrats, {{ request.user.username }}!</h1>
-        <h2>You are welcome at out cool music site!</h2>
-        <a href="{% url 'music:index' %}"><p>Go to main page</p></a>
-        <a href="{% url 'music:logout' %}"><p>Log out</p></a>
+        <h2>You are welcome to our music site!</h2>
+        <span>
+            <a class="btn btn-md btn-success" href="{% url 'music:index' %}">Let's get started</a>
+            <a class="btn btn-md btn-reset" href="{% url 'music:logout' %}">Log out</a>
+        </span>
     </div>
 {% endblock %}

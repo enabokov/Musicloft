@@ -31,7 +31,7 @@ img:hover {
   transform: scale(1.2, 1.2);
   transition-duration: 0.3s;
   -webkit-transition-duration: 0.3s; /* Safari */
-  box-shadow: 5px 5px 5px #888888;
+  /*box-shadow: 5px 5px 5px #888888;*/
   z-index: 1;
 }
 .panel .panel-footer
@@ -49,6 +49,7 @@ img:hover {
     margin: 0 !important;
     padding: 0 !important;
 }
+
 .panel .panel-footer i.glyphicon
 {
     display: inline;
@@ -57,7 +58,7 @@ img:hover {
 }
 .panel .panel-footer i.glyphicon-thumbs-up
 {
-    color: #1abc9c;
+    color: green;
 }
 .panel .panel-footer i.glyphicon-thumbs-down
 {
@@ -69,7 +70,7 @@ img:hover {
     width: 15px;
     display: inline;
     font: 300 normal 1.125em "Roboto",Arial,Verdana,sans-serif;
-    color: #34495e; text-align: center;
+    /*color: #34495e; text-align: center;*/
     background-color: transparent !important;
     border: none !important;
 }
@@ -133,4 +134,24 @@ img:hover {
     color: wheat;
     letter-spacing: 3px;
     margin-bottom: -20px;
+}
+
+.like
+{
+  font-size: 20px;
+  color: darkgreen;
+}
+
+.like:hover{
+  color: lawngreen;
+}
+
+.dislike
+{
+  font-size: 20px;
+  color: darkred;
+}
+
+.dislike:hover{
+  color: orangered;
 }

@@ -1,7 +1,27 @@
-*{
-    margin:0;
+#sect{
+    padding-left: 35vmax;
+    padding-top: 15vmax;
+}
+#sect .panel-footer{
+    width: 50%;
+    border-radius: 10px;
+}
+#sect h3{
+    color: #101010;
 }
 
-#sect{
-    text-align: center;
+#sect h1{
+  font-size: 60px;
+  color: black;
+  font-family: Charter, sans-serif;
+}
+
+#sect h2{
+  font-size: 30px;
+  color: black;
+  font-family: Charter, sans-serif;
+}
+
+.submit{
+  color: green;
 }

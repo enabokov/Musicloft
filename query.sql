@@ -167,39 +167,3 @@ JOIN SongSinger ON Songs.id = SongSinger.song_id
 JOIN Singer ON Singer.id = SongSinger.singer_id
 WHERE Singer.name = 'Some name'
 GROUP By Songs.rating;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
