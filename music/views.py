@@ -1,16 +1,18 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.template import RequestContext
 from django.views import generic
+from django.db.utils import IntegrityError
+from django.contrib.auth.models import User
 
 from .forms import UserForm, LoginForm
-from .models import Band, Album, Song
+from .models import Band, Album, Song, LikedByUsers
 
 
 class BandView(generic.DetailView):
     queryset = Band.objects.all()
     template_name = 'music/BandView.html'
+    context_object_name = 'band'
 
 
 class AlbumView(generic.DetailView):
@@ -37,23 +39,25 @@ class AlbumListView(generic.ListView):
         return Album.objects.all()
 
 
+class Recommendations(generic.ListView):
+    model = LikedByUsers
+    template_name = 'music/user/recommendations.html'
+    context_object_name = 'bands'
+
+
 def index(request):
     form = UserForm(request.POST or None)
     bands = Band.objects.all().order_by('?')[:12]
-    albums = Album.objects.all().order_by('?')[:4]
-    songs = Song.objects.all().order_by('?')[:10]
 
     context = {
         'bands': bands,
-        'albums': albums,
-        'songs': songs,
         'form': form
     }
     return render(request, 'music/index.html', context)
 
 
 def bands_list(request):
-    bands = Band.objects.all()[:15]
+    bands = Band.objects.all().order_by('?')
 
     context = {
         'bands': bands,
@@ -104,13 +108,39 @@ def logout_user(request):
     return redirect(reverse('music:index'))
 
 
+@login_required
+def liked_bands(request):
+    try:
+        LikedByUsers.objects.create(
+            user=request.user.id,
+            band=Band.objects.get(pk=request.POST['band_id']),
+        ).save()
+    except IntegrityError:
+        print('already exists')
+
+    return redirect(reverse('music:bands'))
+
+
+@login_required
+def recommendations(request):
+    liked_bands = LikedByUsers.objects.filter(user=request.user.id)
+    context = {
+        'bands': liked_bands,
+    }
+    return render(request, 'music/user/recommendations.html', context=context)
+
+
 # User information page
 @login_required
 def user_account(request):
     if not request.user.is_authenticated():
         return redirect(reverse('music:register'))
     else:
-        return render(request, 'music/user/account.html', content_type={'request': RequestContext(request)})
+        context = {
+            'username': request.user.username,
+        }
+
+        return render(request, 'music/user/account.html', context=context)
 
 
 def search_band(request):

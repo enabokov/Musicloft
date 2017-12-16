@@ -181,6 +181,15 @@ html, body{
     font-family: 'Titillium Web', sans-serif;
 }
 
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
 .dropdown:hover .dropdown-menu{
     display: inline;
 }
@@ -248,12 +257,15 @@ html, body{
 #Question{
     margin-right: 10px;
 }
+
 #Logged:hover{
     background-color: #1b6d85;
 }
 #Logged{
-    color: greenyellow;
+  color: greenyellow;
+  padding-right: 50px;
 }
+
 .footer{
     width: 100%;
     height: auto;
@@ -332,5 +344,3 @@ html, body{
     width: 70px;
     display: inline;
 }
-
-

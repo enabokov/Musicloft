@@ -62,7 +62,7 @@
                     <a href="#" class="dropdown-toggle"  data-toggle="dropdown" id="BndBar"><strong>BANDS </strong></a>
                     <ul class="dropdown-menu" role="menu" style="background-color: white">
                         {% for band in bands %}
-                            {% if forloop.counter0 < 5 %}
+                            {% if forloop.counter < 5 %}
                                 <li><a href="{% url 'music:band' band.pk %}">{{ band.name }}</a></li>
                             {% endif %}
                         {% endfor %}
@@ -92,9 +92,12 @@
                     <li><a href="{% url 'music:login' %}" id="LogBar"><strong>LOGIN </strong></a></li>
                     <li><a href="#" id="Question" style="font-size: 20px; color: white; "><strong>?</strong></a></li>
                 {% else %}
-                   <li class="dropdown"><a href="#" id="Logged" class="dropdown-toggle" data-toggle="dropdown" >Welcome, {{ request.user.username }}<b class="caret"></b></a>
+                   <li class="dropdown">
+                        <a href="#" id="Logged" class="dropdown-toggle" data-toggle="dropdown">
+                            <strong>WELCOME {{ request.user.username }}<b class="caret"></b></strong>
+                        </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="icon-cog"></i> Preferences</a></li>
+                            <li><a href="{% url 'music:recommendations' %}"><i class="icon-cog"></i> Recommendations</a></li>
                             <li><a href="#"><i class="icon-envelope"></i> Contact Support</a></li>
                             <li class="divider"></li>
                             <li><a href="{% url 'music:logout' %}"><i class="icon-off"></i> Logout</a></li>
@@ -121,6 +124,7 @@
         </div>
     </head>
     <body>
+        <script src="{% static 'music/bower_components/jquery/dist/jquery.min.js' %}"></script>
         {% block body %}{% endblock %}
         <div class="footer" style="background: linear-gradient(dimgrey, #000000)">
             <div class="container">
@@ -200,11 +204,10 @@
                 <br><br><br><br>
             </div>
         </div>
-
-        <script src="{% static 'music/bower_components/jquery/dist/jquery.min.js' %}"></script>
         <script src="{% static 'music/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
         <script src="{% static 'music/js/ajax_search.js' %}"></script>
         <script src="{% static 'music/js/carousel.js' %}"></script>
         <script src="{% static 'music/js/player.js' %}"></script>
+        <script src="{% static 'music/js/liked_by_users.js' %}"></script>
     </body>
 </html>

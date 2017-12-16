@@ -1,0 +1,47 @@
+{% extends 'music/base.html' %}
+{% block title %}Recommendations{% endblock %}
+{% load static %}
+{% load app_filters %}
+{% block css_files %}
+    <link rel="stylesheet" type="text/css" href="{% static 'music/user/recommendations.css' %}">
+{% endblock %}
+{% block body %}
+    <div id="sect">
+        <h1>Recommendations</h1>
+        <div class="row" id="footer-intermediate"></div>
+    </div>
+    <div class="container">
+        <section class="row">
+            {% for band in bands %}
+                <article class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <a href="{% url 'music:band' band.pk %}" title="{{ band.name }}" class="zoom" data-title="Bands" data-type="image" data-toggle="lightbox">
+                                    {% if band.image.url %}
+                                        <img src="{% static band.image.url %}" alt="{{ band.name }}" id="itemGallery"/>
+                                    {% else %}
+                                        <img src="{% static 'music/image_for_site/noimage.jpg' %}" />
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div class="panel-footer">
+                                <h4 class="bandname">
+                                    <a class='a' href="{% url 'music:band' band.pk %}" title="{{ band.name }}">
+                                        <strong style="color: black">{{ band.name }}</strong>
+                                    </a>
+                                </h4>
+                                <h5 class="h5">
+                                    {% csrf_token %}
+                                    <a href="#" style="color: darkgray">Music</a>
+                                    <span id="likes" class="pull-right">
+                                        <i class="like fa fa-thumbs-o-up" data-value="{{ band.pk }}"></i>
+                                        <i class="dislike fa fa-thumbs-o-down" data-value="{{ bank.pk }}"></i>
+                                    </span>
+                                </h5>
+                            </div>
+                        </div>
+                </article>
+            {% endfor %}
+        </section>
+    </div>
+{% endblock %}
