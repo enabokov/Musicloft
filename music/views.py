@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import generic
 
 from .forms import UserForm, LoginForm
-from .models import Band, Album, LikedByUsers
+from .models import Band, Album, LikedByUsers, BandGenres
 
 
 class BandView(generic.DetailView):
@@ -136,10 +136,24 @@ def liked(request):
 def recommendations(request):
     liked_bands = LikedByUsers.objects.filter(user=request.user).values_list('band', flat=True)
     bands = Band.objects.filter(id__in=liked_bands)
-    context = {
-        'bands': bands,
-    }
-    return render(request, 'music/user/recommendations.html', context=context)
+
+    liked_genres = []
+    for liked in liked_bands:
+        result = BandGenres.objects.filter(band=liked).values_list('genre', flat=True)
+        liked_genres += result
+    liked_genres = set(liked_genres)
+
+    rank = []
+    bands_id = Band.objects.all().values_list('id', flat=True)
+    for band_id in bands_id:
+        genres = BandGenres.objects.filter(band=band_id).values_list('genre', flat=True)
+        rank.append((band_id, len(set(genres).intersection(liked_genres))))
+
+    rank.sort(key=lambda x: x[1], reverse=True)
+    ids = [x[0] for x in rank][:30]
+    bands = Band.objects.filter(id__in=ids)
+
+    return render(request, 'music/user/recommendations.html', context={'bands': bands})
 
 
 # User information page
