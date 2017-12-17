@@ -45,7 +45,7 @@ class Genres(models.Model):
 
 
 class Band(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     popularity = models.IntegerField(default=0)
     image = models.ImageField(upload_to=update_filename)
     country = models.ForeignKey(Countries,
@@ -99,12 +99,6 @@ class Album(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to=update_filename)
     band = models.ForeignKey(Band, on_delete=models.CASCADE)
-    language = models.ForeignKey(Languages,
-                                 models.SET_NULL,
-                                 blank=True,
-                                 null=True)
-    budget = models.FloatField(blank=True, null=True)
-    released_date = models.DateField(blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -115,21 +109,15 @@ class Album(models.Model):
     image_tag.short_description = 'Image'
 
     @classmethod
-    def add_album(cls, album, image_path):
-        try:
-            with open(image_path, 'rb') as f:
-                cls.objects.create(
-                    name=album['name'],
-                    image=File(f),
-                    band=Band.objects.get(name=album['band']),
-                    languages=Languages.objects.get(name=album['language']),
-                    budget=album['budget'],
-                    released_date=album['released_date'],
-                )
-
-            os.remove('image.jpg')
-        except:
-            print(f'Album {album["name"]} was not added')
+    def add_album(cls, album):
+        # try:
+        cls.objects.create(
+            name=album['name'],
+            image=album['image'],
+            band=Band.objects.get(name=album['band']),
+        )
+        # except:
+        #     print(f'Album {album["name"]} was not added')
 
 
 class Song(models.Model):

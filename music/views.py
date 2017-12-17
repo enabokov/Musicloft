@@ -25,6 +25,7 @@ class BandListView(generic.ListView):
     template_name = 'music/BandListView.html'
     context_object_name = 'bands'
     paginate_by = 30
+    ordering = ['-popularity']
 
 
 class AlbumListView(generic.ListView):
