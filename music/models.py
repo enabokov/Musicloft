@@ -26,12 +26,22 @@ class Status(models.Model):
     name = models.CharField(max_length=15)
 
 
-class Genres(models.Model):
-    name = models.CharField(max_length=10)
-
-
 class Countries(models.Model):
     name = models.CharField(max_length=20)
+
+
+class Genres(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    @classmethod
+    def add_genre(cls, genre):
+        try:
+            cls.objects.create(
+                name=genre,
+            )
+        except:
+            pass
+            # print(f'Genre {genre} was not added')
 
 
 class Band(models.Model):
@@ -53,23 +63,36 @@ class Band(models.Model):
     image_tag.short_description = 'Image'
 
     @classmethod
-    def add_band(cls, artist):
+    def add_band(cls, band):
+
+        # Add genres before insert band
         try:
-            with open('image.jpg', 'wb') as f:
-                f.write(artist['image'])
+            cls.objects.create(
+                name=band['name'],
+                popularity=band['popularity'],
+                description=band['description'],
+                image=band['image'],
+            )
+            for genre in band['genre']:
+                BandGenres.add_genre(band['name'], genre)
+        except Exception as e:
+            print(f'Band {band["name"]} was not added {e}')
 
-            with open('image.jpg', 'rb') as f:
-                cls.objects.create(
-                    name=artist['name'],
-                    popularity=artist['popularity'],
-                    description=artist['description'],
-                    image=File(f),
-                    country=artist['country'],
-                )
 
-            os.remove('image.jpg')
+class BandGenres(models.Model):
+    band = models.ForeignKey(Band, unique=False)
+    genre = models.ForeignKey(Genres)
+
+    @classmethod
+    def add_genre(cls, band: str, genre: str):
+        try:
+            Genres.add_genre(genre)
         except:
-            print(f'Band {artist["name"]} was not added')
+            pass
+        cls.objects.create(
+            band=Band.objects.get(name=band),
+            genre=Genres.objects.get(name=genre)
+        )
 
 
 class Album(models.Model):
@@ -92,12 +115,9 @@ class Album(models.Model):
     image_tag.short_description = 'Image'
 
     @classmethod
-    def add_album(cls, album):
+    def add_album(cls, album, image_path):
         try:
-            with open('image.jpg', 'wb') as f:
-                f.write(album['image'])
-
-            with open('image.jpg', 'rb') as f:
+            with open(image_path, 'rb') as f:
                 cls.objects.create(
                     name=album['name'],
                     image=File(f),
@@ -136,10 +156,8 @@ class Song(models.Model):
         return self.name
 
     @classmethod
-    def add_song(cls, song):
+    def add_song(cls, song, song_file):
         try:
-            song_file = download_song(song['band'] + ' - ' + song['name'])
-
             with open(song_file, 'rb') as f:
                 cls.objects.create(
                     name=song['name'],
@@ -155,8 +173,6 @@ class Song(models.Model):
                     vote_count=song['vote_count'],  # new field
                     song_status=song['song_status'],  # new field
                 )
-
-            os.remove(song_file)
         except:
             print(f'Song {song["name"]} was not added')
 
