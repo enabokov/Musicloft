@@ -27,7 +27,7 @@ $(function(){
               },
               success: function () {
                 alert('You have liked ' + band_name +
-                  '!\nThis will be used for your next recommendations')
+                  '!\nThis will be used for your next liked')
               }
     });
   });
@@ -44,7 +44,8 @@ $(function(){
               },
               success: function () {
                 alert('Oh, you have disliked ' + band_name +
-                  '!\nThis will be used for your next recommendations');
+                  '!\nThis will be used for your next liked');
+                location.reload();
               }
     })
   })

@@ -97,6 +97,7 @@
                             <strong>WELCOME {{ request.user.username }}<b class="caret"></b></strong>
                         </a>
                         <ul class="dropdown-menu">
+                            <li><a href="{% url 'music:liked' %}"><i class="icon-cog"></i> Liked bands</a></li>
                             <li><a href="{% url 'music:recommendations' %}"><i class="icon-cog"></i> Recommendations</a></li>
                             <li><a href="#"><i class="icon-envelope"></i> Contact Support</a></li>
                             <li class="divider"></li>

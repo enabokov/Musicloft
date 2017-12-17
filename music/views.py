@@ -121,6 +121,16 @@ def disliked_bands(request):
 
 
 @login_required
+def liked(request):
+    liked_bands = LikedByUsers.objects.filter(user=request.user).values_list('band', flat=True)
+    bands = Band.objects.filter(id__in=liked_bands)
+    context = {
+        'bands': bands,
+    }
+    return render(request, 'music/user/liked.html', context=context)
+
+
+@login_required
 def recommendations(request):
     liked_bands = LikedByUsers.objects.filter(user=request.user).values_list('band', flat=True)
     bands = Band.objects.filter(id__in=liked_bands)
