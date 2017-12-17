@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Band, Album, Song
+from .models import Band, Album, Song, LikedByUsers
 
 
 class AlbumInline(admin.TabularInline):
@@ -65,3 +65,4 @@ class SongAdmin(admin.ModelAdmin):
 admin.site.register(Band, BandAdmin)
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Song, SongAdmin)
+admin.site.register(LikedByUsers)

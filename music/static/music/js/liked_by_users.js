@@ -39,7 +39,7 @@ $(function(){
               type: 'POST',
               url: 'adddisliked/',
               data: {
-                  'adddisliked': $(this).attr('data-value'),
+                  'band_id': $(this).attr('data-value'),
                   'csrfmiddlewaretoken': getCookie('csrftoken')
               },
               success: function () {

@@ -1,12 +1,11 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.db.utils import IntegrityError
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import generic
-from django.db.utils import IntegrityError
-from django.contrib.auth.models import User
 
 from .forms import UserForm, LoginForm
-from .models import Band, Album, Song, LikedByUsers
+from .models import Band, Album, LikedByUsers
 
 
 class BandView(generic.DetailView):
@@ -39,16 +38,9 @@ class AlbumListView(generic.ListView):
         return Album.objects.all()
 
 
-class Recommendations(generic.ListView):
-    model = LikedByUsers
-    template_name = 'music/user/recommendations.html'
-    context_object_name = 'bands'
-
-
 def index(request):
     form = UserForm(request.POST or None)
     bands = Band.objects.all().order_by('?')[:12]
-
     context = {
         'bands': bands,
         'form': form
@@ -58,11 +50,9 @@ def index(request):
 
 def bands_list(request):
     bands = Band.objects.all().order_by('?')
-
     context = {
         'bands': bands,
     }
-
     return render(request, 'music/BandListView.html', context)
 
 
@@ -112,8 +102,8 @@ def logout_user(request):
 def liked_bands(request):
     try:
         LikedByUsers.objects.create(
-            user=request.user.id,
-            band=Band.objects.get(pk=request.POST['band_id']),
+            user=request.user,
+            band=Band.objects.get(pk=request.POST['band_id'])
         ).save()
     except IntegrityError:
         print('already exists')
@@ -122,10 +112,20 @@ def liked_bands(request):
 
 
 @login_required
+def disliked_bands(request):
+    LikedByUsers.objects.filter(
+        user=request.user,
+        band=Band.objects.get(pk=request.POST['band_id']),
+    ).delete()
+    return redirect(reverse('music:bands'))
+
+
+@login_required
 def recommendations(request):
-    liked_bands = LikedByUsers.objects.filter(user=request.user.id)
+    liked_bands = LikedByUsers.objects.filter(user=request.user).values_list('band', flat=True)
+    bands = Band.objects.filter(id__in=liked_bands)
     context = {
-        'bands': liked_bands,
+        'bands': bands,
     }
     return render(request, 'music/user/recommendations.html', context=context)
 

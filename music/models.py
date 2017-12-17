@@ -1,9 +1,10 @@
 import os
 
+from django.contrib.auth.models import User
 from django.core.files import File
 from django.db import models
 from django.utils.safestring import mark_safe
-from django.contrib.auth.models import User
+
 
 # Rename uploaded file with class attribute name
 # from _download_script import download_song
@@ -166,5 +167,5 @@ class Song(models.Model):
 
 
 class LikedByUsers(models.Model):
-    user = models.IntegerField()
+    user = models.ForeignKey(User, unique=False)
     band = models.ForeignKey(Band, null=True)

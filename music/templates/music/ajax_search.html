@@ -3,6 +3,7 @@
 {% block css_files %}
     <link rel="stylesheet" type="text/css" href="{% static 'music/ajax_search.css' %}">
 {% endblock %}
+<script src="{% static 'music/js/liked_by_users.js' %}"></script>
 {% if bands %}
     <div id="items">
         {% for band in bands %}
@@ -17,6 +18,8 @@
                                     {% with image_path=band.image.url|check %}
                                         {% if image_path %}
                                             <img src="{% static image_path %}" alt="{{ band.name }}" id="itemGallery"/>
+                                            <a class="like fa fa-thumbs-o-up" data-value="{{ band.pk }}"></a>
+                                            <a class="dislike fa fa-thumbs-o-down" data-value="{{ band.pk }}"></a>
                                         {% else %}
                                             <img src="{% static 'music/image_for_site/noimage.jpg' %}" />
                                         {% endif %}
