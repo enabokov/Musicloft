@@ -167,3 +167,65 @@ JOIN SongSinger ON Songs.id = SongSinger.song_id
 JOIN Singer ON Singer.id = SongSinger.singer_id
 WHERE Singer.name = 'Some name'
 GROUP By Songs.rating;
+
+
+-- Make analytics of rated songs by users
+SELECT "Users".name,
+        CASE WHEN rating >= 0.8 THEN "Very Popular"
+             WHEN rating >= 0.5 AND rating < 0.8 THEN "Getting popular"
+             WHEN rating < 0.5 AND rating >= 0.2 THEN "Well-know among old people..."
+             ELSE "Not popular"
+        END,
+        "Songs".name
+FROM "Ratings"
+JOIN "Songs" ON "Songs".id = "Ratings".song_id
+JOIN "Users" ON "Users".id = "Ratings".user_id;
+
+-- Find average popularity by genre
+SELECT title,
+       genre,
+       AVG(popularity) OVER (PARTITION by genre ORDER by title) AS avg_popularity,
+       language
+FROM "Songs"
+JOIN "Genres" ON "Genres".id = "Songs".genre
+JOIN "Languages" ON "language".id = "Songs".language
+WHERE song_status = "Released";
+
+
+-- sum total budget of all songs grouped by genre
+SELECT genre, SUM(budget) as total
+FROM "Songs"
+JOIN "Genres" ON "Genres".id = "Songs".genre
+GROUP by genre
+HAVING EXTRACT('year', release_date) >= (now() - interval '2 month');
+ORDER by 2 DESC;
+
+-- rank countries by their songs,
+-- find total budget of songs of certain country,
+-- that were liked by adolescence
+WITH songs_with_country as (
+      SELECT
+        title, genre, img_url, popularity, "Countries".name, budget, release_date, song_status
+      FROM "Songs"
+        JOIN "Countries" ON "Countries".id = "Songs".country
+    ), liked_by_users as (
+      SELECT rating FROM "Ratings"
+      JOIN "Users" ON "Users".id = "Ratings".user_id
+      WHERE is_adult IS FALSE;
+    )
+
+SELECT
+  title,
+  SUM(budget) OVER (PARTITION by country) as budget,
+  RANK() OVER (PARTITION by county ORDER by budget)
+FROM songs_with_country
+WHERE vote_avg = (SELECT rating FROM liked_by_users)
+
+
+-- calculate singer by genre in specific country
+SELECT
+  Singers.name,
+  ROW_NUMBER() OVER (PARTITION by country) as total_number
+FROM "Singers"
+JOIN "Countries" ON "Countries".id = "Singers".country
+WHERE "Countries".name = 'USA';
