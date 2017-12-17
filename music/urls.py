@@ -18,8 +18,8 @@ urlpatterns = [
     url(r'^album/(?P<pk>[0-9]+)/$', views.AlbumView.as_view(), name='album'),
     url(r'^albums/(?P<pk>[0-9]+)/$', views.AlbumListView.as_view(), name='albums'),  # Albums for precise band
     # liked bands by users
-    url(r'^bands/addliked/', views.liked_bands, name='liked'),
-    url(r'^.*/adddisliked/', views.disliked_bands, name='disliked'),
+    url(r'^.*addliked/', views.liked_bands, name='liked'),
+    url(r'^.*adddisliked/', views.disliked_bands, name='disliked'),
     # liked
     url(r'^liked/', views.liked, name='liked'),
     url(r'^recommendations/', views.recommendations, name='recommendations'),
