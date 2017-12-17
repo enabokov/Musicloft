@@ -28,36 +28,38 @@
         </div>
 
         <a class="left carousel-control" href="#theBandsCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
         </a>
         <a class="right carousel-control" href="#theBandsCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
         </a>
     </div>
 
-    <div  class="container">
-    <div class="col-lg-12">
-        <div class="page-header">
-            <h1>ALL BANDS</h1>
+    <div class="container">
+        <div class="col-lg-12">
+            <div class="page-header">
+                <h1>ALL BANDS</h1>
             </div>
         </div>
     </div>
 
 
     <div class="container">
-        <section class="row">
-            {% for band in bands %}
-                <article class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
+        {% if bands %}
+            <section class="row">
+                {% for band in bands %}
+                    <article class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <a href="{% url 'music:band' band.pk %}" title="{{ band.name }}" class="zoom" data-title="Bands" data-type="image" data-toggle="lightbox">
+                                <a href="{% url 'music:band' band.pk %}" title="{{ band.name }}" class="zoom"
+                                   data-title="Bands" data-type="image" data-toggle="lightbox">
                                     {% with image_path=band.image.url|check %}
                                         {% if image_path %}
                                             <img src="{% static image_path %}" alt="{{ band.name }}" id="itemGallery"/>
                                         {% else %}
-                                            <img src="{% static 'music/image_for_site/noimage.jpg' %}" />
+                                            <img src="{% static 'music/image_for_site/noimage.jpg' %}"/>
                                         {% endif %}
                                     {% endwith %}
                                 </a>
@@ -78,9 +80,27 @@
                                 </h5>
                             </div>
                         </div>
-                </article>
-            {% endfor %}
-        </section>
+                    </article>
+                {% endfor %}
+            </section>
+            {% if is_paginated %}
+                <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/bands?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/bands?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+                </div>
+            {% endif %}
+        {% else %}
+            <p>No bands found</p>
+        {% endif %}
     </div>
 
 {% endblock %}

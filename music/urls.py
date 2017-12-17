@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^logout/$', views.logout_user, name='logout'),
     url(r'^account/$', views.user_account, name='account'),
     # Data urls
-    url(r'^bands/$', views.bands_list, name='bands'),
+    url(r'^bands/$', views.BandListView.as_view(), name='bands'),
     url(r'^albums/$', views.AlbumListView.as_view(), name='albums'),  # All albums
     url(r'^band/(?P<pk>[0-9]+)/$', views.BandView.as_view(), name='band'),
     url(r'^album/(?P<pk>[0-9]+)/$', views.AlbumView.as_view(), name='album'),

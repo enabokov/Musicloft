@@ -24,6 +24,7 @@ class BandListView(generic.ListView):
     model = Band
     template_name = 'music/BandListView.html'
     context_object_name = 'bands'
+    paginate_by = 30
 
 
 class AlbumListView(generic.ListView):
@@ -157,6 +158,6 @@ def search_band(request):
     results = None
     if request.method == 'POST' and request.POST['search_text']:
         search_text = request.POST['search_text']
-        results = Band.objects.filter(name__contains=search_text)[:8:-1]
+        results = Band.objects.filter(name__contains=search_text)[:6:-1]
 
     return render(request, 'music/ajax_search.html', {'bands': results})
