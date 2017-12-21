@@ -16,7 +16,7 @@ python manage.py runserver
 ## Description
 Django project for web development course.
 
-Mutual project with [Alexander Onbysh](https://github.com/OnbyshAlex)
+Mutual project with [Alexander Onbysh](https://github.com/AlexanderOnbysh)
 
 ![alt tag](https://github.com/enabokov/Musicloft/blob/master/images/img1.png?raw=true)
 ![alt tag](https://github.com/enabokov/Musicloft/blob/master/images/img2.png?raw=true)
